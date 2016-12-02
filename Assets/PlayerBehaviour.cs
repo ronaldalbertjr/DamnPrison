@@ -7,8 +7,6 @@ public class PlayerBehaviour : MonoBehaviour
     float speed;
     Rigidbody2D rb;
 	Animator anim;
-    Vector3 mousePosition;
-    Vector3 point;
     void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -16,7 +14,6 @@ public class PlayerBehaviour : MonoBehaviour
     }
 	void Update () 
 	{
-        mousePosition = Input.mousePosition;
 		if (Input.GetKey (KeyCode.W) && Input.GetKey (KeyCode.D)) 
 		{
             this.transform.position += (Vector3.up + Vector3.right) * speed * Time.deltaTime;
@@ -36,34 +33,22 @@ public class PlayerBehaviour : MonoBehaviour
         else if (Input.GetKey(KeyCode.W))
         {
             this.transform.position += Vector3.up * speed * Time.deltaTime;
-			anim.SetBool("WalkingUp", true);
-			anim.SetBool("WalkingLeft", false);
-			anim.SetBool("WalkingDown", false);
-			anim.SetBool("WalkingRight", false);
+            anim.SetFloat("WalkingFloat", 2);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             this.transform.position += Vector3.right * speed * Time.deltaTime;
-			anim.SetBool("WalkingLeft", true);
-			anim.SetBool("WalkingUp", false);
-			anim.SetBool("WalkingRight", false);
-			anim.SetBool("WalkingDown", true);
+            anim.SetFloat("WalkingFloat", 3);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             this.transform.position += Vector3.left * speed * Time.deltaTime;
-			anim.SetBool("WalkingRight", true);
-			anim.SetBool("WalkingUp", false);
-			anim.SetBool("WalkingLeft", false);
-			anim.SetBool("WalkingDown", false);
+            anim.SetFloat("WalkingFloat", 1);
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            anim.SetFloat("WalkingFloat", 0);
             this.transform.position += Vector3.down * speed * Time.deltaTime;
-			anim.SetBool("WalkingDown", true);
-			anim.SetBool("WalkingUp", false);
-			anim.SetBool("WalkingLeft", false);
-			anim.SetBool("WalkingRight", false);
         }
         
 	}
