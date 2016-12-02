@@ -46,8 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ArmaScript.cs" />
-     <Compile Include="Assets\PlayerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\ArmaScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
