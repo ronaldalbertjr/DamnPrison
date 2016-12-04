@@ -6,12 +6,16 @@ public class ArmaScript : MonoBehaviour
     Vector3 mousePosition;
     Vector3 lookPosition;
     Quaternion rotation;
-	void Update ()
+    Rigidbody2D body;
+    void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
+	void FixedUpdate ()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        lookPosition = mousePosition - this.transform.position;
-        rotation = Quaternion.LookRotation(lookPosition);
-        rotation = new Quaternion(0f, 0f, rotation.z / 2, rotation.w / 2);
-        this.transform.rotation = rotation;
+        float AngleRad = Mathf.Atan2(-mousePosition.x + transform.position.x, mousePosition.y - transform.position.y);
+        float angle = (180 / Mathf.PI) * AngleRad;
+        this.body.rotation = angle;
     }
 }
