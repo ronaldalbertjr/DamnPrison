@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 988ded4ed44ab0740a591064f4debc33
-timeCreated: 1480418796
-licenseType: Pro
+timeCreated: 1481151772
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Tileset Parede 32x28_0
@@ -35,14 +35,14 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: .25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 5
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -61,7 +61,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  textureType: 8
+  textureType: 5
   buildTargetSettings: []
   spriteSheet:
     sprites:
