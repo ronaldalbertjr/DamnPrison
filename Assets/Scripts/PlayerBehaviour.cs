@@ -19,6 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Awake()
     {
+        Cursor.visible = true;
 		bodyAnim = body.GetComponent<Animator> ();
         legsAnim = legs.GetComponent<Animator> ();
     }
