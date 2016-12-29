@@ -12,7 +12,7 @@ namespace Tiler.Editor
             if (textureImporter != null)
             {
                 AssetDatabase.StartAssetEditing();
-                textureImporter.textureType = TextureImporterType.Advanced;
+                textureImporter.textureType = TextureImporterType.Default;
                 textureImporter.isReadable = true;
                 textureImporter.maxTextureSize = textureResolution;
                 textureImporter.mipmapEnabled = true; // turn these off for now otherwise drawing is extremely slow
@@ -34,7 +34,7 @@ namespace Tiler.Editor
                 if (textureImporter != null && !textureImporter.isReadable)
                 {
                     AssetDatabase.StartAssetEditing();
-                    textureImporter.textureType = TextureImporterType.Advanced;
+                    textureImporter.textureType = TextureImporterType.Default;
                     textureImporter.isReadable = true;
                     textureImporter.textureFormat = TextureImporterFormat.ARGB32;
                     AssetDatabase.ImportAsset(path);

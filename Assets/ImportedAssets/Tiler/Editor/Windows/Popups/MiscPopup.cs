@@ -271,8 +271,8 @@ public class MiscPopup : PopupWindow
             }
         }
 
-        NavMeshBuilder.ClearAllNavMeshes();
-        NavMeshBuilder.BuildNavMesh();
+        UnityEditor.AI.NavMeshBuilder.ClearAllNavMeshes();
+        UnityEditor.AI.NavMeshBuilder.BuildNavMesh();
 
         foreach (var map in maps)
         {

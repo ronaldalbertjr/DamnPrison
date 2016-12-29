@@ -180,7 +180,7 @@ public class TilesetAddWindow : IChildWindow
         if (textureImporter != null)
         {
             AssetDatabase.StartAssetEditing();
-            textureImporter.textureType = TextureImporterType.Advanced;
+            textureImporter.textureType = TextureImporterType.Default;
             textureImporter.isReadable = true;
             textureImporter.maxTextureSize = textureResolution;
             textureImporter.mipmapEnabled = false;
