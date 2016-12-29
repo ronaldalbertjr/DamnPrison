@@ -11,6 +11,8 @@ public class PlayerBehaviour : MonoBehaviour
     GameObject body;
     [SerializeField]
     GameObject legs;
+    [SerializeField]
+    GameObject bullet;
     
 	Animator bodyAnim;
     Animator legsAnim;
@@ -27,6 +29,11 @@ public class PlayerBehaviour : MonoBehaviour
 	{
         ChangeMovement();
         ChangeRotation();
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            ShotBullet();
+        }
 	}
 
     void ChangeMovement()
@@ -107,5 +114,9 @@ public class PlayerBehaviour : MonoBehaviour
         {
             bodyAnim.SetFloat("WalkingBody", 2);
         }
+    }
+    void ShotBullet()
+    {
+        Instantiate(bullet, this.transform.position,Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
     }
 }
