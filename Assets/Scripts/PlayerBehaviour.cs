@@ -12,10 +12,13 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField]
     GameObject legs;
     [SerializeField]
+    GameObject gun;
+    [SerializeField]
     GameObject bullet;
     
 	Animator bodyAnim;
     Animator legsAnim;
+    Animator gunAnim;
     float angle;
 
 
@@ -24,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
         Cursor.visible = true;
 		bodyAnim = body.GetComponent<Animator> ();
         legsAnim = legs.GetComponent<Animator> ();
+        gunAnim = gun.GetComponent<Animator> ();
     }
 	void Update () 
 	{
@@ -85,38 +89,46 @@ public class PlayerBehaviour : MonoBehaviour
         if (angle > 157.5 && angle < 202.5)
         {
             bodyAnim.SetFloat("WalkingBody", 0);
+            gunAnim.SetFloat("GunPosition", 0);
         }
         else if (angle > 247.5 && angle < 292.5)
         {
             bodyAnim.SetFloat("WalkingBody", 1);
+            gunAnim.SetFloat("GunPosition", 1);
         }
         else if (angle > 67.5 && angle < 112.5)
         {
             bodyAnim.SetFloat("WalkingBody", 3);
+            gunAnim.SetFloat("GunPosition", 3);
         }
         else if(angle >= 22.5 && angle <= 67.5)
         {
             bodyAnim.SetFloat("WalkingBody", 5);
+            gunAnim.SetFloat("GunPosition", 5);
         }
         else if(angle >= 292.5 && angle <= 337.5)
         {
             bodyAnim.SetFloat("WalkingBody", 4);
+            gunAnim.SetFloat("GunPosition", 4);
         }
         else if(angle >= 112.5 && angle <= 157.5)
         {
             bodyAnim.SetFloat("WalkingBody", 7);
+            gunAnim.SetFloat("GunPosition", 7);
         }
         else if(angle >= 202.5 && angle <= 247.5)
         {
             bodyAnim.SetFloat("WalkingBody", 6);
+            gunAnim.SetFloat("GunPosition", 6);
         }
         else if (angle < 22.5 || angle > 337.5)
         {
             bodyAnim.SetFloat("WalkingBody", 2);
+            gunAnim.SetFloat("GunPosition", 2);
         }
     }
     void ShotBullet()
     {
-        Instantiate(bullet, this.transform.position,Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
+        Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
     }
 }

@@ -61,12 +61,12 @@ TextureImporter:
     21300108: Sheet Beta 01 (29x37)_54
     21300110: Sheet Beta 01 (29x37)_55
     21300112: Sheet Beta 01 (29x37)_56
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -74,14 +74,12 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 512
@@ -92,21 +90,44 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 512
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Sheet Beta 01 (29x37)_0
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_0
       rect:
         serializedVersion: 2
         x: 5
@@ -116,7 +137,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_1
       rect:
         serializedVersion: 2
         x: 35
@@ -126,7 +150,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -136,7 +163,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_3
       rect:
         serializedVersion: 2
         x: 93
@@ -146,7 +176,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_4
       rect:
         serializedVersion: 2
         x: 121
@@ -156,7 +189,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_5
       rect:
         serializedVersion: 2
         x: 146
@@ -164,9 +200,12 @@ TextureImporter:
         width: 22
         height: 26
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_6
       rect:
         serializedVersion: 2
         x: 173
@@ -174,9 +213,12 @@ TextureImporter:
         width: 23
         height: 26
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_7
       rect:
         serializedVersion: 2
         x: 206
@@ -186,7 +228,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_8
       rect:
         serializedVersion: 2
         x: 238
@@ -196,7 +241,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_9
       rect:
         serializedVersion: 2
         x: 6
@@ -206,7 +254,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_10
       rect:
         serializedVersion: 2
         x: 35
@@ -216,7 +267,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_11
       rect:
         serializedVersion: 2
         x: 64
@@ -226,7 +280,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_12
       rect:
         serializedVersion: 2
         x: 93
@@ -236,7 +293,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_13
       rect:
         serializedVersion: 2
         x: 122
@@ -246,7 +306,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_14
       rect:
         serializedVersion: 2
         x: 151
@@ -256,7 +319,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_15
       rect:
         serializedVersion: 2
         x: 181
@@ -266,7 +332,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_16
       rect:
         serializedVersion: 2
         x: 209
@@ -276,7 +345,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_17
       rect:
         serializedVersion: 2
         x: 238
@@ -286,7 +358,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_18
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_18
       rect:
         serializedVersion: 2
         x: 267
@@ -296,7 +371,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_19
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_19
       rect:
         serializedVersion: 2
         x: 295
@@ -306,7 +384,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_20
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_20
       rect:
         serializedVersion: 2
         x: 324
@@ -316,7 +397,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_21
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_21
       rect:
         serializedVersion: 2
         x: 6
@@ -326,7 +410,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_22
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_22
       rect:
         serializedVersion: 2
         x: 35
@@ -336,7 +423,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_23
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_23
       rect:
         serializedVersion: 2
         x: 64
@@ -346,7 +436,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_24
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_24
       rect:
         serializedVersion: 2
         x: 93
@@ -356,7 +449,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_25
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_25
       rect:
         serializedVersion: 2
         x: 122
@@ -366,7 +462,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_26
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_26
       rect:
         serializedVersion: 2
         x: 151
@@ -376,7 +475,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_27
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_27
       rect:
         serializedVersion: 2
         x: 180
@@ -386,7 +488,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_28
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_28
       rect:
         serializedVersion: 2
         x: 209
@@ -396,7 +501,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_29
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_29
       rect:
         serializedVersion: 2
         x: 238
@@ -406,7 +514,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_30
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_30
       rect:
         serializedVersion: 2
         x: 267
@@ -416,7 +527,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_31
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_31
       rect:
         serializedVersion: 2
         x: 296
@@ -426,7 +540,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_32
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_32
       rect:
         serializedVersion: 2
         x: 325
@@ -436,7 +553,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_33
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_33
       rect:
         serializedVersion: 2
         x: 6
@@ -446,7 +566,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_34
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_34
       rect:
         serializedVersion: 2
         x: 36
@@ -456,7 +579,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_35
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_35
       rect:
         serializedVersion: 2
         x: 64
@@ -466,7 +592,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_36
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_36
       rect:
         serializedVersion: 2
         x: 93
@@ -476,7 +605,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_37
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_37
       rect:
         serializedVersion: 2
         x: 122
@@ -486,7 +618,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_38
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_38
       rect:
         serializedVersion: 2
         x: 148
@@ -496,7 +631,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_39
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_39
       rect:
         serializedVersion: 2
         x: 180
@@ -506,7 +644,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_40
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_40
       rect:
         serializedVersion: 2
         x: 210
@@ -516,7 +657,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_41
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_41
       rect:
         serializedVersion: 2
         x: 238
@@ -526,7 +670,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_42
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_42
       rect:
         serializedVersion: 2
         x: 267
@@ -536,7 +683,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_43
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_43
       rect:
         serializedVersion: 2
         x: 296
@@ -546,7 +696,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_44
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_44
       rect:
         serializedVersion: 2
         x: 325
@@ -556,7 +709,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_45
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_45
       rect:
         serializedVersion: 2
         x: 6
@@ -566,7 +722,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_46
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_46
       rect:
         serializedVersion: 2
         x: 36
@@ -576,7 +735,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_47
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_47
       rect:
         serializedVersion: 2
         x: 64
@@ -586,7 +748,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_48
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_48
       rect:
         serializedVersion: 2
         x: 93
@@ -596,7 +761,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_49
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_49
       rect:
         serializedVersion: 2
         x: 122
@@ -606,7 +774,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_50
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_50
       rect:
         serializedVersion: 2
         x: 148
@@ -616,7 +787,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_51
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_51
       rect:
         serializedVersion: 2
         x: 180
@@ -626,7 +800,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_52
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_52
       rect:
         serializedVersion: 2
         x: 210
@@ -636,7 +813,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_53
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_53
       rect:
         serializedVersion: 2
         x: 238
@@ -646,7 +826,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_54
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_54
       rect:
         serializedVersion: 2
         x: 267
@@ -656,7 +839,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_55
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_55
       rect:
         serializedVersion: 2
         x: 296
@@ -666,7 +852,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sheet Beta 01 (29x37)_56
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Sheet Beta 01 (29x37)_56
       rect:
         serializedVersion: 2
         x: 325
@@ -676,6 +865,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
