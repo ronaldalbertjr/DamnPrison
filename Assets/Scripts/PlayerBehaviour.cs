@@ -19,6 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
 	Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
+
     float angle;
 
 
@@ -31,6 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 	void Update () 
 	{
+        gunAnim.SetBool("Shotting", false);
         ChangeMovement();
         ChangeRotation();
 
@@ -130,5 +132,6 @@ public class PlayerBehaviour : MonoBehaviour
     void ShotBullet()
     {
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
+        gunAnim.SetBool("Shotting", true);
     }
 }
