@@ -15,13 +15,16 @@ public class PlayerBehaviour : MonoBehaviour
     GameObject gun;
     [SerializeField]
     GameObject bullet;
-    
-	Animator bodyAnim;
+    [SerializeField]
+    AnimationClip animShottingClip;
+
+    Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
+    
 
     float angle;
-
+    float time;
 
     void Awake()
     {
@@ -32,13 +35,19 @@ public class PlayerBehaviour : MonoBehaviour
     }
 	void Update () 
 	{
-        gunAnim.SetBool("Shotting", false);
+        time += Time.deltaTime;
         ChangeMovement();
         ChangeRotation();
 
         if(Input.GetMouseButtonDown(0))
         {
+            time = 0;
+            gunAnim.SetBool("Shotting", true);
             ShotBullet();
+        }
+        else if(time >= 0.15)
+        {
+            gunAnim.SetBool("Shotting", false);
         }
 	}
 
@@ -132,6 +141,5 @@ public class PlayerBehaviour : MonoBehaviour
     void ShotBullet()
     {
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
-        gunAnim.SetBool("Shotting", true);
     }
 }
