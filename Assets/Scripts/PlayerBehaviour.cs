@@ -29,9 +29,9 @@ public class PlayerBehaviour : MonoBehaviour
     void Awake()
     {
         Cursor.visible = true;
-		bodyAnim = body.GetComponent<Animator> ();
-        legsAnim = legs.GetComponent<Animator> ();
-        gunAnim = gun.GetComponent<Animator> ();
+        bodyAnim = body.GetComponent<Animator>();
+        legsAnim = legs.GetComponent<Animator>();
+        gunAnim = gun.GetComponent<Animator>();
     }
 	void Update () 
 	{
@@ -138,7 +138,7 @@ public class PlayerBehaviour : MonoBehaviour
             gunAnim.SetFloat("GunPosition", 2);
         }
     }
-    void ShotBullet()
+    public void ShotBullet()
     {
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
     }
