@@ -1,0 +1,1540 @@
+fileFormatVersion: 2
+guid: dfba763a2a9925c4da4788672e11fb41
+timeCreated: 1486875746
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sprite do Inimigo Sem Pistola 29x38_0
+    21300002: Sprite do Inimigo Sem Pistola 29x38_1
+    21300004: Sprite do Inimigo Sem Pistola 29x38_2
+    21300006: Sprite do Inimigo Sem Pistola 29x38_3
+    21300008: Sprite do Inimigo Sem Pistola 29x38_4
+    21300010: Sprite do Inimigo Sem Pistola 29x38_5
+    21300012: Sprite do Inimigo Sem Pistola 29x38_6
+    21300014: Sprite do Inimigo Sem Pistola 29x38_7
+    21300016: Sprite do Inimigo Sem Pistola 29x38_8
+    21300018: Sprite do Inimigo Sem Pistola 29x38_9
+    21300020: Sprite do Inimigo Sem Pistola 29x38_10
+    21300022: Sprite do Inimigo Sem Pistola 29x38_11
+    21300024: Sprite do Inimigo Sem Pistola 29x38_12
+    21300026: Sprite do Inimigo Sem Pistola 29x38_13
+    21300028: Sprite do Inimigo Sem Pistola 29x38_14
+    21300030: Sprite do Inimigo Sem Pistola 29x38_15
+    21300032: Sprite do Inimigo Sem Pistola 29x38_16
+    21300034: Sprite do Inimigo Sem Pistola 29x38_17
+    21300036: Sprite do Inimigo Sem Pistola 29x38_18
+    21300038: Sprite do Inimigo Sem Pistola 29x38_19
+    21300040: Sprite do Inimigo Sem Pistola 29x38_20
+    21300042: Sprite do Inimigo Sem Pistola 29x38_21
+    21300044: Sprite do Inimigo Sem Pistola 29x38_22
+    21300046: Sprite do Inimigo Sem Pistola 29x38_23
+    21300048: Sprite do Inimigo Sem Pistola 29x38_24
+    21300050: Sprite do Inimigo Sem Pistola 29x38_25
+    21300052: Sprite do Inimigo Sem Pistola 29x38_26
+    21300054: Sprite do Inimigo Sem Pistola 29x38_27
+    21300056: Sprite do Inimigo Sem Pistola 29x38_28
+    21300058: Sprite do Inimigo Sem Pistola 29x38_29
+    21300060: Sprite do Inimigo Sem Pistola 29x38_30
+    21300062: Sprite do Inimigo Sem Pistola 29x38_31
+    21300064: Sprite do Inimigo Sem Pistola 29x38_32
+    21300066: Sprite do Inimigo Sem Pistola 29x38_33
+    21300068: Sprite do Inimigo Sem Pistola 29x38_34
+    21300070: Sprite do Inimigo Sem Pistola 29x38_35
+    21300072: Sprite do Inimigo Sem Pistola 29x38_36
+    21300074: Sprite do Inimigo Sem Pistola 29x38_37
+    21300076: Sprite do Inimigo Sem Pistola 29x38_38
+    21300078: Sprite do Inimigo Sem Pistola 29x38_39
+    21300080: Sprite do Inimigo Sem Pistola 29x38_40
+    21300082: Sprite do Inimigo Sem Pistola 29x38_41
+    21300084: Sprite do Inimigo Sem Pistola 29x38_42
+    21300086: Sprite do Inimigo Sem Pistola 29x38_43
+    21300088: Sprite do Inimigo Sem Pistola 29x38_44
+    21300090: Sprite do Inimigo Sem Pistola 29x38_45
+    21300092: Sprite do Inimigo Sem Pistola 29x38_46
+    21300094: Sprite do Inimigo Sem Pistola 29x38_47
+    21300096: Sprite do Inimigo Sem Pistola 29x38_48
+    21300098: Sprite do Inimigo Sem Pistola 29x38_49
+    21300100: Sprite do Inimigo Sem Pistola 29x38_50
+    21300102: Sprite do Inimigo Sem Pistola 29x38_51
+    21300104: Sprite do Inimigo Sem Pistola 29x38_52
+    21300106: Sprite do Inimigo Sem Pistola 29x38_53
+    21300108: Sprite do Inimigo Sem Pistola 29x38_54
+    21300110: Sprite do Inimigo Sem Pistola 29x38_55
+    21300112: Sprite do Inimigo Sem Pistola 29x38_56
+    21300114: Sprite do Inimigo Sem Pistola 29x38_57
+    21300116: Sprite do Inimigo Sem Pistola 29x38_58
+    21300118: Sprite do Inimigo Sem Pistola 29x38_59
+    21300120: Sprite do Inimigo Sem Pistola 29x38_60
+    21300122: Sprite do Inimigo Sem Pistola 29x38_61
+    21300124: Sprite do Inimigo Sem Pistola 29x38_62
+    21300126: Sprite do Inimigo Sem Pistola 29x38_63
+    21300128: Sprite do Inimigo Sem Pistola 29x38_64
+    21300130: Sprite do Inimigo Sem Pistola 29x38_65
+    21300132: Sprite do Inimigo Sem Pistola 29x38_66
+    21300134: Sprite do Inimigo Sem Pistola 29x38_67
+    21300136: Sprite do Inimigo Sem Pistola 29x38_68
+    21300138: Sprite do Inimigo Sem Pistola 29x38_69
+    21300140: Sprite do Inimigo Sem Pistola 29x38_70
+    21300142: Sprite do Inimigo Sem Pistola 29x38_71
+    21300144: Sprite do Inimigo Sem Pistola 29x38_72
+    21300146: Sprite do Inimigo Sem Pistola 29x38_73
+    21300148: Sprite do Inimigo Sem Pistola 29x38_74
+    21300150: Sprite do Inimigo Sem Pistola 29x38_75
+    21300152: Sprite do Inimigo Sem Pistola 29x38_76
+    21300154: Sprite do Inimigo Sem Pistola 29x38_77
+    21300156: Sprite do Inimigo Sem Pistola 29x38_78
+    21300158: Sprite do Inimigo Sem Pistola 29x38_79
+    21300160: Sprite do Inimigo Sem Pistola 29x38_80
+    21300162: Sprite do Inimigo Sem Pistola 29x38_81
+    21300164: Sprite do Inimigo Sem Pistola 29x38_82
+    21300166: Sprite do Inimigo Sem Pistola 29x38_83
+    21300168: Sprite do Inimigo Sem Pistola 29x38_84
+    21300170: Sprite do Inimigo Sem Pistola 29x38_85
+    21300172: Sprite do Inimigo Sem Pistola 29x38_86
+    21300174: Sprite do Inimigo Sem Pistola 29x38_87
+    21300176: Sprite do Inimigo Sem Pistola 29x38_88
+    21300178: Sprite do Inimigo Sem Pistola 29x38_89
+    21300180: Sprite do Inimigo Sem Pistola 29x38_90
+    21300182: Sprite do Inimigo Sem Pistola 29x38_91
+    21300184: Sprite do Inimigo Sem Pistola 29x38_92
+    21300186: Sprite do Inimigo Sem Pistola 29x38_93
+    21300188: Sprite do Inimigo Sem Pistola 29x38_94
+    21300190: Sprite do Inimigo Sem Pistola 29x38_95
+    21300192: Sprite do Inimigo Sem Pistola 29x38_96
+    21300194: Sprite do Inimigo Sem Pistola 29x38_97
+    21300196: Sprite do Inimigo Sem Pistola 29x38_98
+    21300198: Sprite do Inimigo Sem Pistola 29x38_99
+    21300200: Sprite do Inimigo Sem Pistola 29x38_100
+    21300202: Sprite do Inimigo Sem Pistola 29x38_101
+    21300204: Sprite do Inimigo Sem Pistola 29x38_102
+    21300206: Sprite do Inimigo Sem Pistola 29x38_103
+    21300208: Sprite do Inimigo Sem Pistola 29x38_104
+    21300210: Sprite do Inimigo Sem Pistola 29x38_105
+    21300212: Sprite do Inimigo Sem Pistola 29x38_106
+    21300214: Sprite do Inimigo Sem Pistola 29x38_107
+    21300216: Sprite do Inimigo Sem Pistola 29x38_108
+    21300218: Sprite do Inimigo Sem Pistola 29x38_109
+    21300220: Sprite do Inimigo Sem Pistola 29x38_110
+    21300222: Sprite do Inimigo Sem Pistola 29x38_111
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 304
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 304
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 304
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 304
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_4
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 304
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_5
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 304
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 304
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_7
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 304
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 266
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_11
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 266
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 266
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_13
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 266
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_14
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 266
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_15
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 266
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_16
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 266
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 266
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_18
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 266
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_19
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 266
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_20
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 266
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_21
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 266
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_23
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 228
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_24
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 228
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 228
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_26
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 228
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_27
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 228
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_28
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 228
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_29
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 228
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_30
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 228
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_31
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 228
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_32
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 228
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_33
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 228
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_34
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 228
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_36
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 190
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 190
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_38
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 190
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_39
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 190
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_40
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 190
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_41
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 190
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_42
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 190
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_43
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 190
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_44
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 190
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_45
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 190
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_46
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 190
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_47
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 189
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_49
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 152
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_50
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 152
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_51
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 152
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_52
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 152
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_53
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 152
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_54
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 154
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_55
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 152
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_56
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 152
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_57
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 152
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_58
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 152
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_59
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 152
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_60
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 154
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_62
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 114
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_63
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 114
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_64
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 114
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_65
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 114
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_66
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 114
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_67
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 116
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_68
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 114
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_69
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 114
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_70
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 114
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_71
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 114
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_72
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 114
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_73
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 116
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_75
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 76
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_76
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 76
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_77
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 76
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_78
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 76
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_79
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 76
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_80
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 78
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_81
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 76
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_82
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 76
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_83
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 76
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_84
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 76
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_85
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 76
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_86
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 78
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_88
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 38
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_89
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 38
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_90
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 37
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_91
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 38
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_92
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 38
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_93
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 40
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_94
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 38
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_95
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 38
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_96
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 38
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_97
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 38
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_98
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 38
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_99
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 41
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_101
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_102
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_103
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_104
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 0
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_105
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 2
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_106
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_107
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_108
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_109
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_110
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sprite do Inimigo Sem Pistola 29x38_111
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 2
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

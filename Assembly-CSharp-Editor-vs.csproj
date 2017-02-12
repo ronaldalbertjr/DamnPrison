@@ -46,37 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\SelectTool\FillTool.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\SelectTool\IDrawTool.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\SelectTool\PaintTool.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\SelectTool\ReplaceTool.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Util\EditorUtil.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Util\MyGUI.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Util\UnityInternal.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Util\UnityUpdate.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\IChildWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Draw\BrushWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Draw\DrawTileSetWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Draw\DrawWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Section.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Tileset\TilesetAddWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Tileset\TilesetListWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Tileset\TilesetPropertiesWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Main\Tileset\TilesetWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Menu\Menu.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\FilterPopup.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\LayerPopup.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\Menu\FileMenuPopup.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\Menu\HelpPopup.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\Menu\WindowPopup.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\MiscPopup.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Popups\PopupWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\TilerWindow.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Wizards\CellEditor.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Wizards\TilerMapEditor.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Wizards\TilerMapWizard.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Wizards\TilesetEditor.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Editor\Windows\Wizards\TilesetWizard.cs" />
+     <Compile Include="Assets\Scripts\Editor\TileWindow.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

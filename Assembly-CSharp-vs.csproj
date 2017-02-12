@@ -46,23 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Brush\CopyBrush.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Brush\Filter.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Brush\IBrush.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Brush\NormalBrush.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Map\Cell.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Map\TilerMap.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Map\TilerMapEdit.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Map\UndoPaint.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Tile\Tile.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Tile\TileProperties.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Tile\TileTexture.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Tile\Tileset.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Util\Combine.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Util\CreatePlane.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Util\Point.cs" />
-     <Compile Include="Assets\ImportedAssets\Tiler\Scripts\Util\Util.cs" />
      <Compile Include="Assets\Scripts\ArmaScript.cs" />
+     <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

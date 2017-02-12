@@ -48,7 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ArmaScript.cs" />
      <Compile Include="Assets\Scripts\BulletScript.cs" />
+     <Compile Include="Assets\Scripts\DefaultEnemyScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyArmaScript.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
