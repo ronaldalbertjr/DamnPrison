@@ -24,7 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     
 
     float angle;
-    float time;
+    float time = 1;
 
     void Awake()
     {
@@ -39,15 +39,17 @@ public class PlayerBehaviour : MonoBehaviour
         ChangeMovement();
         ChangeRotation();
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0) && time >= 0.8)
         {
             time = 0;
             gunAnim.SetBool("Shotting", true);
+            bodyAnim.SetBool("Shotting", true);
             ShotBullet();
         }
-        else if(time >= 0.15)
+        else if(time >= 0.005)
         {
             gunAnim.SetBool("Shotting", false);
+            bodyAnim.SetBool("Shotting", false);
         }
 	}
 
@@ -136,6 +138,18 @@ public class PlayerBehaviour : MonoBehaviour
         {
             bodyAnim.SetFloat("WalkingBody", 2);
             gunAnim.SetFloat("GunPosition", 2);
+        }
+    }
+
+    void CheckDifferentVisions()
+    {
+        if((Input.GetKey(KeyCode.W) && angle > 157.5 && angle < 202.5) || (Input.GetKey(KeyCode.A) && angle > 247.5 && angle < 292.5) || (Input.GetKey(KeyCode.S) && (angle < 22.5 || angle > 337.5)) || (Input.GetKey(KeyCode.D) && angle > 67.5 && angle < 112.5) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A) && angle >= 292.5 && angle <= 337.5) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D) && angle >= 22.5 && angle <= 67.5) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && angle >= 202.5 && angle <= 247.5) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) && angle >= 112.5 && angle <= 157.5))
+        {
+            legsAnim.SetBool("Backwards", true);
+        }
+        else
+        {
+            legsAnim.SetBool("Backwards", false);
         }
     }
     public void ShotBullet()

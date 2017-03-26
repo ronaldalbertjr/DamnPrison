@@ -19,7 +19,7 @@ public class DefaultEnemyScript : MonoBehaviour
     }
     void Start()
     {
-        health = 10;
+        health = 5;
     }
 	void Update ()
     {
@@ -83,7 +83,7 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         if(col.tag.Equals("Player"))
         {
-            Application.Quit();
+            Debug.Log("Tomou dano");
         }
     }
 }
