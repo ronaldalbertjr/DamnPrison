@@ -17,12 +17,18 @@ public class PlayerBehaviour : MonoBehaviour
     GameObject bullet;
     [SerializeField]
     AnimationClip animShottingClip;
+    [SerializeField]
+    Transform mainCamera;
 
     Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
-    
-
+   
+	private float shakeDuration;
+	private float shakeAmount;
+	private float decreaseFactor;
+	private Vector3 camPosition;
+	private bool canShock;
     float angle;
     float time = 1;
 
@@ -32,18 +38,23 @@ public class PlayerBehaviour : MonoBehaviour
         bodyAnim = body.GetComponent<Animator>();
         legsAnim = legs.GetComponent<Animator>();
         gunAnim = gun.GetComponent<Animator>();
+        mainCamera = Camera.main.transform;
+        shakeDuration = 0;
+        shakeAmount = 0.7f;
+        decreaseFactor = 1;
     }
 	void Update () 
 	{
         time += Time.deltaTime;
         ChangeMovement();
         ChangeRotation();
-
+        CameraShake();
         if(Input.GetMouseButton(0) && time >= 0.8)
         {
             time = 0;
             gunAnim.SetBool("Shotting", true);
             bodyAnim.SetBool("Shotting", true);
+            shakeDuration = 0.1f;
             ShotBullet();
         }
         else if(time >= 0.005)
@@ -150,6 +161,21 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
             legsAnim.SetBool("Backwards", false);
+        }
+    }
+    
+    void CameraShake()
+    {
+        camPosition = mainCamera.position;
+        if (shakeDuration > 0)
+        {
+            mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
+            shakeDuration -= Time.deltaTime * decreaseFactor;
+        }
+        else
+        {
+            shakeDuration = 0f;
+            mainCamera.localPosition = camPosition;
         }
     }
     public void ShotBullet()
