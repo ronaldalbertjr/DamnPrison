@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class DefaultEnemyScript : MonoBehaviour
 {
     [SerializeField]
@@ -23,7 +23,7 @@ public class DefaultEnemyScript : MonoBehaviour
     }
 	void Update ()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.1f);
+        this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
         ChangeRotation();
         if(health <= 0)
         {
@@ -70,14 +70,56 @@ public class DefaultEnemyScript : MonoBehaviour
     public void Damaged()
     {
         health--;
+        StartCoroutine(ChangeTimeScale());
         StartCoroutine(ChangeEnemyColor());
+        StartCoroutine(GoingBackWhenShot());
     }
     IEnumerator ChangeEnemyColor()
     {
         GetComponent<SpriteRenderer>().color = new Color(0.3f, 0, 0);
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         yield return 0;
+    }
+    IEnumerator ChangeTimeScale()
+    {
+        Time.timeScale = 0.3f;
+        yield return new WaitForSeconds(0.03f);
+        Time.timeScale = 1;
+    }
+    IEnumerator GoingBackWhenShot()
+    {
+        for (float i = 0; i < 10; i++)
+        {
+            switch (Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat")))
+            {
+                case 0:
+                    transform.position += new Vector3(0f, 0.1f, 0f);
+                    break;
+                case 1:
+                    transform.position += new Vector3(0.1f, 0f, 0f);
+                    break;
+                case 2:
+                    transform.position += new Vector3(0f, -0.1f, 0f);
+                    break;
+                case 3:
+                    transform.position += new Vector3(-0.1f, 0f, 0f);
+                    break;
+                case 4:
+                    transform.position += new Vector3(0.1f, -0.1f, 0f);
+                    break;
+                case 5:
+                    transform.position += new Vector3(-0.1f, -0.1f, 0f);
+                    break;
+                case 6:
+                    transform.position += new Vector3(0.1f, 0.1f, 0f);
+                    break;
+                case 7:
+                    transform.position += new Vector3(-0.1f, 0.1f, 0f);
+                    break;
+            }
+            yield return new WaitForSeconds(0.001f);
+        }
     }
     void OnTriggerStay2D(Collider2D col)
     {
