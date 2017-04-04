@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: d0cc34bfe76863d4e984188da14c76a4
-timeCreated: 1491178890
-licenseType: Free
+guid: 1c71f3e64d6875146b1c1186b5f2eb42
+timeCreated: 1491315609
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Policial Padrao Tomando Tiro_0
-    21300002: Policial Padrao Tomando Tiro_1
+    21300000: Policial Padrao Tomando Tiro Completo_0
+    21300002: Policial Padrao Tomando Tiro Completo_1
+    21300004: Policial Padrao Tomando Tiro Completo_2
+    21300006: Policial Padrao Tomando Tiro Completo_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,32 +70,66 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Policial Padrao Tomando Tiro_0
+      name: Policial Padrao Tomando Tiro Completo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Policial Padrao Tomando Tiro Completo_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 36
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Policial Padrao Tomando Tiro Completo_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 30
-        height: 35
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Policial Padrao Tomando Tiro_1
+      name: Policial Padrao Tomando Tiro Completo_3
       rect:
         serializedVersion: 2
         x: 30
         y: 0
         width: 30
-        height: 35
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

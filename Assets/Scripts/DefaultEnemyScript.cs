@@ -27,6 +27,7 @@ public class DefaultEnemyScript : MonoBehaviour
         ChangeRotation();
         if(health <= 0)
         {
+            Time.timeScale = 1;
             Destroy(gameObject);
         }
 
@@ -70,9 +71,17 @@ public class DefaultEnemyScript : MonoBehaviour
     public void Damaged()
     {
         health--;
+        StartCoroutine(Shot());
+    }
+    IEnumerator Shot()
+    {
+        anim.SetBool("Shot", true);
+        int aux = Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat"));
+        Vector3 pos = player.transform.position;
+        yield return new WaitForSeconds(0.2f);
         StartCoroutine(ChangeTimeScale());
         StartCoroutine(ChangeEnemyColor());
-        StartCoroutine(GoingBackWhenShot());
+        StartCoroutine(GoingBackWhenShot(aux, pos));
     }
     IEnumerator ChangeEnemyColor()
     {
@@ -84,42 +93,57 @@ public class DefaultEnemyScript : MonoBehaviour
     IEnumerator ChangeTimeScale()
     {
         Time.timeScale = 0.3f;
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.03f);;
         Time.timeScale = 1;
     }
-    IEnumerator GoingBackWhenShot()
+    IEnumerator GoingBackWhenShot(int aux, Vector3 position)
     {
         for (float i = 0; i < 10; i++)
         {
-            switch (Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat")))
+            switch (aux)
             {
                 case 0:
                     transform.position += new Vector3(0f, 0.1f, 0f);
+                    if (position.x < transform.position.x)
+                        anim.SetFloat("EnemyShotFloat", 1);
+                    else
+                        anim.SetFloat("EnemyShotFloat", 0);
                     break;
                 case 1:
                     transform.position += new Vector3(0.1f, 0f, 0f);
+                        anim.SetFloat("EnemyShotFloat", 1);                       
                     break;
                 case 2:
                     transform.position += new Vector3(0f, -0.1f, 0f);
+                    if (position.x < transform.position.x)
+                        anim.SetFloat("EnemyShotFloat", 1);
+                    else
+                        anim.SetFloat("EnemyShotFloat", 0);
                     break;
                 case 3:
                     transform.position += new Vector3(-0.1f, 0f, 0f);
+                        anim.SetFloat("EnemyShotFloat", 0);
                     break;
                 case 4:
                     transform.position += new Vector3(0.1f, -0.1f, 0f);
+                    anim.SetFloat("EnemyShotFloat", 1);
                     break;
                 case 5:
                     transform.position += new Vector3(-0.1f, -0.1f, 0f);
+                    anim.SetFloat("EnemyShotFloat", 0);
                     break;
                 case 6:
                     transform.position += new Vector3(0.1f, 0.1f, 0f);
+                    anim.SetFloat("EnemyShotFloat", 1);
                     break;
                 case 7:
                     transform.position += new Vector3(-0.1f, 0.1f, 0f);
+                    anim.SetFloat("EnemyShotFloat", 0);
                     break;
             }
             yield return new WaitForSeconds(0.001f);
         }
+        anim.SetBool("Shot", false);
     }
     void OnTriggerStay2D(Collider2D col)
     {
