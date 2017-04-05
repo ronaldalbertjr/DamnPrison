@@ -23,7 +23,9 @@ public class PlayerBehaviour : MonoBehaviour
     Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
-   
+
+    [HideInInspector]
+    public GameObject currentRoom;
 	private float shakeDuration;
 	private float shakeAmount;
 	private float decreaseFactor;
@@ -181,5 +183,13 @@ public class PlayerBehaviour : MonoBehaviour
     public void ShotBullet()
     {
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if(col.tag.Equals("Background"))
+        {
+            currentRoom = col.transform.gameObject;
+        }
     }
 }

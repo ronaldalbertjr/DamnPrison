@@ -59,18 +59,20 @@ public class ProceduralScripting : MonoBehaviour
 {
     [SerializeField]
     GameObject[] roomsGameObject;
+    [SerializeField]
+    Transform[] roomPositions;
+
     List<Room> rooms = new List<Room>();
-    GameObject[,] grid = new GameObject[3,3];
     System.Random rnd = new System.Random();
+
+    [HideInInspector]
+    public GameObject[,] grid = new GameObject[3,3];
+
 
     void Awake()
     {
-        GenerateGrid();   
-        
-        foreach(GameObject r in grid)
-        {
-            Debug.Log(r.name);
-        }
+        GenerateGrid();
+        InstantiateRooms();
     }
 
     void GenerateGrid()
@@ -110,6 +112,20 @@ public class ProceduralScripting : MonoBehaviour
                     grid[i, j] = Room.SearchRooms(rooms[0], rnd.Next(1, rooms.Count - (2 + j + i))).roomGameObject;
                     Room.SearchRoomWithGameObject(rooms[0], grid[i, j]).Remove();
                 }
+            }
+        }
+    }
+
+    void InstantiateRooms()
+    {
+        int i = 0;
+        foreach (GameObject r in grid)
+        {
+            if (r.name != "Background")
+            {
+                GameObject g = (GameObject) Instantiate(r, roomPositions[i].position, roomPositions[i].rotation);
+                i++;
+                g.GetComponentInChildren<DoorScript>().enabled = false;
             }
         }
     }
