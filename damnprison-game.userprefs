@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="damnprison-game.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ProceduralScripting.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BackgroundScript.cs">
     <Files>
-      <File FileName="Assets\PolyNav2D\Scripts\Runtime\PolyNav2D.cs" Line="510" Column="23" />
+      <File FileName="Assets\PolyNav2D\Scripts\Runtime\PolyNav2D.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ProceduralScripting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BackgroundScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

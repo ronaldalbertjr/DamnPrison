@@ -25,6 +25,7 @@ public class DoorScript : MonoBehaviour
 	
 	void Update ()
     {
+        ChangeRoom();
         if(doorClosing)
         {
             StartCoroutine(DoorClosing());
@@ -41,8 +42,8 @@ public class DoorScript : MonoBehaviour
     }
     void ChangeRoom()
     {
-        int lin;
-        int col;
+        int lin = 0;
+        int col = 0;
         for(int i = 0; i < gameManager.GetComponent<ProceduralScripting>().grid.GetLength(0); i++)
         {
             for(int j = 0; j < gameManager.GetComponent<ProceduralScripting>().grid.GetLength(1); j++)
@@ -57,18 +58,19 @@ public class DoorScript : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.UpArrow))
         {
+            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin - 1, col].GetComponent<BackgroundScript>().playerPositions[3].transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.DownArrow))
         {
-
+            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin + 1, col].GetComponent<BackgroundScript>().playerPositions[2].transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.LeftArrow))
         {
-
+            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin, col - 1].GetComponent<BackgroundScript>().playerPositions[1].transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.RightArrow))
         {
-
+            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin, col - 1].GetComponent<BackgroundScript>().playerPositions[0].transform.position;
         }
     }
 }
