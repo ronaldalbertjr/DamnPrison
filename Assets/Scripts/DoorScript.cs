@@ -12,6 +12,10 @@ public class DoorScript : MonoBehaviour
     public bool doorClosing;
 
     Animator anim;
+
+
+    int lin = 1;
+    int col = 1;
     private void Awake()
     {
         cam = Camera.main.gameObject;
@@ -42,35 +46,47 @@ public class DoorScript : MonoBehaviour
     }
     void ChangeRoom()
     {
-        int lin = 0;
-        int col = 0;
-        for(int i = 0; i < gameManager.GetComponent<ProceduralScripting>().grid.GetLength(0); i++)
-        {
-            for(int j = 0; j < gameManager.GetComponent<ProceduralScripting>().grid.GetLength(1); j++)
-            {
-                if (gameManager.GetComponent<ProceduralScripting>().grid[i,j].name.Equals(player.GetComponent<PlayerBehaviour>().currentRoom.name) || gameManager.GetComponent<ProceduralScripting>().grid[i, j].name.Equals(player.GetComponent<PlayerBehaviour>().currentRoom.name+"(Clone)"))
-                {
-                    lin = i;
-                    col = j;
-                }
-            }
-        }
+        Debug.Log(lin + " " + col);
         if(Input.GetKeyUp(KeyCode.UpArrow))
         {
-            Debug.Log(gameManager.GetComponent<ProceduralScripting>().grid[lin - 1, col].GetComponent<BackgroundScript>().playerPositions[3].transform.position);
-            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin - 1, col].GetComponent<BackgroundScript>().playerPositions[3].transform.position;
+            if (lin > 0)
+            {
+                lin -= 1;
+            }
+            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromDown").transform.position;
+            player.transform.position = newPos;
+            cam.transform.position = player.transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.DownArrow))
         {
-            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin + 1, col].GetComponent<BackgroundScript>().playerPositions[2].transform.position;
+            if (lin < gameManager.GetComponent<ProceduralScripting>().g.GetLength(0) - 1)
+            {
+                lin += 1;
+            }
+            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromUp").transform.position;
+            player.transform.position = newPos;
+            cam.transform.position = player.transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.LeftArrow))
         {
-            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin, col - 1].GetComponent<BackgroundScript>().playerPositions[1].transform.position;
+            if (col > 0)
+            {
+                col -= 1;
+            }
+            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromRight").transform.position;
+            player.transform.position = newPos;
+            cam.transform.position = player.transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.RightArrow))
         {
-            player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin, col - 1].GetComponent<BackgroundScript>().playerPositions[0].transform.position;
+            if (col < gameManager.GetComponent<ProceduralScripting>().g.GetLength(1) - 1)
+            {
+                col += 1;
+            }
+            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromLeft").transform.position;
+            player.transform.position = newPos;
+            cam.transform.position = player.transform.position;
         }
+        player.GetComponent<PlayerBehaviour>().currentRoom = gameManager.GetComponent<ProceduralScripting>().g[lin, col];
     }
 }

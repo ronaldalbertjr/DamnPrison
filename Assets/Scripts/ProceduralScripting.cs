@@ -64,10 +64,11 @@ public class ProceduralScripting : MonoBehaviour
 
     List<Room> rooms = new List<Room>();
     System.Random rnd = new System.Random();
-
+    
     [HideInInspector]
-    public GameObject[,] grid = new GameObject[3,3];
-
+    public GameObject[,] grid = new GameObject[3, 3];
+    [HideInInspector]
+    public GameObject[,] g = new GameObject[3, 3];
 
     void Awake()
     {
@@ -118,15 +119,19 @@ public class ProceduralScripting : MonoBehaviour
 
     void InstantiateRooms()
     {
-        int i = 0;
-        foreach (GameObject r in grid)
+        int counter = 0;
+        for (int i = 0; i < grid.GetLength(0); i++)
         {
-            if (r.name != "Background")
+            for (int j = 0; j < grid.GetLength(1); j++)
             {
-                GameObject g = (GameObject) Instantiate(r, roomPositions[i].position, roomPositions[i].rotation);
-                i++;
-                g.GetComponentInChildren<DoorScript>().enabled = false;
+                if (grid[i, j].name != "Background")
+                {
+                    g[i,j] = (GameObject) Instantiate(grid[i,j], roomPositions[counter].position, roomPositions[counter].rotation);
+                    counter++;
+                    g[i,j].GetComponentInChildren<DoorScript>().enabled = false;
+                }
             }
         }
+        g[1, 1] = GameObject.Find("Background");
     }
 }

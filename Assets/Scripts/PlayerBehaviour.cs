@@ -41,7 +41,7 @@ public class PlayerBehaviour : MonoBehaviour
         gunAnim = gun.GetComponent<Animator>();
         mainCamera = Camera.main.transform;
         shakeDuration = 0;
-        shakeAmount = 0.7f;
+        shakeAmount = 0.3f;
         decreaseFactor = 1;
     }
 	void Update () 
