@@ -128,7 +128,6 @@ public class ProceduralScripting : MonoBehaviour
                 {
                     g[i,j] = (GameObject) Instantiate(grid[i,j], roomPositions[counter].position, roomPositions[counter].rotation);
                     counter++;
-                    g[i,j].GetComponentInChildren<DoorScript>().enabled = false;
                 }
             }
         }

@@ -10,6 +10,8 @@ public class DoorScript : MonoBehaviour
     GameObject gameManager;
     GameObject player;
     public bool doorClosing;
+    [SerializeField]
+    string doorPos;
 
     Animator anim;
 
@@ -29,8 +31,7 @@ public class DoorScript : MonoBehaviour
 	
 	void Update ()
     {
-        ChangeRoom();
-        if(doorClosing)
+        if (doorClosing)
         {
             StartCoroutine(DoorClosing());
             doorClosing = false;
@@ -44,45 +45,32 @@ public class DoorScript : MonoBehaviour
         yield return new WaitForSeconds(doorClosingAnimation.length);
         cam.GetComponent<CameraScript>().lookingAtClosedDoor = false;
     }
-    void ChangeRoom()
+    public void ChangeRoom()
     {
-        Debug.Log(lin + " " + col);
-        if(Input.GetKeyUp(KeyCode.UpArrow))
+        if(doorPos.Equals("Up") && lin > 0)
         {
-            if (lin > 0)
-            {
-                lin -= 1;
-            }
+            lin -= 1;
             Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromDown").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        else if(Input.GetKeyUp(KeyCode.DownArrow))
+        else if(doorPos.Equals("Down") && lin < gameManager.GetComponent<ProceduralScripting>().g.GetLength(0) - 1)
         {
-            if (lin < gameManager.GetComponent<ProceduralScripting>().g.GetLength(0) - 1)
-            {
-                lin += 1;
-            }
+            lin += 1;
             Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromUp").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        else if(Input.GetKeyUp(KeyCode.LeftArrow))
+        else if(doorPos.Equals("Left") && col > 0)
         {
-            if (col > 0)
-            {
-                col -= 1;
-            }
+            col -= 1;
             Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromRight").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        else if(Input.GetKeyUp(KeyCode.RightArrow))
+        else if(doorPos.Equals("Right") && col < gameManager.GetComponent<ProceduralScripting>().g.GetLength(1) - 1)
         {
-            if (col < gameManager.GetComponent<ProceduralScripting>().g.GetLength(1) - 1)
-            {
-                col += 1;
-            }
+            col += 1;
             Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromLeft").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;

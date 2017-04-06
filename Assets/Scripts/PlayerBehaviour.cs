@@ -23,8 +23,10 @@ public class PlayerBehaviour : MonoBehaviour
     Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
+    GameObject door;
     
     public GameObject currentRoom;
+    private bool collidingWithDoor;
 	private float shakeDuration;
 	private float shakeAmount;
 	private float decreaseFactor;
@@ -62,6 +64,10 @@ public class PlayerBehaviour : MonoBehaviour
         {
             gunAnim.SetBool("Shotting", false);
             bodyAnim.SetBool("Shotting", false);
+        }
+        if(collidingWithDoor && Input.GetKey(KeyCode.Q))
+        {
+            door.GetComponent<DoorScript>().ChangeRoom();
         }
 	}
 
@@ -184,11 +190,20 @@ public class PlayerBehaviour : MonoBehaviour
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag.Equals("Background"))
+        if (col.tag.Equals("Door"))
         {
-            currentRoom = col.transform.parent.gameObject;
+            collidingWithDoor = true;
+            door = col.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag.Equals("Door"))
+        {
+            collidingWithDoor = false;
+            door = null;
         }
     }
 }
