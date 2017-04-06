@@ -48,16 +48,16 @@ public class DoorScript : MonoBehaviour
         {
             for(int j = 0; j < gameManager.GetComponent<ProceduralScripting>().grid.GetLength(1); j++)
             {
-                if (gameManager.GetComponent<ProceduralScripting>().grid[i,j].Equals(player.GetComponent<PlayerBehaviour>().currentRoom))
+                if (gameManager.GetComponent<ProceduralScripting>().grid[i,j].name.Equals(player.GetComponent<PlayerBehaviour>().currentRoom.name) || gameManager.GetComponent<ProceduralScripting>().grid[i, j].name.Equals(player.GetComponent<PlayerBehaviour>().currentRoom.name+"(Clone)"))
                 {
                     lin = i;
                     col = j;
                 }
             }
         }
-
         if(Input.GetKeyUp(KeyCode.UpArrow))
         {
+            Debug.Log(gameManager.GetComponent<ProceduralScripting>().grid[lin - 1, col].GetComponent<BackgroundScript>().playerPositions[3].transform.position);
             player.transform.position = gameManager.GetComponent<ProceduralScripting>().grid[lin - 1, col].GetComponent<BackgroundScript>().playerPositions[3].transform.position;
         }
         else if(Input.GetKeyUp(KeyCode.DownArrow))

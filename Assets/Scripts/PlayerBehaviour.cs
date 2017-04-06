@@ -23,8 +23,7 @@ public class PlayerBehaviour : MonoBehaviour
     Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
-
-    [HideInInspector]
+    
     public GameObject currentRoom;
 	private float shakeDuration;
 	private float shakeAmount;
@@ -189,7 +188,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if(col.tag.Equals("Background"))
         {
-            currentRoom = col.transform.gameObject;
+            currentRoom = col.transform.parent.gameObject;
         }
     }
 }
