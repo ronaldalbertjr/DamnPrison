@@ -69,13 +69,18 @@ public class ProceduralScripting : MonoBehaviour
     public GameObject[,] grid = new GameObject[3, 3];
     [HideInInspector]
     public GameObject[,] g = new GameObject[3, 3];
+	[HideInInspector]
+	public int lin;
+	[HideInInspector]
+	public int col;
 
     void Awake()
     {
+		lin = 1;
+		col = 1;
         GenerateGrid();
         InstantiateRooms();
     }
-
     void GenerateGrid()
     {
         foreach (GameObject r in roomsGameObject)

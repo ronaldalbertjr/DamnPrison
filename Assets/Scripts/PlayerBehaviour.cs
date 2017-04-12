@@ -19,6 +19,8 @@ public class PlayerBehaviour : MonoBehaviour
     AnimationClip animShottingClip;
     [SerializeField]
     Transform mainCamera;
+	[SerializeField]
+	GameObject gameManager;
 
     Animator bodyAnim;
     Animator legsAnim;
@@ -65,7 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
             gunAnim.SetBool("Shotting", false);
             bodyAnim.SetBool("Shotting", false);
         }
-        if(collidingWithDoor && Input.GetKey(KeyCode.Q))
+        if(collidingWithDoor && Input.GetKeyDown(KeyCode.Q))
         {
             door.GetComponent<DoorScript>().ChangeRoom();
         }

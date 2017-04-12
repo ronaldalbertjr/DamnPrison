@@ -14,10 +14,6 @@ public class DoorScript : MonoBehaviour
     string doorPos;
 
     Animator anim;
-
-
-    int lin = 1;
-    int col = 1;
     private void Awake()
     {
         cam = Camera.main.gameObject;
@@ -46,35 +42,36 @@ public class DoorScript : MonoBehaviour
         cam.GetComponent<CameraScript>().lookingAtClosedDoor = false;
     }
     public void ChangeRoom()
-    {
-        if(doorPos.Equals("Up") && lin > 0)
+	{
+		if(doorPos.Equals("Up") && gameManager.GetComponent<ProceduralScripting>().lin > 0)
         {
-            lin -= 1;
-            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromDown").transform.position;
+			gameManager.GetComponent<ProceduralScripting>().lin--;
+			Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[gameManager.GetComponent<ProceduralScripting>().lin, gameManager.GetComponent<ProceduralScripting>().col].transform.FindChild("playerPositionFromDown").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        else if(doorPos.Equals("Down") && lin < gameManager.GetComponent<ProceduralScripting>().g.GetLength(0) - 1)
+		else if(doorPos.Equals("Down") && gameManager.GetComponent<ProceduralScripting>().lin < gameManager.GetComponent<ProceduralScripting>().g.GetLength(0) - 1)
         {
-            lin += 1;
-            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromUp").transform.position;
+			gameManager.GetComponent<ProceduralScripting>().lin++;
+			Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[gameManager.GetComponent<ProceduralScripting>().lin, gameManager.GetComponent<ProceduralScripting>().col].transform.FindChild("playerPositionFromUp").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        else if(doorPos.Equals("Left") && col > 0)
+		else if(doorPos.Equals("Left") && gameManager.GetComponent<ProceduralScripting>().col > 0)
         {
-            col -= 1;
-            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromRight").transform.position;
+			gameManager.GetComponent<ProceduralScripting> ().col--;
+			Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[gameManager.GetComponent<ProceduralScripting>().lin, gameManager.GetComponent<ProceduralScripting>().col].transform.FindChild("playerPositionFromRight").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        else if(doorPos.Equals("Right") && col < gameManager.GetComponent<ProceduralScripting>().g.GetLength(1) - 1)
+		else if(doorPos.Equals("Right") && gameManager.GetComponent<ProceduralScripting>().col < gameManager.GetComponent<ProceduralScripting>().g.GetLength(1) - 1)
         {
-            col += 1;
-            Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[lin, col].transform.FindChild("playerPositionFromLeft").transform.position;
+			gameManager.GetComponent<ProceduralScripting> ().col++;
+			Vector3 newPos = gameManager.GetComponent<ProceduralScripting>().g[gameManager.GetComponent<ProceduralScripting>().lin, gameManager.GetComponent<ProceduralScripting>().col].transform.FindChild("playerPositionFromLeft").transform.position;
             player.transform.position = newPos;
             cam.transform.position = player.transform.position;
         }
-        player.GetComponent<PlayerBehaviour>().currentRoom = gameManager.GetComponent<ProceduralScripting>().g[lin, col];
+		player.GetComponent<PlayerBehaviour>().currentRoom = gameManager.GetComponent<ProceduralScripting>().g[gameManager.GetComponent<ProceduralScripting>().lin, gameManager.GetComponent<ProceduralScripting>().col];
+
     }
 }
