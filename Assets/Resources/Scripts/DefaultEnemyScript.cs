@@ -4,35 +4,50 @@ using UnityEngine;
 using System;
 public class DefaultEnemyScript : MonoBehaviour
 {
-    [SerializeField]
-    GameObject aux;
+    #region Variables
+    GameObject bullet;
     GameObject player;
-
+    GameObject aux;
     Animator anim;
-
+    float time = 1.5f;
     float angle;
     float health;
+    #endregion
     void Awake()
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        aux = GameObject.FindGameObjectWithTag("Aux");
+        bullet = (GameObject)Resources.Load("Prefabs/Weapons/Bala Pistola", typeof(GameObject));
     }
     void Start()
     {
         health = 5;
     }
-	void Update ()
-    {
+
+    void Update()
+    { 
         this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
-        ChangeRotation();
-        if(health <= 0)
+        ChangeRotation(aux, anim, angle);
+        if (health <= 0)
         {
             Time.timeScale = 1;
             Destroy(gameObject);
         }
+    }
 
-	}
-    void ChangeRotation()
+    public void Damaged()
+    {
+        health--;
+        StartCoroutine(Shot(anim, player));
+    }
+
+    public void ShotBullet()
+    {
+        Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0f, aux.transform.eulerAngles.z + 90f));
+    }
+
+    void ChangeRotation(GameObject aux, Animator anim, float angle)
     {
         angle = aux.transform.eulerAngles.z;
         if (angle > 157.5 && angle < 202.5)
@@ -45,7 +60,7 @@ public class DefaultEnemyScript : MonoBehaviour
         }
         else if (angle > 67.5 && angle < 112.5)
         {
-           anim.SetFloat("EnemyWalkingFloat", 1);
+            anim.SetFloat("EnemyWalkingFloat", 1);
         }
         else if (angle >= 22.5 && angle <= 67.5)
         {
@@ -68,12 +83,8 @@ public class DefaultEnemyScript : MonoBehaviour
             anim.SetFloat("EnemyWalkingFloat", 2);
         }
     }
-    public void Damaged()
-    {
-        health--;
-        StartCoroutine(Shot());
-    }
-    IEnumerator Shot()
+
+    IEnumerator Shot(Animator anim, GameObject player)
     {
         anim.SetBool("Shot", true);
         int aux = Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat"));
@@ -81,8 +92,9 @@ public class DefaultEnemyScript : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         StartCoroutine(ChangeTimeScale());
         StartCoroutine(ChangeEnemyColor());
-        StartCoroutine(GoingBackWhenShot(aux, pos));
+        StartCoroutine(GoingBackWhenShot(aux, pos, anim));
     }
+
     IEnumerator ChangeEnemyColor()
     {
         GetComponent<SpriteRenderer>().color = new Color(0.3f, 0, 0);
@@ -90,13 +102,15 @@ public class DefaultEnemyScript : MonoBehaviour
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         yield return 0;
     }
+
     IEnumerator ChangeTimeScale()
     {
         Time.timeScale = 0.3f;
-        yield return new WaitForSeconds(0.03f);;
+        yield return new WaitForSeconds(0.03f); ;
         Time.timeScale = 1;
     }
-    IEnumerator GoingBackWhenShot(int aux, Vector3 position)
+
+    IEnumerator GoingBackWhenShot(int aux, Vector3 position, Animator anim)
     {
         for (float i = 0; i < 10; i++)
         {
@@ -111,7 +125,7 @@ public class DefaultEnemyScript : MonoBehaviour
                     break;
                 case 1:
                     transform.position += new Vector3(0.1f, 0f, 0f);
-                        anim.SetFloat("EnemyShotFloat", 1);                       
+                    anim.SetFloat("EnemyShotFloat", 1);
                     break;
                 case 2:
                     transform.position += new Vector3(0f, -0.1f, 0f);
@@ -122,7 +136,7 @@ public class DefaultEnemyScript : MonoBehaviour
                     break;
                 case 3:
                     transform.position += new Vector3(-0.1f, 0f, 0f);
-                        anim.SetFloat("EnemyShotFloat", 0);
+                    anim.SetFloat("EnemyShotFloat", 0);
                     break;
                 case 4:
                     transform.position += new Vector3(0.1f, -0.1f, 0f);
@@ -145,11 +159,13 @@ public class DefaultEnemyScript : MonoBehaviour
         }
         anim.SetBool("Shot", false);
     }
+
     void OnTriggerStay2D(Collider2D col)
     {
-        if(col.tag.Equals("Player"))
+        if (col.tag.Equals("Player"))
         {
             Debug.Log("Tomou dano");
         }
     }
+
 }
