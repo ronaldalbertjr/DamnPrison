@@ -8,6 +8,7 @@ public class TankScript : MonoBehaviour
     AnimationClip hitAnimClip;
     [SerializeField]
     float speed;
+    GameObject spawner;
     GameObject player;
     Animator anim;
     Vector3 runDirection;
@@ -23,6 +24,7 @@ public class TankScript : MonoBehaviour
 		health = 10;
 		spRenderer = GetComponent<SpriteRenderer> ();
         player = GameObject.FindGameObjectWithTag("Player");
+        spawner = GameObject.Find("spawnPoints");
         anim = GetComponent<Animator>();
         runDirection = player.transform.position - transform.position;
 		canCollide = true;
@@ -41,6 +43,7 @@ public class TankScript : MonoBehaviour
 		}
 		if (health <= 0) 
 		{
+            spawner.GetComponent<SpawnEnemy>().Instantiate();
 			Time.timeScale = 1f;
 			Destroy (gameObject);
 		}

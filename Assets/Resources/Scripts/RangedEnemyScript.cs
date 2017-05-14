@@ -6,6 +6,7 @@ using UnityEngine;
 public class RangedEnemyScript : MonoBehaviour
 {
     #region Variables
+    GameObject spawner;
     GameObject bullet;
     GameObject player;
     GameObject aux;
@@ -18,7 +19,8 @@ public class RangedEnemyScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        aux = GameObject.FindGameObjectWithTag("Aux");
+        spawner = GameObject.Find("spawnPoints");
+        aux = transform.FindChild("AuxRotationEnemy").gameObject;
         bullet = (GameObject) Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
     }
     void Start ()
@@ -45,6 +47,7 @@ public class RangedEnemyScript : MonoBehaviour
         ChangeRotation();
         if (health <= 0)
         {
+            spawner.GetComponent<SpawnEnemy>().Instantiate();
             Time.timeScale = 1;
             Destroy(gameObject);
         }

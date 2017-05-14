@@ -17,12 +17,17 @@ public class BulletScript : MonoBehaviour
     {
         if (col.tag.Equals("EnemyDefault") && thrownBy.Equals("Player"))
         {
+            col.GetComponent<DefaultEnemyScript>().Damaged();
+            Destroy(gameObject);
+        }
+        if (col.tag.Equals("EnemyGun") && thrownBy.Equals("Player"))
+        {
             col.GetComponent<RangedEnemyScript>().Damaged();
             Destroy(gameObject);
         }
         else if (col.tag.Equals("Player") && thrownBy.Equals("Enemy"))
         {
-            Debug.Log("playerDamaged");
+            col.gameObject.GetComponent<PlayerBehaviour>().Damaged(col.gameObject);
             Destroy(gameObject);
         }
 

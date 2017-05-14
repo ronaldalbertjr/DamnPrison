@@ -5,6 +5,7 @@ using System;
 public class DefaultEnemyScript : MonoBehaviour
 {
     #region Variables
+    GameObject spawner;
     GameObject bullet;
     GameObject player;
     GameObject aux;
@@ -17,8 +18,9 @@ public class DefaultEnemyScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        aux = GameObject.FindGameObjectWithTag("Aux");
-        bullet = (GameObject)Resources.Load("Prefabs/Weapons/Bala Pistola", typeof(GameObject));
+        spawner = GameObject.Find("spawnPoints");
+        aux = transform.FindChild("AuxRotationEnemy").gameObject;
+        bullet = (GameObject)Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
     }
     void Start()
     {
@@ -30,7 +32,8 @@ public class DefaultEnemyScript : MonoBehaviour
         this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
         ChangeRotation(aux, anim, angle);
         if (health <= 0)
-        {
+        { 
+            spawner.GetComponent<SpawnEnemy>().Instantiate();
             Time.timeScale = 1;
             Destroy(gameObject);
         }

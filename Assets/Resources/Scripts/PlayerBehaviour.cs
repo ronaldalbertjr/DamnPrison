@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerBehaviour : MonoBehaviour 
 {
+    #region Variables
     [SerializeField]
     float speed;
     [SerializeField]
@@ -25,6 +27,9 @@ public class PlayerBehaviour : MonoBehaviour
     Animator bodyAnim;
     Animator legsAnim;
     Animator gunAnim;
+    SpriteRenderer bodySpriteRenderer;
+    SpriteRenderer legsSpriteRenderer;
+    SpriteRenderer gunSpriteRenderer;
     GameObject door;
     
     public GameObject currentRoom;
@@ -36,6 +41,7 @@ public class PlayerBehaviour : MonoBehaviour
 	private bool canShock;
     float angle;
     float time = 1;
+    #endregion
 
     void Awake()
     {
@@ -43,6 +49,9 @@ public class PlayerBehaviour : MonoBehaviour
         bodyAnim = body.GetComponent<Animator>();
         legsAnim = legs.GetComponent<Animator>();
         gunAnim = gun.GetComponent<Animator>();
+        bodySpriteRenderer = body.GetComponent<SpriteRenderer>();
+        legsSpriteRenderer = legs.GetComponent<SpriteRenderer>();
+        gunSpriteRenderer = gun.GetComponent<SpriteRenderer>();
         mainCamera = Camera.main.transform;
         shakeDuration = 0;
         shakeAmount = 0.3f;
@@ -178,7 +187,7 @@ public class PlayerBehaviour : MonoBehaviour
         camPosition = mainCamera.position;
         if (shakeDuration > 0)
         {
-            mainCamera.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
+            mainCamera.localPosition = camPosition + UnityEngine.Random.insideUnitSphere * shakeAmount;
             shakeDuration -= Time.deltaTime * decreaseFactor;
         }
         else
@@ -190,6 +199,103 @@ public class PlayerBehaviour : MonoBehaviour
     public void ShotBullet()
     {
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
+    }
+
+    public void Damaged(GameObject col)
+    {
+        StartCoroutine(IDamaged(col));
+    }
+
+    IEnumerator IDamaged(GameObject collision)
+    {
+        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
+        bodyAnim.SetBool("Damaged", true);
+        legsAnim.SetBool("Damaged", true);
+        Vector3 pos = collision.transform.position;
+        int aux = Convert.ToInt32(bodyAnim.GetFloat("WalkingBody"));
+        yield return new WaitForSeconds(0.2f);
+        StartCoroutine(ChangePlayerColor());
+        StartCoroutine(GoingBackWhenShot(aux, pos));
+    }
+
+    IEnumerator ChangePlayerColor()
+    {
+        bodySpriteRenderer.color = new Color(0.3f, 0, 0);
+        legsSpriteRenderer.color = new Color(0.3f, 0, 0);
+        yield return new WaitForSeconds(0.05f);
+        bodySpriteRenderer.color = new Color(1, 1, 1);
+        legsSpriteRenderer.color = new Color(1, 1, 1);
+        yield return 0;
+    }
+
+    IEnumerator GoingBackWhenShot(int aux, Vector3 position)
+    {
+        for (float i = 0; i < 10; i++)
+        {
+            switch (aux)
+            {
+                case 0:
+                    transform.position += new Vector3(0f, 0.1f, 0f);
+                    if (position.x < transform.position.x)
+                    {
+                        bodyAnim.SetFloat("DamagedFloat", 1);
+                        legsAnim.SetFloat("DamagedFloat", 1);
+                    }
+                    else
+                    {
+                        bodyAnim.SetFloat("DamagedFloat", 0);
+                        legsAnim.SetFloat("DamagedFloat", 0);
+                    }
+                    break;
+                case 1:
+                    transform.position += new Vector3(-0.1f, 0f, 0f);
+                    bodyAnim.SetFloat("DamagedFloat", 1);
+                    legsAnim.SetFloat("DamagedFloat", 1);
+                    break;
+                case 2:
+                    transform.position += new Vector3(0f, -0.1f, 0f);
+                    if (position.x < transform.position.x)
+                    {
+                        bodyAnim.SetFloat("DamagedFloat", 1);
+                        legsAnim.SetFloat("DamagedFloat", 1);
+                    }
+                    else
+                    {
+                        bodyAnim.SetFloat("DamagedFloat", 0);
+                        legsAnim.SetFloat("DamagedFloat", 0);
+                    }
+                    break;
+                case 3:
+                    transform.position += new Vector3(0.1f, 0f, 0f);
+                    bodyAnim.SetFloat("DamagedFloat", 0);
+                    legsAnim.SetFloat("DamagedFloat", 0);
+                    break;
+                case 4:
+                    transform.position += new Vector3(-0.1f, -0.1f, 0f);
+                    bodyAnim.SetFloat("DamagedFloat", 1);
+                    legsAnim.SetFloat("DamagedFloat", 1);
+                    break;
+                case 5:
+                    transform.position += new Vector3(0.1f, -0.1f, 0f);
+                    bodyAnim.SetFloat("DamagedFloat", 0);
+                    legsAnim.SetFloat("DamagedFloat", 0);
+                    break;
+                case 6:
+                    transform.position += new Vector3(-0.1f, 0.1f, 0f);
+                    bodyAnim.SetFloat("DamagedFloat", 1);
+                    legsAnim.SetFloat("DamagedFloat", 1);
+                    break;
+                case 7:
+                    transform.position += new Vector3(0.1f, 0.1f, 0f);
+                    bodyAnim.SetFloat("DamagedFloat", 0);
+                    legsAnim.SetFloat("DamagedFloat", 0);
+                    break;
+            }
+            yield return new WaitForSeconds(0.001f);
+        }
+        bodyAnim.SetBool("Damaged", false);
+        legsAnim.SetBool("Damaged", false);
+        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

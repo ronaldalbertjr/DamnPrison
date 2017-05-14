@@ -7,22 +7,10 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField]
     Transform[] spawnPoints;
     [SerializeField]
-    GameObject enemy;
+    GameObject[] enemy;
 
-    float time;
-    void Start()
+    public void Instantiate()
     {
-        time = 6;
+        Instantiate(enemy[Random.Range(0, enemy.Length)], spawnPoints[Mathf.FloorToInt(Random.Range(1, 4))].position, new Quaternion(0, 0, 0, 0));
     }
-	void Update ()
-    {
-        time += Time.deltaTime;
-
-        if(time >= 5)
-        {
-            time = 0;
-            Instantiate(enemy, spawnPoints[Mathf.FloorToInt(Random.Range(1, 4))].position, new Quaternion(0,0,0,0));
-        }
-		
-	}
 }
