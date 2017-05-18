@@ -7,6 +7,8 @@ public class TankScript : MonoBehaviour
     [SerializeField]
     AnimationClip hitAnimClip;
     [SerializeField]
+    AnimationClip standingUpClip;
+    [SerializeField]
     float speed;
     GameObject spawner;
     GameObject player;
@@ -16,12 +18,13 @@ public class TankScript : MonoBehaviour
     bool running;
 	bool canCollide;
 	bool facingRight;
+    bool invencible;
 	float shakeDuration;
 	int health;
 	void Start ()
     {
         running = true;
-		health = 10;
+		health = 20;
 		spRenderer = GetComponent<SpriteRenderer> ();
         player = GameObject.FindGameObjectWithTag("Player");
         spawner = GameObject.Find("spawnPoints");
@@ -36,7 +39,7 @@ public class TankScript : MonoBehaviour
 		{
 			transform.position += runDirection.normalized * Time.deltaTime * speed;
 		} 
-		else 
+		else
 		{
 			CameraShake (0.3f, 1f);
 			Flip ();
@@ -51,12 +54,16 @@ public class TankScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-		if (canCollide) 
+        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")))  
 		{
 			shakeDuration = 0.5f;
-			StartCoroutine (Collision ());
+			StartCoroutine (Collision());
 			canCollide = false;
 		}
+        else if(canCollide && collision.gameObject.tag.Equals("Player"))
+        {
+            player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
+        }
     }
 
 	private void OnTriggerEnter2D(Collider2D col)
@@ -65,8 +72,8 @@ public class TankScript : MonoBehaviour
 		{
 			health--;
 			Destroy (col.gameObject);
-			StartCoroutine (ChangeEnemyColor ());
-			StartCoroutine (ChangeTimeScale ());
+            StartCoroutine(ChangeEnemyColor());
+            StartCoroutine(ChangeTimeScale());
 		}
 	}
 	void Flip()
@@ -107,10 +114,14 @@ public class TankScript : MonoBehaviour
     {
 		StartCoroutine (GoingBackWhenCollided ());
         anim.SetTrigger("Hit");
+        anim.SetBool("HitWall", true);
         anim.SetBool("Running", false);
         running = false;
-        yield return new WaitForSeconds(hitAnimClip.length * 2);
-		anim.SetBool("Running", true);
+        yield return new WaitForSecondsRealtime(hitAnimClip.length * 2);
+        anim.SetBool("Running", true);
+        yield return new WaitForSecondsRealtime(2.5f);
+        anim.SetBool("HitWall", false);
+        yield return new WaitForSecondsRealtime(standingUpClip.length * 1.5f);
 		runDirection = player.transform.position - transform.position;
         running = true;
 		canCollide = true;
@@ -122,7 +133,7 @@ public class TankScript : MonoBehaviour
 		for (float i = 0; i < 10; i++)
 		{
 			transform.position += goBackVector;
-			yield return new WaitForSeconds(0.001f);
+			yield return new WaitForSecondsRealtime(0.001f);
 		}
 	}
 
@@ -130,9 +141,8 @@ public class TankScript : MonoBehaviour
 	IEnumerator ChangeEnemyColor()
 	{
 		GetComponent<SpriteRenderer>().color = new Color(0.3f, 0, 0);
-		yield return new WaitForSeconds(0.05f);
+		yield return new WaitForSecondsRealtime(0.05f);
 		GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
-		yield return 0;
 	}
 
 	IEnumerator ChangeTimeScale()
