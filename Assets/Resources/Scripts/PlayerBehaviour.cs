@@ -40,6 +40,8 @@ public class PlayerBehaviour : MonoBehaviour
 	private Vector3 camPosition;
 	private bool canShock;
     float angle;
+    float w;
+    float h;
     float time = 1;
     #endregion
 
@@ -59,6 +61,8 @@ public class PlayerBehaviour : MonoBehaviour
     }
 	void Update () 
 	{
+        w = Input.GetAxis("Horizontal");
+        h = Input.GetAxis("Vertical");
         time += Time.deltaTime;
         ChangeMovement();
         ChangeRotation();
@@ -86,43 +90,64 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.up + Vector3.right) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 2);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.up + Vector3.left) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 2);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.down + Vector3.right) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 0);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.down + Vector3.left) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 0);
         }
         else if (Input.GetKey(KeyCode.W))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.up * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 2);
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.right * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 1);
         }
         else if (Input.GetKey(KeyCode.A))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.left * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 3);
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            bodyAnim.SetBool("Walking", true);
+            legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.down * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 0);
+        }
+        else
+        {
+            bodyAnim.SetBool("Walking", false);
+            legsAnim.SetBool("Walking", false);
         }
     }
     void ChangeRotation()
@@ -130,42 +155,42 @@ public class PlayerBehaviour : MonoBehaviour
         angle = aux.transform.eulerAngles.z;
         if (angle > 157.5 && angle < 202.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 0);
+            bodyAnim.SetFloat("LookingAngle", 0);
             gunAnim.SetFloat("GunPosition", 0);
         }
         else if (angle > 247.5 && angle < 292.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 1);
+            bodyAnim.SetFloat("LookingAngle", 1);
             gunAnim.SetFloat("GunPosition", 1);
         }
         else if (angle > 67.5 && angle < 112.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 3);
+            bodyAnim.SetFloat("LookingAngle", 3);
             gunAnim.SetFloat("GunPosition", 3);
         }
         else if(angle >= 22.5 && angle <= 67.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 5);
+            bodyAnim.SetFloat("LookingAngle", 5);
             gunAnim.SetFloat("GunPosition", 5);
         }
         else if(angle >= 292.5 && angle <= 337.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 4);
+            bodyAnim.SetFloat("LookingAngle", 4);
             gunAnim.SetFloat("GunPosition", 4);
         }
         else if(angle >= 112.5 && angle <= 157.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 7);
+            bodyAnim.SetFloat("LookingAngle", 7);
             gunAnim.SetFloat("GunPosition", 7);
         }
         else if(angle >= 202.5 && angle <= 247.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 6);
+            bodyAnim.SetFloat("LookingAngle", 6);
             gunAnim.SetFloat("GunPosition", 6);
         }
         else if (angle < 22.5 || angle > 337.5)
         {
-            bodyAnim.SetFloat("WalkingBody", 2);
+            bodyAnim.SetFloat("LookingAngle", 2);
             gunAnim.SetFloat("GunPosition", 2);
         }
     }
