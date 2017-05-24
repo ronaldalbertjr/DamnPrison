@@ -61,8 +61,6 @@ public class PlayerBehaviour : MonoBehaviour
     }
 	void Update () 
 	{
-        w = Input.GetAxis("Horizontal");
-        h = Input.GetAxis("Vertical");
         time += Time.deltaTime;
         ChangeMovement();
         ChangeRotation();
