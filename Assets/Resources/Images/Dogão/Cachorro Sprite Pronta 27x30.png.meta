@@ -1,9 +1,57 @@
 fileFormatVersion: 2
-guid: 064547ee40294f04fb6f12f778ea5646
-timeCreated: 1495406959
-licenseType: Free
+guid: b60122d348efeaf4193edae51967f6d6
+timeCreated: 1495719271
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Cachorro Sprite Pronta 27x30_0
+    21300002: Cachorro Sprite Pronta 27x30_1
+    21300004: Cachorro Sprite Pronta 27x30_2
+    21300006: Cachorro Sprite Pronta 27x30_3
+    21300008: Cachorro Sprite Pronta 27x30_4
+    21300010: Cachorro Sprite Pronta 27x30_5
+    21300012: Cachorro Sprite Pronta 27x30_6
+    21300014: Cachorro Sprite Pronta 27x30_7
+    21300016: Cachorro Sprite Pronta 27x30_8
+    21300018: Cachorro Sprite Pronta 27x30_9
+    21300020: Cachorro Sprite Pronta 27x30_10
+    21300022: Cachorro Sprite Pronta 27x30_11
+    21300024: Cachorro Sprite Pronta 27x30_12
+    21300026: Cachorro Sprite Pronta 27x30_13
+    21300028: Cachorro Sprite Pronta 27x30_14
+    21300030: Cachorro Sprite Pronta 27x30_15
+    21300032: Cachorro Sprite Pronta 27x30_16
+    21300034: Cachorro Sprite Pronta 27x30_17
+    21300036: Cachorro Sprite Pronta 27x30_18
+    21300038: Cachorro Sprite Pronta 27x30_19
+    21300040: Cachorro Sprite Pronta 27x30_20
+    21300042: Cachorro Sprite Pronta 27x30_21
+    21300044: Cachorro Sprite Pronta 27x30_22
+    21300046: Cachorro Sprite Pronta 27x30_23
+    21300048: Cachorro Sprite Pronta 27x30_24
+    21300050: Cachorro Sprite Pronta 27x30_25
+    21300052: Cachorro Sprite Pronta 27x30_26
+    21300054: Cachorro Sprite Pronta 27x30_27
+    21300056: Cachorro Sprite Pronta 27x30_28
+    21300058: Cachorro Sprite Pronta 27x30_29
+    21300060: Cachorro Sprite Pronta 27x30_30
+    21300062: Cachorro Sprite Pronta 27x30_31
+    21300064: Cachorro Sprite Pronta 27x30_32
+    21300066: Cachorro Sprite Pronta 27x30_33
+    21300068: Cachorro Sprite Pronta 27x30_34
+    21300070: Cachorro Sprite Pronta 27x30_35
+    21300072: Cachorro Sprite Pronta 27x30_36
+    21300074: Cachorro Sprite Pronta 27x30_37
+    21300076: Cachorro Sprite Pronta 27x30_38
+    21300078: Cachorro Sprite Pronta 27x30_39
+    21300080: Cachorro Sprite Pronta 27x30_40
+    21300082: Cachorro Sprite Pronta 27x30_41
+    21300084: Cachorro Sprite Pronta 27x30_42
+    21300086: Cachorro Sprite Pronta 27x30_43
+    21300088: Cachorro Sprite Pronta 27x30_44
+    21300090: Cachorro Sprite Pronta 27x30_45
+    21300092: Cachorro Sprite Pronta 27x30_46
+    21300094: Cachorro Sprite Pronta 27x30_47
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -27,7 +75,7 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -66,9 +114,641 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_5
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_7
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 150
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_12
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_13
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_14
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_15
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 120
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_17
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_18
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_20
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_21
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_22
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_23
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 90
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_25
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_26
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_27
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_28
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_29
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_30
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_31
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 60
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_34
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_36
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_37
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_38
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_39
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 30
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_41
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_42
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_43
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_44
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_45
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_46
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cachorro Sprite Pronta 27x30_47
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

@@ -1,0 +1,924 @@
+fileFormatVersion: 2
+guid: 51ff20e37ae35f74493bcb8a9f5f862f
+timeCreated: 1495719198
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tropa de Choque Sheet 63x54 V02_0
+    21300002: Tropa de Choque Sheet 63x54 V02_1
+    21300004: Tropa de Choque Sheet 63x54 V02_2
+    21300006: Tropa de Choque Sheet 63x54 V02_3
+    21300008: Tropa de Choque Sheet 63x54 V02_4
+    21300010: Tropa de Choque Sheet 63x54 V02_5
+    21300012: Tropa de Choque Sheet 63x54 V02_6
+    21300014: Tropa de Choque Sheet 63x54 V02_7
+    21300016: Tropa de Choque Sheet 63x54 V02_8
+    21300018: Tropa de Choque Sheet 63x54 V02_9
+    21300020: Tropa de Choque Sheet 63x54 V02_10
+    21300022: Tropa de Choque Sheet 63x54 V02_11
+    21300024: Tropa de Choque Sheet 63x54 V02_12
+    21300026: Tropa de Choque Sheet 63x54 V02_13
+    21300028: Tropa de Choque Sheet 63x54 V02_14
+    21300030: Tropa de Choque Sheet 63x54 V02_15
+    21300032: Tropa de Choque Sheet 63x54 V02_16
+    21300034: Tropa de Choque Sheet 63x54 V02_17
+    21300036: Tropa de Choque Sheet 63x54 V02_18
+    21300038: Tropa de Choque Sheet 63x54 V02_19
+    21300040: Tropa de Choque Sheet 63x54 V02_20
+    21300042: Tropa de Choque Sheet 63x54 V02_21
+    21300044: Tropa de Choque Sheet 63x54 V02_22
+    21300046: Tropa de Choque Sheet 63x54 V02_23
+    21300048: Tropa de Choque Sheet 63x54 V02_24
+    21300050: Tropa de Choque Sheet 63x54 V02_25
+    21300052: Tropa de Choque Sheet 63x54 V02_26
+    21300054: Tropa de Choque Sheet 63x54 V02_27
+    21300056: Tropa de Choque Sheet 63x54 V02_28
+    21300058: Tropa de Choque Sheet 63x54 V02_29
+    21300060: Tropa de Choque Sheet 63x54 V02_30
+    21300062: Tropa de Choque Sheet 63x54 V02_31
+    21300064: Tropa de Choque Sheet 63x54 V02_32
+    21300066: Tropa de Choque Sheet 63x54 V02_33
+    21300068: Tropa de Choque Sheet 63x54 V02_34
+    21300070: Tropa de Choque Sheet 63x54 V02_35
+    21300072: Tropa de Choque Sheet 63x54 V02_36
+    21300074: Tropa de Choque Sheet 63x54 V02_37
+    21300076: Tropa de Choque Sheet 63x54 V02_38
+    21300078: Tropa de Choque Sheet 63x54 V02_39
+    21300080: Tropa de Choque Sheet 63x54 V02_40
+    21300082: Tropa de Choque Sheet 63x54 V02_41
+    21300084: Tropa de Choque Sheet 63x54 V02_42
+    21300086: Tropa de Choque Sheet 63x54 V02_43
+    21300088: Tropa de Choque Sheet 63x54 V02_44
+    21300090: Tropa de Choque Sheet 63x54 V02_45
+    21300092: Tropa de Choque Sheet 63x54 V02_46
+    21300094: Tropa de Choque Sheet 63x54 V02_47
+    21300096: Tropa de Choque Sheet 63x54 V02_48
+    21300098: Tropa de Choque Sheet 63x54 V02_49
+    21300100: Tropa de Choque Sheet 63x54 V02_50
+    21300102: Tropa de Choque Sheet 63x54 V02_51
+    21300104: Tropa de Choque Sheet 63x54 V02_52
+    21300106: Tropa de Choque Sheet 63x54 V02_53
+    21300108: Tropa de Choque Sheet 63x54 V02_54
+    21300110: Tropa de Choque Sheet 63x54 V02_55
+    21300112: Tropa de Choque Sheet 63x54 V02_60
+    21300114: Tropa de Choque Sheet 63x54 V02_61
+    21300116: Tropa de Choque Sheet 63x54 V02_62
+    21300118: Tropa de Choque Sheet 63x54 V02_63
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_5
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_7
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 378
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_9
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_11
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_12
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_13
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_14
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_15
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 324
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_19
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_20
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_21
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_22
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_23
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 270
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_25
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_26
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_27
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_28
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_29
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_30
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_31
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 216
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_33
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_34
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_35
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_36
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_37
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_38
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_39
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 162
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_41
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_42
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_43
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_44
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_45
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_46
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_47
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 108
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_49
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_50
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_51
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_52
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_53
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_54
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_55
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 54
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_60
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_61
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_62
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tropa de Choque Sheet 63x54 V02_63
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 0
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
