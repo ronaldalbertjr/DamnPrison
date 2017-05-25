@@ -95,6 +95,8 @@
     <Compile Include="Assets\Resources\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyArmaScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\PorreteAreaHitScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\PorreteScript.cs" />
     <Compile Include="Assets\Resources\Scripts\ProceduralScripting.cs" />
     <Compile Include="Assets\Resources\Scripts\RangedEnemyScript.cs" />
     <Compile Include="Assets\Resources\Scripts\SpawnEnemy.cs" />

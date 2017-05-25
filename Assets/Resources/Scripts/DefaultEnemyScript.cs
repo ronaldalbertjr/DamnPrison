@@ -10,8 +10,6 @@ public class DefaultEnemyScript : MonoBehaviour
     GameObject player;
     GameObject aux;
     Animator anim;
-    float time = 1.5f;
-    float angle;
     float health;
     #endregion
     void Awake()
@@ -30,7 +28,7 @@ public class DefaultEnemyScript : MonoBehaviour
     void Update()
     { 
         this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
-        ChangeRotation(aux, anim, angle);
+        ChangeRotation(aux, anim);
         if (health <= 0)
         { 
             spawner.GetComponent<SpawnEnemy>().Instantiate();
@@ -50,9 +48,9 @@ public class DefaultEnemyScript : MonoBehaviour
         Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0f, aux.transform.eulerAngles.z + 90f));
     }
 
-    void ChangeRotation(GameObject aux, Animator anim, float angle)
+    void ChangeRotation(GameObject aux, Animator anim)
     {
-        angle = aux.transform.eulerAngles.z;
+        float angle = aux.transform.eulerAngles.z;
         if (angle > 157.5 && angle < 202.5)
         {
             anim.SetFloat("EnemyWalkingFloat", 0);

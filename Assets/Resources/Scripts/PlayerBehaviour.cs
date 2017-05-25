@@ -235,7 +235,7 @@ public class PlayerBehaviour : MonoBehaviour
         bodyAnim.SetBool("Damaged", true);
         legsAnim.SetBool("Damaged", true);
         Vector3 pos = collision.transform.position;
-        int aux = Convert.ToInt32(bodyAnim.GetFloat("WalkingBody"));
+        int aux = Convert.ToInt32(bodyAnim.GetFloat("LookingAngle"));
         yield return new WaitForSeconds(0.2f);
         StartCoroutine(ChangePlayerColor());
         StartCoroutine(GoingBackWhenShot(aux, pos));
