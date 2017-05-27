@@ -121,7 +121,7 @@ public class TankScript : MonoBehaviour
         anim.SetBool("Running", true);
         yield return new WaitForSecondsRealtime(2.5f);
         anim.SetBool("HitWall", false);
-        yield return new WaitForSecondsRealtime(standingUpClip.length * 1.7f);
+        yield return new WaitForSecondsRealtime(standingUpClip.length * 2f);
 		runDirection = player.transform.position - transform.position;
         running = true;
 		canCollide = true;

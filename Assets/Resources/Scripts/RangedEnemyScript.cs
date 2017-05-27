@@ -33,9 +33,11 @@ public class RangedEnemyScript : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) > 10)
         {
             this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
+            anim.SetBool("Walking", true);
         }
         else
         {
+            anim.SetBool("Walking", false);
             this.GetComponent<PolyNavAgent>().Stop();
             time += Time.deltaTime;
             if (time >= 1.5f)
