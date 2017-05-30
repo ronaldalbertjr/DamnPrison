@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b60122d348efeaf4193edae51967f6d6
-timeCreated: 1495719271
-licenseType: Pro
+timeCreated: 1496154819
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Cachorro Sprite Pronta 27x30_0
@@ -108,12 +108,12 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -129,12 +129,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 150
-        width: 27
-        height: 30
+        x: 6
+        y: 153
+        width: 13
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -142,12 +142,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 150
-        width: 27
-        height: 30
+        x: 33
+        y: 155
+        width: 13
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -155,12 +155,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_2
       rect:
         serializedVersion: 2
-        x: 54
-        y: 150
-        width: 27
-        height: 30
+        x: 60
+        y: 155
+        width: 13
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -168,12 +168,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_3
       rect:
         serializedVersion: 2
-        x: 81
-        y: 150
-        width: 27
-        height: 30
+        x: 87
+        y: 154
+        width: 13
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -181,12 +181,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_4
       rect:
         serializedVersion: 2
-        x: 108
-        y: 150
-        width: 27
-        height: 30
+        x: 114
+        y: 151
+        width: 13
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -194,12 +194,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_5
       rect:
         serializedVersion: 2
-        x: 135
-        y: 150
-        width: 27
-        height: 30
+        x: 141
+        y: 152
+        width: 13
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -207,12 +207,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_6
       rect:
         serializedVersion: 2
-        x: 162
-        y: 150
-        width: 27
-        height: 30
+        x: 168
+        y: 152
+        width: 13
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -220,12 +220,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_7
       rect:
         serializedVersion: 2
-        x: 189
-        y: 150
-        width: 27
-        height: 30
+        x: 195
+        y: 153
+        width: 13
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -233,12 +233,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 120
-        width: 27
-        height: 30
+        x: 6
+        y: 124
+        width: 13
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -246,12 +246,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_9
       rect:
         serializedVersion: 2
-        x: 27
-        y: 120
-        width: 27
-        height: 30
+        x: 33
+        y: 126
+        width: 13
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -259,12 +259,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_10
       rect:
         serializedVersion: 2
-        x: 54
-        y: 120
-        width: 27
-        height: 30
+        x: 60
+        y: 126
+        width: 13
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -272,12 +272,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_11
       rect:
         serializedVersion: 2
-        x: 81
-        y: 120
-        width: 27
-        height: 30
+        x: 87
+        y: 125
+        width: 13
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -285,12 +285,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_12
       rect:
         serializedVersion: 2
-        x: 108
-        y: 120
-        width: 27
-        height: 30
+        x: 114
+        y: 122
+        width: 13
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -298,12 +298,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_13
       rect:
         serializedVersion: 2
-        x: 135
-        y: 120
-        width: 27
-        height: 30
+        x: 141
+        y: 123
+        width: 13
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -311,12 +311,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_14
       rect:
         serializedVersion: 2
-        x: 162
-        y: 120
-        width: 27
-        height: 30
+        x: 168
+        y: 123
+        width: 13
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -324,12 +324,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_15
       rect:
         serializedVersion: 2
-        x: 189
-        y: 120
-        width: 27
-        height: 30
+        x: 195
+        y: 124
+        width: 13
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -337,12 +337,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 90
-        width: 27
-        height: 30
+        x: 7
+        y: 91
+        width: 13
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -350,12 +350,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_17
       rect:
         serializedVersion: 2
-        x: 27
-        y: 90
-        width: 27
-        height: 30
+        x: 34
+        y: 93
+        width: 13
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -363,12 +363,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_18
       rect:
         serializedVersion: 2
-        x: 54
-        y: 90
-        width: 27
-        height: 30
+        x: 61
+        y: 92
+        width: 13
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -376,12 +376,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_19
       rect:
         serializedVersion: 2
-        x: 81
-        y: 90
-        width: 27
-        height: 30
+        x: 88
+        y: 92
+        width: 13
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -389,12 +389,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_20
       rect:
         serializedVersion: 2
-        x: 108
-        y: 90
-        width: 27
-        height: 30
+        x: 115
+        y: 91
+        width: 13
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -402,12 +402,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_21
       rect:
         serializedVersion: 2
-        x: 135
-        y: 90
-        width: 27
-        height: 30
+        x: 142
+        y: 91
+        width: 13
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -415,12 +415,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_22
       rect:
         serializedVersion: 2
-        x: 162
+        x: 169
         y: 90
-        width: 27
-        height: 30
+        width: 13
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -428,12 +428,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_23
       rect:
         serializedVersion: 2
-        x: 189
+        x: 196
         y: 90
-        width: 27
-        height: 30
+        width: 13
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -441,12 +441,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 60
-        width: 27
-        height: 30
+        x: 7
+        y: 61
+        width: 13
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -454,12 +454,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_25
       rect:
         serializedVersion: 2
-        x: 27
-        y: 60
-        width: 27
-        height: 30
+        x: 34
+        y: 63
+        width: 13
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -467,12 +467,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_26
       rect:
         serializedVersion: 2
-        x: 54
-        y: 60
-        width: 27
-        height: 30
+        x: 61
+        y: 62
+        width: 13
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -480,12 +480,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_27
       rect:
         serializedVersion: 2
-        x: 81
-        y: 60
-        width: 27
-        height: 30
+        x: 88
+        y: 62
+        width: 13
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -493,12 +493,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_28
       rect:
         serializedVersion: 2
-        x: 108
-        y: 60
-        width: 27
-        height: 30
+        x: 115
+        y: 61
+        width: 13
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -506,12 +506,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_29
       rect:
         serializedVersion: 2
-        x: 135
-        y: 60
-        width: 27
-        height: 30
+        x: 142
+        y: 61
+        width: 13
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -519,12 +519,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_30
       rect:
         serializedVersion: 2
-        x: 162
+        x: 169
         y: 60
-        width: 27
-        height: 30
+        width: 13
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -532,12 +532,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_31
       rect:
         serializedVersion: 2
-        x: 189
+        x: 196
         y: 60
-        width: 27
-        height: 30
+        width: 13
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -546,11 +546,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
+        y: 34
         width: 27
-        height: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -559,11 +559,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 27
-        y: 30
+        y: 36
         width: 27
-        height: 30
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -572,11 +572,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 54
-        y: 30
+        y: 34
         width: 27
-        height: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -585,11 +585,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 81
-        y: 30
+        y: 34
         width: 27
-        height: 30
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -598,11 +598,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 108
-        y: 30
+        y: 36
         width: 27
-        height: 30
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -611,11 +611,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 135
-        y: 30
+        y: 35
         width: 27
-        height: 30
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -624,11 +624,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 162
-        y: 30
+        y: 34
         width: 27
-        height: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -637,11 +637,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 189
-        y: 30
+        y: 34
         width: 27
-        height: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -650,11 +650,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 4
         width: 27
-        height: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -663,11 +663,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 27
-        y: 0
+        y: 6
         width: 27
-        height: 30
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -675,12 +675,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_42
       rect:
         serializedVersion: 2
-        x: 54
-        y: 0
+        x: 108
+        y: 6
         width: 27
-        height: 30
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -688,12 +688,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_43
       rect:
         serializedVersion: 2
-        x: 81
-        y: 0
+        x: 135
+        y: 5
         width: 27
-        height: 30
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -701,12 +701,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_44
       rect:
         serializedVersion: 2
-        x: 108
-        y: 0
+        x: 162
+        y: 4
         width: 27
-        height: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -714,12 +714,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_45
       rect:
         serializedVersion: 2
-        x: 135
-        y: 0
+        x: 189
+        y: 4
         width: 27
-        height: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -727,12 +727,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_46
       rect:
         serializedVersion: 2
-        x: 162
-        y: 0
+        x: 54
+        y: 4
         width: 27
-        height: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -740,12 +740,12 @@ TextureImporter:
       name: Cachorro Sprite Pronta 27x30_47
       rect:
         serializedVersion: 2
-        x: 189
-        y: 0
+        x: 81
+        y: 4
         width: 27
-        height: 30
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

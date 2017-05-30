@@ -86,6 +86,7 @@
     <Compile Include="Assets\Resources\Scripts\BulletScript.cs" />
     <Compile Include="Assets\Resources\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Resources\Scripts\DefaultEnemyScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\DogScript.cs" />
     <Compile Include="Assets\Resources\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyArmaScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerBehaviour.cs" />
