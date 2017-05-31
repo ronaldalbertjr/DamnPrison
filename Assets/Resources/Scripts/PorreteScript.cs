@@ -61,6 +61,7 @@ public class PorreteScript : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            Time.timeScale = 1;
         }
 	}
 

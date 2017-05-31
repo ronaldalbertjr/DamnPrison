@@ -32,6 +32,7 @@ public class TankScript : MonoBehaviour
         runDirection = player.transform.position - transform.position;
 		canCollide = true;
 		anim.SetBool ("Running", true);
+        Flip();
 	}
 	void Update ()
     {
