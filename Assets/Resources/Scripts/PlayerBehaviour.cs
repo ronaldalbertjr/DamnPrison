@@ -44,6 +44,8 @@ public class PlayerBehaviour : MonoBehaviour
     float w;
     float h;
     float time = 1;
+    bool canEnterDoor = true;
+    bool cameFromLastRoom;
     #endregion
 
     void Awake()
@@ -81,10 +83,6 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 gunAnim.SetBool("Shotting", false);
                 bodyAnim.SetBool("Shotting", false);
-            }
-            if (collidingWithDoor && Input.GetKeyDown(KeyCode.Q))
-            {
-                door.GetComponent<DoorScript>().ChangeRoom();
             }
         }
 	}
@@ -328,17 +326,21 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Door"))
+        if (col.tag.Equals("Door") && canEnterDoor)
         {
-            collidingWithDoor = true;
             door = col.gameObject;
+            door.GetComponent<DoorScript>().ChangeRoom();
+            canEnterDoor = false;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.tag.Equals("Door"))
         {
-            collidingWithDoor = false;
+            if(!col.gameObject.Equals(door))
+            {
+                canEnterDoor = true;
+            }
             door = null;
         }
     }
