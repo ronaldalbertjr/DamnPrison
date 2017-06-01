@@ -21,18 +21,17 @@ public class TankScript : MonoBehaviour
     bool invencible;
 	float shakeDuration;
 	int health;
-	void Start ()
+	public void Start ()
     {
         running = true;
 		health = 20;
 		spRenderer = GetComponent<SpriteRenderer> ();
         player = GameObject.FindGameObjectWithTag("Player");
-        spawner = GameObject.Find("spawnPoints");
         anim = GetComponent<Animator>();
         runDirection = player.transform.position - transform.position;
 		canCollide = true;
 		anim.SetBool ("Running", true);
-        Flip();
+        Flip(player.transform, spRenderer);
 	}
 	void Update ()
     {
@@ -43,11 +42,10 @@ public class TankScript : MonoBehaviour
 		else
 		{
 			CameraShake (0.3f, 1f);
-			Flip ();
+			Flip (player.transform, spRenderer);
 		}
 		if (health <= 0) 
 		{
-            spawner.GetComponent<SpawnEnemy>().Instantiate();
 			Time.timeScale = 1f;
 			Destroy (gameObject);
 		}
@@ -77,21 +75,21 @@ public class TankScript : MonoBehaviour
             StartCoroutine(ChangeTimeScale());
 		}
 	}
-	void Flip()
+	public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
 	{
-		if (player.transform.position.x > transform.position.x && !facingRight) 
+		if (toLookAt.position.x > transform.position.x && !facingRight) 
 		{
 			facingRight = true;
-			ChangeScale (facingRight);
+			ChangeScale (facingRight, spRenderer);
 		}
-		else if (player.transform.position.x < transform.position.x && facingRight) 
+		else if (toLookAt.position.x < transform.position.x && facingRight) 
 		{
 			facingRight = false;
-			ChangeScale (facingRight);
+			ChangeScale (facingRight, spRenderer);
 		}
 	}
 
-	void ChangeScale(bool flip)
+	void ChangeScale(bool flip, SpriteRenderer spRenderer)
 	{
 		spRenderer.flipX = flip;
 	}

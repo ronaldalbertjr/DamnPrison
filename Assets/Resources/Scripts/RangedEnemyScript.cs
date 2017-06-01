@@ -15,17 +15,15 @@ public class RangedEnemyScript : MonoBehaviour
     float angle;
     float health;
     #endregion
-    void Awake()
-    {
-        anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        spawner = GameObject.Find("spawnPoints");
-        aux = transform.FindChild("AuxRotationEnemy").gameObject;
-        bullet = (GameObject) Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
-    }
-    void Start ()
+    void OnEnable ()
     {
         health = 5;
+        aux = transform.FindChild("AuxRotationEnemy").gameObject;
+        aux.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        aux.GetComponent<EnemyArmaScript>().pointPosition = player.transform.transform;
+        bullet = (GameObject)Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
     }
 	
     void Update ()
@@ -46,10 +44,9 @@ public class RangedEnemyScript : MonoBehaviour
                 ShotBullet();
             }
         }
-        ChangeRotation();
+        ChangeRotation(aux, anim);
         if (health <= 0)
         {
-            spawner.GetComponent<SpawnEnemy>().Instantiate();
             Time.timeScale = 1;
             Destroy(gameObject);
         }
@@ -66,7 +63,7 @@ public class RangedEnemyScript : MonoBehaviour
         Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0f, aux.transform.eulerAngles.z + 90f));
     }
 
-    void ChangeRotation()
+    public void ChangeRotation(GameObject aux, Animator anim)
     {
         angle = aux.transform.eulerAngles.z;
         if (angle > 157.5 && angle < 202.5)

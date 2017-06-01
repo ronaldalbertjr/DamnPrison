@@ -11,10 +11,9 @@ public class DogScript : MonoBehaviour
     Animator anim;
     float health;
     bool biting;
-	void Start ()
+	public void Start ()
     {
         health = 5;
-        spawner = GameObject.Find("spawnPoints");
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         biting = false;
@@ -22,24 +21,23 @@ public class DogScript : MonoBehaviour
 
 	void Update ()
     {
-        ChangeAnimation();
+        ChangeAnimation(player.transform, anim);
         this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
-        
 	}
 
-    void ChangeAnimation()
+    public void ChangeAnimation(Transform toLookAt, Animator anim)
     {
-        Vector3 diferenceVector = player.transform.position - transform.position;
+        Vector3 diferenceVector = toLookAt.position - transform.position;
         if(Mathf.Abs(diferenceVector.x) < Mathf.Abs(diferenceVector.y))
         {
-            if (player.transform.position.y > transform.position.y)
+            if (toLookAt.position.y > transform.position.y)
                 anim.SetFloat("WalkingFloat", 0);
             else
                 anim.SetFloat("WalkingFloat", 2);
         }
         else
         {
-            if (player.transform.position.x > transform.position.x)
+            if (toLookAt.position.x > transform.position.x)
                 anim.SetFloat("WalkingFloat", 1);
             else
                 anim.SetFloat("WalkingFloat", 3);
@@ -76,7 +74,6 @@ public class DogScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            spawner.GetComponent<SpawnEnemy>().Instantiate();
             Time.timeScale = 1;
         }
     }

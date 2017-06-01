@@ -12,17 +12,13 @@ public class DefaultEnemyScript : MonoBehaviour
     Animator anim;
     float health;
     #endregion
-    void Awake()
-    {
-        anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        spawner = GameObject.Find("spawnPoints");
-        aux = transform.FindChild("AuxRotationEnemy").gameObject;
-        bullet = (GameObject)Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
-    }
-    void Start()
+    public void Start()
     {
         health = 5;
+        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        aux = transform.FindChild("AuxRotationEnemy").gameObject;
+        bullet = (GameObject)Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
     }
 
     void Update()
@@ -31,7 +27,6 @@ public class DefaultEnemyScript : MonoBehaviour
         ChangeRotation(aux, anim);
         if (health <= 0)
         { 
-            spawner.GetComponent<SpawnEnemy>().Instantiate();
             Time.timeScale = 1;
             Destroy(gameObject);
         }
@@ -48,7 +43,7 @@ public class DefaultEnemyScript : MonoBehaviour
         Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0f, aux.transform.eulerAngles.z + 90f));
     }
 
-    void ChangeRotation(GameObject aux, Animator anim)
+    public void ChangeRotation(GameObject aux, Animator anim)
     {
         float angle = aux.transform.eulerAngles.z;
         if (angle > 157.5 && angle < 202.5)

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -83,17 +85,22 @@
     <Compile Include="Assets\PolyNav2D\Scripts\Runtime\PolyNavAgent.cs" />
     <Compile Include="Assets\PolyNav2D\Scripts\Runtime\PolyNavObstacle.cs" />
     <Compile Include="Assets\Resources\Scripts\ArmaScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\BoxColliderTriggerScript.cs" />
     <Compile Include="Assets\Resources\Scripts\BulletScript.cs" />
     <Compile Include="Assets\Resources\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Resources\Scripts\DefaultEnemyScript.cs" />
     <Compile Include="Assets\Resources\Scripts\DogScript.cs" />
     <Compile Include="Assets\Resources\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyArmaScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\EnemyMovementDefaultScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerBehaviour.cs" />
     <Compile Include="Assets\Resources\Scripts\PorreteAreaHitScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PorreteScript.cs" />
     <Compile Include="Assets\Resources\Scripts\ProceduralScripting.cs" />
     <Compile Include="Assets\Resources\Scripts\RangedEnemyScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\RoomColliderScript.cs" />
     <Compile Include="Assets\Resources\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Resources\Scripts\TankScript.cs" />
   </ItemGroup>

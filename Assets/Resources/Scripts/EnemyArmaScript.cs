@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyArmaScript : MonoBehaviour
 {
-    Transform pointPosition;
+    [HideInInspector]
+    public Transform pointPosition;
     Vector3 lookPosition;
     Quaternion rotation;
     Rigidbody2D body;

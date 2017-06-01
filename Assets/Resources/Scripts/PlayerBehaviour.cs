@@ -33,6 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
     GameObject door;
     
     public GameObject currentRoom;
+    public bool playerCanMove;
     private bool collidingWithDoor;
 	private float shakeDuration;
 	private float shakeAmount;
@@ -47,6 +48,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Awake()
     {
+        playerCanMove = true;
         Cursor.visible = true;
         bodyAnim = body.GetComponent<Animator>();
         legsAnim = legs.GetComponent<Animator>();
@@ -61,26 +63,29 @@ public class PlayerBehaviour : MonoBehaviour
     }
 	void Update () 
 	{
-        time += Time.deltaTime;
-        ChangeMovement();
-        ChangeRotation();
-        CameraShake();
-        if(Input.GetMouseButton(0) && time >= 0.8)
+        if (playerCanMove)
         {
-            time = 0;
-            gunAnim.SetBool("Shotting", true);
-            bodyAnim.SetBool("Shotting", true);
-            shakeDuration = 0.1f;
-            ShotBullet();
-        }
-        else if(time >= 0.005)
-        {
-            gunAnim.SetBool("Shotting", false);
-            bodyAnim.SetBool("Shotting", false);
-        }
-        if(collidingWithDoor && Input.GetKeyDown(KeyCode.Q))
-        {
-            door.GetComponent<DoorScript>().ChangeRoom();
+            time += Time.deltaTime;
+            ChangeMovement();
+            ChangeRotation();
+            CameraShake();
+            if (Input.GetMouseButton(0) && time >= 0.8)
+            {
+                time = 0;
+                gunAnim.SetBool("Shotting", true);
+                bodyAnim.SetBool("Shotting", true);
+                shakeDuration = 0.1f;
+                ShotBullet();
+            }
+            else if (time >= 0.005)
+            {
+                gunAnim.SetBool("Shotting", false);
+                bodyAnim.SetBool("Shotting", false);
+            }
+            if (collidingWithDoor && Input.GetKeyDown(KeyCode.Q))
+            {
+                door.GetComponent<DoorScript>().ChangeRoom();
+            }
         }
 	}
 

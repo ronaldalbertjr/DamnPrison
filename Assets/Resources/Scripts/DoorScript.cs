@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    [SerializeField]
-    AnimationClip doorClosingAnimation;
     GameObject cam;
     GameObject gameManager;
     GameObject player;
@@ -13,7 +11,6 @@ public class DoorScript : MonoBehaviour
     [SerializeField]
     string doorPos;
 
-    Animator anim;
     private void Awake()
     {
         cam = Camera.main.gameObject;
@@ -21,26 +18,9 @@ public class DoorScript : MonoBehaviour
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        anim = GetComponent<Animator>();
         gameManager = GameObject.Find("GameManager");
 	}
-	
-	void Update ()
-    {
-        if (doorClosing)
-        {
-            StartCoroutine(DoorClosing());
-            doorClosing = false;
-        }
-	}
 
-    IEnumerator DoorClosing()
-    {
-        cam.GetComponent<CameraScript>().lookingAtClosedDoor = true;
-        anim.SetBool("Closing", true);
-        yield return new WaitForSeconds(doorClosingAnimation.length);
-        cam.GetComponent<CameraScript>().lookingAtClosedDoor = false;
-    }
     public void ChangeRoom()
 	{
 		if(doorPos.Equals("Up") && gameManager.GetComponent<ProceduralScripting>().lin > 0)

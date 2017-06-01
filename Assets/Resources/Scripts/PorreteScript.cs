@@ -25,9 +25,10 @@ public class PorreteScript : MonoBehaviour
     bool attacking;
     bool facingRight;
     bool damaged;
-	void Awake ()
+    void OnEnable()
     {
-		player = GameObject.FindGameObjectWithTag("Player");
+        health = 10;
+        player = GameObject.FindGameObjectWithTag("Player");
         hitArea = transform.FindChild("PorreteAttackArea").gameObject;
         hitAreaScript = hitArea.GetComponent<PorreteAreaHitScript>();
         hitAreaCollider = hitArea.GetComponent<BoxCollider2D>();
@@ -36,14 +37,11 @@ public class PorreteScript : MonoBehaviour
         attacking = false;
         playerInsideArea = false;
         damaged = false;
-    }
-    private void Start()
-    {
-        health = 10;
+        Flip(player.transform, spRenderer, hitAreaCollider);
     }
     void Update ()
     {
-        Flip();
+        Flip(player.transform, spRenderer, hitAreaCollider);
         playerInsideArea = hitAreaScript.playerInsideArea;
         if(!playerInsideArea && !attacking && !damaged)
         {
@@ -65,20 +63,20 @@ public class PorreteScript : MonoBehaviour
         }
 	}
 
-    void Flip()
+    public void Flip(Transform toLookAt, SpriteRenderer spRenderer, BoxCollider2D hitAreaCollider)
     {
-        if (player.transform.position.x > transform.position.x && !facingRight)
+        if (toLookAt.position.x > transform.position.x && !facingRight)
         {
             facingRight = true;
-            ChangeScale(facingRight);
+            ChangeScale(facingRight, spRenderer, hitAreaCollider);
         }
-        else if (player.transform.position.x < transform.position.x && facingRight)
+        else if (toLookAt.position.x < transform.position.x && facingRight)
         {
             facingRight = false;
-            ChangeScale(facingRight);
+            ChangeScale(facingRight, spRenderer, hitAreaCollider);
         }
     }
-    void ChangeScale(bool flip)
+    void ChangeScale(bool flip, SpriteRenderer spRenderer, BoxCollider2D hitAreaCollider)
     {
         spRenderer.flipX = flip;
         hitAreaCollider.offset = new Vector2(-hitAreaCollider.offset.x, hitAreaCollider.offset.y);
