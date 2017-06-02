@@ -11,12 +11,14 @@ public class RangedEnemyScript : MonoBehaviour
     GameObject player;
     GameObject aux;
     Animator anim;
+    BoxColliderTriggerScript boxColliderTrigger;
     float time = 1.5f;
     float angle;
     float health;
     #endregion
     void OnEnable ()
     {
+        boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         health = 5;
         aux = transform.FindChild("AuxRotationEnemy").gameObject;
         aux.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
@@ -45,17 +47,18 @@ public class RangedEnemyScript : MonoBehaviour
             }
         }
         ChangeRotation(aux, anim);
-        if (health <= 0)
-        {
-            Time.timeScale = 1;
-            Destroy(gameObject);
-        }
     }
 
     public void Damaged()
     {
         health--;
         StartCoroutine(Shot());
+        if (health <= 0)
+        {
+            Time.timeScale = 1;
+            Destroy(gameObject);
+            boxColliderTrigger.numberOfEnemiesInRoom--;
+        }
     }
 
     public void ShotBullet()

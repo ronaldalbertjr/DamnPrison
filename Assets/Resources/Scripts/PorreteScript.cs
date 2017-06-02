@@ -18,6 +18,7 @@ public class PorreteScript : MonoBehaviour
     GameObject hitArea;
     BoxCollider2D hitAreaCollider;
     PorreteAreaHitScript hitAreaScript;
+    BoxColliderTriggerScript boxColliderTrigger;
     SpriteRenderer spRenderer;
     Animator anim;
     float health;
@@ -27,6 +28,7 @@ public class PorreteScript : MonoBehaviour
     bool damaged;
     void OnEnable()
     {
+        boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         health = 10;
         player = GameObject.FindGameObjectWithTag("Player");
         hitArea = transform.FindChild("PorreteAttackArea").gameObject;
@@ -55,11 +57,6 @@ public class PorreteScript : MonoBehaviour
         else if(damaged)
         {
             GetComponent<PolyNavAgent>().Stop();
-        }
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-            Time.timeScale = 1;
         }
 	}
 
@@ -92,6 +89,12 @@ public class PorreteScript : MonoBehaviour
         else if(health == 5)
         {
             StartCoroutine(IFatalDamaged());
+        }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 1;
+            boxColliderTrigger.numberOfEnemiesInRoom--;
         }
     }
 

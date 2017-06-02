@@ -15,6 +15,7 @@ public class TankScript : MonoBehaviour
     Animator anim;
     Vector3 runDirection;
 	SpriteRenderer spRenderer;
+    BoxColliderTriggerScript boxColliderTrigger;
     bool running;
 	bool canCollide;
 	bool facingRight;
@@ -23,6 +24,7 @@ public class TankScript : MonoBehaviour
 	int health;
 	public void Start ()
     {
+        boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         running = true;
 		health = 20;
 		spRenderer = GetComponent<SpriteRenderer> ();
@@ -43,11 +45,6 @@ public class TankScript : MonoBehaviour
 		{
 			CameraShake (0.3f, 1f);
 			Flip (player.transform, spRenderer);
-		}
-		if (health <= 0) 
-		{
-			Time.timeScale = 1f;
-			Destroy (gameObject);
 		}
 	}
 
@@ -73,7 +70,13 @@ public class TankScript : MonoBehaviour
 			Destroy (col.gameObject);
             StartCoroutine(ChangeEnemyColor());
             StartCoroutine(ChangeTimeScale());
-		}
+            if (health <= 0)
+            {
+                Time.timeScale = 1f;
+                Destroy(gameObject);
+                boxColliderTrigger.numberOfEnemiesInRoom--;
+            }
+        }
 	}
 	public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
 	{

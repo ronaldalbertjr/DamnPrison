@@ -45,7 +45,6 @@ public class PlayerBehaviour : MonoBehaviour
     float h;
     float time = 1;
     bool canEnterDoor = true;
-    bool cameFromLastRoom;
     #endregion
 
     void Awake()

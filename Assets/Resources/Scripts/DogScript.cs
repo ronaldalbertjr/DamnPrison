@@ -8,11 +8,13 @@ public class DogScript : MonoBehaviour
     AnimationClip biteClip;
     GameObject spawner;
     GameObject player;
+    BoxColliderTriggerScript boxColliderTrigger;
     Animator anim;
     float health;
     bool biting;
 	public void Start ()
     {
+        boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         health = 5;
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
@@ -75,6 +77,7 @@ public class DogScript : MonoBehaviour
         {
             Destroy(gameObject);
             Time.timeScale = 1;
+            boxColliderTrigger.numberOfEnemiesInRoom--;
         }
     }
 

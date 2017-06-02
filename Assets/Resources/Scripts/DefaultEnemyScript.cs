@@ -9,12 +9,14 @@ public class DefaultEnemyScript : MonoBehaviour
     GameObject bullet;
     GameObject player;
     GameObject aux;
+    BoxColliderTriggerScript boxColliderTrigger;
     Animator anim;
     float health;
     #endregion
     public void Start()
     {
         health = 5;
+        boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         aux = transform.FindChild("AuxRotationEnemy").gameObject;
@@ -29,6 +31,7 @@ public class DefaultEnemyScript : MonoBehaviour
         { 
             Time.timeScale = 1;
             Destroy(gameObject);
+            boxColliderTrigger.numberOfEnemiesInRoom--;
         }
     }
 

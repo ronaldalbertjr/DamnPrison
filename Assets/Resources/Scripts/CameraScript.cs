@@ -28,19 +28,10 @@ public class CameraScript : MonoBehaviour
         }
     }
 
-    public IEnumerator MovingCamera(GameObject[] enemies, GameObject door, GameObject[] roomColliders)
+    public IEnumerator MovingCamera(GameObject door, GameObject[] roomColliders)
     {
         playerPosition.gameObject.GetComponent<PlayerBehaviour>().playerCanMove = false;
         lookingAtClosedDoor = true;
-        foreach(GameObject e in enemies)
-        {
-            while (Vector3.Distance(e.transform.position, new Vector3(transform.position.x, transform.position.y, 0)) > 0.1f)
-            {
-                this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(e.transform.position.x + offset.x, e.transform.position.y + offset.y, -14f), 20 * Time.deltaTime);
-                yield return new WaitForSecondsRealtime(0.00000000000000000000001f);
-            }
-            yield return new WaitForSeconds(0.15f);
-        }
         while (Vector3.Distance(new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), transform.position) > 0.1f)
         {
             this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), 20 * Time.deltaTime);
@@ -59,6 +50,28 @@ public class CameraScript : MonoBehaviour
         playerPosition.gameObject.GetComponent<PlayerBehaviour>().playerCanMove = true;
         foreach(GameObject r in roomColliders)
             r.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public IEnumerator OpeningDoor(GameObject door)
+    {
+        lookingAtClosedDoor = true;
+        playerPosition.gameObject.GetComponent<PlayerBehaviour>().playerCanMove = false;
+        while (Vector3.Distance(new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), transform.position) > 0.1f)
+        {
+            this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), 20 * Time.deltaTime);
+            yield return new WaitForSecondsRealtime(0.00000000000000000000001f);
+        }
+        yield return new WaitForSecondsRealtime(0.15f);
+        door.GetComponent<Animator>().SetBool("Closing", false);
+        yield return new WaitForSecondsRealtime(doorClosingAnimation.length);
+        while (Vector3.Distance(playerPosition.transform.position, new Vector3(transform.position.x, transform.position.y, 0)) > 0.1f)
+        {
+            this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(playerPosition.position.x + offset.x, playerPosition.position.y + offset.y, -14f), 20 * Time.deltaTime);
+            yield return new WaitForSecondsRealtime(0.00000000000000000000001f);
+        }
+        yield return new WaitForSecondsRealtime(0.15f);
+        lookingAtClosedDoor = false;
+        playerPosition.gameObject.GetComponent<PlayerBehaviour>().playerCanMove = true;
     }
 
 }
