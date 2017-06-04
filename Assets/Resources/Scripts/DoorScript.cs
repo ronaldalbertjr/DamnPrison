@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
     GameObject gameManager;
     GameObject player;
     BoxColliderTriggerScript boxColliderTrigger;
+    public bool canOpen = true;
     public bool doorClosing;
     [SerializeField]
     string doorPos;

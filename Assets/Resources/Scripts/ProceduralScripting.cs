@@ -133,6 +133,22 @@ public class ProceduralScripting : MonoBehaviour
                 {
                     g[i,j] = (GameObject) Instantiate(grid[i,j], roomPositions[counter].position, roomPositions[counter].rotation);
                     counter++;
+                    if(i == 0)
+                    {
+                        g[i, j].transform.FindChild("doorUp").gameObject.GetComponent<DoorScript>().canOpen = false;
+                    }
+                    else if(i == 2)
+                    {
+                        Destroy(g[i, j].transform.FindChild("doorDown").gameObject);
+                    }
+                    if(j == 0)
+                    {
+                        Destroy(g[i, j].transform.FindChild("doorLeft").gameObject);
+                    }
+                    else if(j == 2)
+                    {
+                        Destroy(g[i, j].transform.FindChild("doorRight").gameObject);
+                    }
                 }
             }
         }

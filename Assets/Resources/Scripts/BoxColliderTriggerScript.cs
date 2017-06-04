@@ -19,7 +19,8 @@ public class BoxColliderTriggerScript : MonoBehaviour
         if(numberOfEnemiesInRoom <= 0 && thereWereEnemiesInTheRoom)
         {
             thereWereEnemiesInTheRoom = false;
-            StartCoroutine(Camera.main.gameObject.GetComponent<CameraScript>().OpeningDoor(door));
+            if(door.GetComponent<DoorScript>().canOpen)
+                StartCoroutine(Camera.main.gameObject.GetComponent<CameraScript>().OpeningDoor(door));
         }
 
     }
