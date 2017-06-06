@@ -64,12 +64,10 @@ public class TankScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.tag.Equals ("Bullet")) 
+		if (col.tag.Equals ("Bullet") && GetComponent<TankScript>().isActiveAndEnabled) 
 		{
-			health--;
+            Damaged();
 			Destroy (col.gameObject);
-            StartCoroutine(ChangeEnemyColor());
-            StartCoroutine(ChangeTimeScale());
             if (health <= 0)
             {
                 Time.timeScale = 1f;
@@ -78,6 +76,12 @@ public class TankScript : MonoBehaviour
             }
         }
 	}
+    public void Damaged()
+    {
+        health--;
+        StartCoroutine(ChangeEnemyColor());
+        StartCoroutine(ChangeTimeScale());
+    }
 	public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
 	{
 		if (toLookAt.position.x > transform.position.x && !facingRight) 

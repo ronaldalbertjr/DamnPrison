@@ -56,7 +56,7 @@ public class DogScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag.Equals("Bullet"))
+        if(col.tag.Equals("Bullet") &&  GetComponent<DogScript>().isActiveAndEnabled)
         {
             Damaged();
             Destroy(col.gameObject);
@@ -67,7 +67,7 @@ public class DogScript : MonoBehaviour
         StartCoroutine(IBite());
     }
     
-    void Damaged()
+    public void Damaged()
     {
         health--;
         StartCoroutine(GoingBackWhenShot());

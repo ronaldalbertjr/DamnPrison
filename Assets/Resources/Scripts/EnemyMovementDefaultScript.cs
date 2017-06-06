@@ -9,6 +9,8 @@ public class EnemyMovementDefaultScript: MonoBehaviour
     Transform[] walkPositions;
     [SerializeField]
     float speed;
+    [HideInInspector]
+    public GameObject roomCollider;
     Vector3 currentPosition;
     int counter;
     private void Start()
@@ -58,6 +60,14 @@ public class EnemyMovementDefaultScript: MonoBehaviour
         else if(GetComponent<DogScript>())
         {
             GetComponent<DogScript>().ChangeAnimation(walkPositions[counter], GetComponent<Animator>());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.tag.Equals("Bullet"))
+        {
+            roomCollider.GetComponent<RoomColliderScript>().RoomEntered();
         }
     }
 }

@@ -15,12 +15,12 @@ public class BulletScript : MonoBehaviour
 	}
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("EnemyDefault") && thrownBy.Equals("Player"))
+        if (col.tag.Equals("EnemyDefault") && thrownBy.Equals("Player") && col.GetComponent<DefaultEnemyScript>().isActiveAndEnabled)
         {
             col.GetComponent<DefaultEnemyScript>().Damaged();
             Destroy(gameObject);
         }
-        if (col.tag.Equals("EnemyGun") && thrownBy.Equals("Player"))
+        if (col.tag.Equals("EnemyGun") && thrownBy.Equals("Player") && col.GetComponent<RangedEnemyScript>().isActiveAndEnabled)
         {
             col.GetComponent<RangedEnemyScript>().Damaged();
             Destroy(gameObject);
@@ -30,7 +30,6 @@ public class BulletScript : MonoBehaviour
             col.gameObject.GetComponent<PlayerBehaviour>().Damaged(col.gameObject);
             Destroy(gameObject);
         }
-
         else if (col.tag.Equals("Background"))
         {
             Destroy(gameObject);

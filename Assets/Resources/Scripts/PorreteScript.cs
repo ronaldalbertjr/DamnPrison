@@ -79,7 +79,7 @@ public class PorreteScript : MonoBehaviour
         hitAreaCollider.offset = new Vector2(-hitAreaCollider.offset.x, hitAreaCollider.offset.y);
     }
 
-    void Damaged()
+    public void Damaged()
     {
         health--;
         if (health != 5)
@@ -101,7 +101,7 @@ public class PorreteScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Bullet"))
+        if (col.tag.Equals("Bullet") && GetComponent<PorreteScript>().isActiveAndEnabled)
         {
             Damaged();
             Destroy(col.gameObject);
