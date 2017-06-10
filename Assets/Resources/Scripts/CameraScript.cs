@@ -34,7 +34,7 @@ public class CameraScript : MonoBehaviour
         lookingAtClosedDoor = true;
         while (Vector3.Distance(new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), transform.position) > 0.1f)
         {
-            this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), 20 * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(door.transform.position.x + offset.x, door.transform.position.y + offset.y, -14f), 200 * Time.deltaTime);
             yield return new WaitForSecondsRealtime(0.00000000000000000000001f);
         }
         yield return new WaitForSecondsRealtime(0.15f);
@@ -42,7 +42,7 @@ public class CameraScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(doorClosingAnimation.length);
         while (Vector3.Distance(playerPosition.transform.position, new Vector3(transform.position.x, transform.position.y, 0)) > 0.1f)
         {
-            this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(playerPosition.position.x + offset.x, playerPosition.position.y + offset.y, -14f), 20 * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(playerPosition.position.x + offset.x, playerPosition.position.y + offset.y, -14f), 200 * Time.deltaTime);
             yield return new WaitForSecondsRealtime(0.00000000000000000000001f);
         }
         yield return new WaitForSecondsRealtime(0.15f);
@@ -72,6 +72,7 @@ public class CameraScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.15f);
         lookingAtClosedDoor = false;
         playerPosition.gameObject.GetComponent<PlayerBehaviour>().playerCanMove = true;
+
     }
 
 }

@@ -9,18 +9,20 @@ public class BoxColliderTriggerScript : MonoBehaviour
     public GameObject door;
     GameObject cameraGameObject;
     public float numberOfEnemiesInRoom;
-    bool thereWereEnemiesInTheRoom;
+    [HideInInspector]
+    public bool thereWereEnemiesInTheRoom;
     private void Start()
     {
         cameraGameObject = Camera.main.gameObject;
     }
     private void Update()
     {
-        if(numberOfEnemiesInRoom <= 0 && thereWereEnemiesInTheRoom)
+        if (numberOfEnemiesInRoom <= 0 && thereWereEnemiesInTheRoom)
         {
             thereWereEnemiesInTheRoom = false;
-            if(door.GetComponent<DoorScript>().canOpen)
+            if (door.GetComponent<DoorScript>().canOpen)
                 StartCoroutine(Camera.main.gameObject.GetComponent<CameraScript>().OpeningDoor(door));
+
         }
 
     }

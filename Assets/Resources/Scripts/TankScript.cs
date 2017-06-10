@@ -9,6 +9,8 @@ public class TankScript : MonoBehaviour
     [SerializeField]
     AnimationClip standingUpClip;
     [SerializeField]
+    AnimationClip dyingClip;
+    [SerializeField]
     float speed;
     GameObject spawner;
     GameObject player;
@@ -20,6 +22,7 @@ public class TankScript : MonoBehaviour
 	bool canCollide;
 	bool facingRight;
     bool invencible;
+    bool dying;
 	float shakeDuration;
 	int health;
 	public void Start ()
@@ -64,18 +67,23 @@ public class TankScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.tag.Equals ("Bullet") && GetComponent<TankScript>().isActiveAndEnabled) 
+		if (col.tag.Equals ("Bullet") && GetComponent<TankScript>().isActiveAndEnabled && !dying) 
 		{
             Damaged();
 			Destroy (col.gameObject);
             if (health <= 0)
             {
+                dying = true;
                 Time.timeScale = 1f;
-                Destroy(gameObject);
                 boxColliderTrigger.numberOfEnemiesInRoom--;
+                Invoke("DestroyTank", dyingClip.length);
             }
         }
 	}
+    private void DestroyTank()
+    {
+        Destroy(this);
+    }
     public void Damaged()
     {
         health--;
@@ -115,7 +123,6 @@ public class TankScript : MonoBehaviour
 			Camera.main.transform.localPosition = camPosition;
 		}
 	}
-
     IEnumerator Collision()
     {
 		StartCoroutine (GoingBackWhenCollided ());
