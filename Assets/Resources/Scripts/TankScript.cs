@@ -76,13 +76,14 @@ public class TankScript : MonoBehaviour
                 dying = true;
                 Time.timeScale = 1f;
                 boxColliderTrigger.numberOfEnemiesInRoom--;
+                anim.SetTrigger("Die");
                 Invoke("DestroyTank", dyingClip.length);
             }
         }
 	}
     private void DestroyTank()
     {
-        Destroy(this);
+		Destroy(gameObject);
     }
     public void Damaged()
     {
