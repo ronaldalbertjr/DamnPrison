@@ -6,9 +6,16 @@ public class BoxColliderTriggerScript : MonoBehaviour
 {
     [SerializeField]
     GameObject[] roomColliders;
+    public int maxPoints;
+    public GameObject[] enemies;
+    [SerializeField]
+    Transform[] placesToSpawn;
     public GameObject door;
     GameObject cameraGameObject;
+    [HideInInspector]
     public float numberOfEnemiesInRoom;
+    [HideInInspector]
+    public int pointsInTheRoom;
     [HideInInspector]
     public bool thereWereEnemiesInTheRoom;
     private void Start()

@@ -91,6 +91,7 @@
     <Compile Include="Assets\Resources\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyArmaScript.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyMovementDefaultScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\EnemySpawnerScript.cs" />
     <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerBehaviour.cs" />

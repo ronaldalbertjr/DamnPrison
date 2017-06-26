@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomColliderScript : MonoBehaviour
 {
-    public GameObject[] enemiesInRoom;
+    public List<GameObject> enemiesInRoom;
     bool hasBeenEntered;
 
     private void Start()

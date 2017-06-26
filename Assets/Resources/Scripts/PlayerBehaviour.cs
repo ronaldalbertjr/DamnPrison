@@ -324,7 +324,7 @@ public class PlayerBehaviour : MonoBehaviour
         gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.tag.Equals("Door") && canEnterDoor)
         {

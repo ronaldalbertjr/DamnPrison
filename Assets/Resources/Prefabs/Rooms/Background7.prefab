@@ -294,10 +294,6 @@ GameObject:
   - component: {fileID: 68860481970076868}
   - component: {fileID: 68618695706872910}
   - component: {fileID: 68320934011897082}
-  - component: {fileID: 61937415597015714}
-  - component: {fileID: 61723195679941816}
-  - component: {fileID: 61791346045512152}
-  - component: {fileID: 61060766971247474}
   m_Layer: 0
   m_Name: Sala 07 - A02
   m_TagString: Background
@@ -523,7 +519,7 @@ GameObject:
   - component: {fileID: 60140902728031546}
   m_Layer: 0
   m_Name: NavObstacle
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,7 +536,7 @@ GameObject:
   - component: {fileID: 60359394025938458}
   m_Layer: 0
   m_Name: NavObstacle
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -986,7 +982,7 @@ GameObject:
   - component: {fileID: 60648706208472128}
   m_Layer: 0
   m_Name: NavObstacle
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1405,7 +1401,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1284253423471430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3810.234, y: -528.341, z: 0.265625}
+  m_LocalPosition: {x: 673.00757, y: -6.30674, z: 0.265625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4121614638299596}
@@ -1991,16 +1987,16 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
     - - {x: -0.45244217, y: 8.237524}
       - {x: 13.616894, y: 8.300512}
-      - {x: 13.741894, y: -4.8438354}
-      - {x: -0.46782303, y: -4.5786376}
-      - {x: -3.0002937, y: -4.8802123}
+      - {x: 14.026867, y: -7.1238704}
+      - {x: -1.0378304, y: -7.0011744}
+      - {x: -3.1427498, y: -7.1602473}
       - {x: -2.9111824, y: 8.300512}
 --- !u!60 &60233977606005594
 PolygonCollider2D:
@@ -2033,17 +2029,18 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
     - - {x: -8.292919, y: 8.237524}
       - {x: 6.680958, y: 8.300451}
-      - {x: 23.657276, y: -10.0068}
-      - {x: 6.196827, y: -9.272242}
-      - {x: 6.3850594, y: -4.858972}
-      - {x: -8.579296, y: -4.7293944}
+      - {x: 22.576588, y: 8.503754}
+      - {x: 23.372242, y: -12.429337}
+      - {x: 6.339344, y: -11.979784}
+      - {x: 6.2426033, y: -7.5665145}
+      - {x: -8.436779, y: -7.1519313}
       - {x: -8.339306, y: 1.2137208}
 --- !u!60 &60389796416066364
 PolygonCollider2D:
@@ -2114,7 +2111,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -2122,8 +2119,8 @@ PolygonCollider2D:
     - - {x: 43.416454, y: -21.366053}
       - {x: 54.10322, y: -21.399134}
       - {x: 54.134716, y: -30.67422}
-      - {x: 37.829296, y: -30.937342}
-      - {x: 37.334423, y: -21.136011}
+      - {x: 37.470287, y: -30.506514}
+      - {x: 37.334423, y: -21.495039}
 --- !u!60 &60716623634310542
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -2202,20 +2199,6 @@ BoxCollider2D:
   m_Offset: {x: -0.00000009023308, y: 0.004353836}
   serializedVersion: 2
   m_Size: {x: 0.46455446, y: 0.444216}
---- !u!61 &61060766971247474
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1236112328726594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -3.0620818, y: -0.25458342}
-  serializedVersion: 2
-  m_Size: {x: 1.2858386, y: 1.2136998}
 --- !u!61 &61084552694671878
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -2328,20 +2311,6 @@ BoxCollider2D:
   m_Offset: {x: 0.004073156, y: 0.004073495}
   serializedVersion: 2
   m_Size: {x: 0.31504783, y: 0.42789146}
---- !u!61 &61723195679941816
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1236112328726594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -0.0034157566, y: -0.63880205}
-  serializedVersion: 2
-  m_Size: {x: 1.2685833, y: 1.1406918}
 --- !u!61 &61732149435546578
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -2370,20 +2339,6 @@ BoxCollider2D:
   m_Offset: {x: 62.03955, y: -1.6318359}
   serializedVersion: 2
   m_Size: {x: 98.47023, y: 68.90825}
---- !u!61 &61791346045512152
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1236112328726594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -1.1490889, y: -0.25525957}
-  serializedVersion: 2
-  m_Size: {x: 1.252907, y: 1.1962755}
 --- !u!61 &61817809080378364
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -2454,20 +2409,6 @@ BoxCollider2D:
   m_Offset: {x: 89.907715, y: -20.420837}
   serializedVersion: 2
   m_Size: {x: 38.366867, y: 27.368889}
---- !u!61 &61937415597015714
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1236112328726594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.0057914834, y: -2.2486095}
-  serializedVersion: 2
-  m_Size: {x: 1.2816002, y: 0.72278076}
 --- !u!61 &61944801731469774
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -3500,6 +3441,7 @@ MonoBehaviour:
   - {fileID: 1314437748759454}
   door: {fileID: 1672956221216654}
   numberOfEnemiesInRoom: 7
+  thereWereEnemiesInTheRoom: 0
 --- !u!212 &212006675389804914
 SpriteRenderer:
   m_ObjectHideFlags: 1

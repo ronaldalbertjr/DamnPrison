@@ -40,7 +40,7 @@ public class TankScript : MonoBehaviour
 	}
 	void Update ()
     {
-		if (running) 
+		if (running && !dying) 
 		{
 			transform.position += runDirection.normalized * Time.deltaTime * speed;
 		} 

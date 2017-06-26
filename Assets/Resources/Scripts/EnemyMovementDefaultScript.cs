@@ -5,8 +5,7 @@ using System;
 
 public class EnemyMovementDefaultScript: MonoBehaviour
 {
-    [SerializeField]
-    Transform[] walkPositions;
+    public Transform[] walkPositions;
     [SerializeField]
     float speed;
     [HideInInspector]

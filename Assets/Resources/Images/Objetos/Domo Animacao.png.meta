@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 98650bf5ed1e44841a95d3e0b4291362
+timeCreated: 1497627720
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Domo Animacao_0
+    21300002: Domo Animacao_1
+    21300004: Domo Animacao_2
+    21300006: Domo Animacao_3
+    21300008: Domo Animacao_4
+    21300010: Domo Animacao_5
+    21300012: Domo Animacao_6
+    21300014: Domo Animacao_7
+    21300016: Domo Animacao_8
+    21300018: Domo Animacao_9
+    21300020: Domo Animacao_10
+    21300022: Domo Animacao_11
+    21300024: Domo Animacao_12
+    21300026: Domo Animacao_13
+    21300028: Domo Animacao_14
+    21300030: Domo Animacao_15
+    21300032: Domo Animacao_16
+    21300034: Domo Animacao_17
+    21300036: Domo Animacao_18
+    21300038: Domo Animacao_19
+    21300040: Domo Animacao_20
+    21300042: Domo Animacao_21
+    21300044: Domo Animacao_22
+    21300046: Domo Animacao_23
+    21300048: Domo Animacao_24
+    21300050: Domo Animacao_25
+    21300052: Domo Animacao_26
+    21300054: Domo Animacao_27
+    21300056: Domo Animacao_28
+    21300058: Domo Animacao_29
+    21300060: Domo Animacao_30
+    21300062: Domo Animacao_31
+    21300064: Domo Animacao_32
+    21300066: Domo Animacao_33
+    21300068: Domo Animacao_34
+    21300070: Domo Animacao_35
+    21300072: Domo Animacao_36
+    21300074: Domo Animacao_37
+    21300076: Domo Animacao_38
+    21300078: Domo Animacao_39
+    21300080: Domo Animacao_40
+    21300082: Domo Animacao_41
+    21300084: Domo Animacao_42
+    21300086: Domo Animacao_43
+    21300088: Domo Animacao_44
+    21300090: Domo Animacao_45
+    21300092: Domo Animacao_46
+    21300094: Domo Animacao_47
+    21300096: Domo Animacao_48
+    21300098: Domo Animacao_49
+    21300100: Domo Animacao_50
+    21300102: Domo Animacao_51
+    21300104: Domo Animacao_52
+    21300106: Domo Animacao_53
+    21300108: Domo Animacao_54
+    21300110: Domo Animacao_55
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Domo Animacao_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 689
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 689
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_10
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 689
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_11
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 689
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 689
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_13
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 689
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_14
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 689
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_15
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 689
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_24
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_25
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_26
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_27
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_28
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_29
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_30
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 463
+        width: 72
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_31
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 463
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_40
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_41
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_42
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_43
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_44
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_45
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_46
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_47
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 237
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_52
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 11
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_53
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 11
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_54
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 11
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Domo Animacao_55
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 11
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

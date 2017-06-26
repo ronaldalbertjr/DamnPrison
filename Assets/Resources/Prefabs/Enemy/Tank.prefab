@@ -152,8 +152,6 @@ MonoBehaviour:
   walkPositions:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   speed: 3
   roomCollider: {fileID: 0}
 --- !u!212 &212820878659689826
