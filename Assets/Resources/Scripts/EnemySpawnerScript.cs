@@ -40,7 +40,6 @@ public class EnemySpawnerScript : MonoBehaviour
                 fit = true;
                 enemy.GetComponent<EnemyMovementDefaultScript>().walkPositions = walkPositions;
                 GameObject newEnemy = Instantiate(enemy, this.transform.position, this.transform.rotation, transform.parent.parent.parent);
-                Debug.Log(enemy.name + "spawned by " + this.name);
                 boxCollider.numberOfEnemiesInRoom++;
                 roomCollider.enemiesInRoom.Add(newEnemy);
             }
