@@ -79,16 +79,16 @@ public class PorreteScript : MonoBehaviour
         hitAreaCollider.offset = new Vector2(-hitAreaCollider.offset.x, hitAreaCollider.offset.y);
     }
 
-    public void Damaged()
+    public void Damaged(bool hittenByTank = false)
     {
         health--;
         if (health != 5)
         {
-            StartCoroutine(IDamaged());
+            StartCoroutine(IDamaged(hittenByTank));
         }
         else if(health == 5)
         {
-            StartCoroutine(IFatalDamaged());
+            StartCoroutine(IFatalDamaged(hittenByTank));
         }
         if (health <= 0)
         {
@@ -108,10 +108,10 @@ public class PorreteScript : MonoBehaviour
         }
     }
 
-    IEnumerator IDamaged()
+    IEnumerator IDamaged(bool hittenByTank)
     {
         damaged = true;
-        StartCoroutine(GoingBackWhenShot());
+        StartCoroutine(GoingBackWhenShot(hittenByTank));
         StartCoroutine(ChangeEnemyColor());
         StartCoroutine(ChangeTimeScale());
         if(health > 5) anim.SetTrigger("TakenDamage");
@@ -120,10 +120,10 @@ public class PorreteScript : MonoBehaviour
         damaged = false;
     }
 
-    IEnumerator IFatalDamaged()
+    IEnumerator IFatalDamaged(bool hittenByTank)
     {
         damaged = true;
-        StartCoroutine(GoingBackWhenShot());
+        StartCoroutine(GoingBackWhenShot(hittenByTank));
         StartCoroutine(ChangeEnemyColor());
         StartCoroutine(ChangeTimeScale());
         anim.SetTrigger("Rising");
@@ -147,14 +147,17 @@ public class PorreteScript : MonoBehaviour
         attacking = false;
     }
 
-    IEnumerator GoingBackWhenShot()
+    IEnumerator GoingBackWhenShot(bool hittenByTank)
     {
         float multiplier = 0;
+        float counterMultiplier = 1;
+        if (hittenByTank)
+            counterMultiplier = 10;
         Vector3 goingDirection = player.transform.position - transform.position;
         if(health > 5) multiplier = 0.05f;
         else if(health <= 5) multiplier = 0.08f;
         Vector3 goBackVector = new Vector3(-goingDirection.normalized.x, -goingDirection.normalized.y) * multiplier;
-        for (float i = 0; i < 10; i++)
+        for (float i = 0; i < 10 * counterMultiplier; i++)
         {
             transform.position += goBackVector;
             yield return new WaitForSecondsRealtime(0.001f);

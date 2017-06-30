@@ -1055,7 +1055,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291670193537050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2597.8525, y: 2549.3076, z: 0}
+  m_LocalPosition: {x: 546.7471, y: 2464.7737, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4822727426982862}
@@ -1644,8 +1644,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -9.703369, y: 7.060547}
       - {x: 6.845337, y: 7.299919}
-      - {x: 6.813965, y: -5.333496}
-      - {x: -9.671143, y: -5.428467}
+      - {x: 6.716614, y: -6.793701}
+      - {x: -9.671143, y: -6.888672}
       - {x: -9.611816, y: 0.5539551}
 --- !u!60 &60788499462471726
 PolygonCollider2D:
@@ -1663,8 +1663,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.8877945, y: 4.94331}
       - {x: 7.753517, y: 4.7799797}
-      - {x: 7.5851517, y: -9.866108}
-      - {x: -9.239342, y: -9.98904}
+      - {x: 7.6599045, y: -11.80962}
+      - {x: -9.089836, y: -11.6335945}
       - {x: -8.836998, y: 5.085003}
 --- !u!60 &60914218976790526
 PolygonCollider2D:
@@ -1685,8 +1685,8 @@ PolygonCollider2D:
       - {x: 5.5607452, y: 12.394478}
       - {x: 21.971878, y: 12.311714}
       - {x: 22.108414, y: 5.685646}
-      - {x: 7.5851593, y: -10.068787}
-      - {x: -8.903519, y: -10.054298}
+      - {x: 7.286148, y: -11.564018}
+      - {x: -8.903519, y: -11.623833}
       - {x: -8.836998, y: 5.085003}
 --- !u!61 &61045328800131914
 BoxCollider2D:
@@ -1778,7 +1778,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755053898229960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1834,7 +1834,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682318336489740}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1915,8 +1915,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -3.709054, y: 1.9778186}
-  - {x: 3.5648527, y: 1.9953935}
+  - {x: -3.676018, y: 1.8787061}
+  - {x: 3.5648503, y: 1.8632644}
 --- !u!68 &68621352146838780
 EdgeCollider2D:
   m_ObjectHideFlags: 1

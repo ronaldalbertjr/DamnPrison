@@ -58,7 +58,7 @@ public class EnemyMovementDefaultScript: MonoBehaviour
         }
         else if(GetComponent<DogScript>())
         {
-            GetComponent<DogScript>().ChangeAnimation(walkPositions[counter], GetComponent<Animator>());
+            GetComponent<DogScript>().ChangeAnimation(GetComponent<Animator>());
         }
     }
 

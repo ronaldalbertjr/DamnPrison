@@ -1624,7 +1624,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1335720605196658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2526.6638, y: 2512.1663, z: 0}
+  m_LocalPosition: {x: 493.92368, y: 2419.7039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4917717771921234}
@@ -1706,24 +1706,24 @@ PolygonCollider2D:
       - {x: 9.208675, y: -23.513083}
       - {x: 10.5734215, y: -21.407187}
       - {x: 47.62716, y: -21.841284}
-      - {x: 47.96212, y: -0.9297619}
-      - {x: 33.336754, y: -0.9383373}
+      - {x: 48.06198, y: -2.327734}
+      - {x: 33.53647, y: -2.336279}
       - {x: 33.444496, y: 14.466974}
       - {x: 47.757362, y: 14.1123905}
-      - {x: 47.64425, y: 35.060436}
-      - {x: 10.7369, y: 35.16828}
-      - {x: 10.575279, y: 30.490114}
-      - {x: -5.6639786, y: 30.498255}
-      - {x: -5.8805313, y: 35.657143}
-      - {x: -43.1215, y: 35.664536}
+      - {x: 48.030205, y: 33.70986}
+      - {x: 10.479607, y: 33.624657}
+      - {x: 10.517693, y: 28.870508}
+      - {x: -5.606392, y: 29.093409}
+      - {x: -5.658638, y: 33.659813}
+      - {x: -43.21708, y: 33.593407}
       - {x: -42.92478, y: 14.168406}
-      - {x: -5.557192, y: 13.759348}
-      - {x: -5.6325874, y: 20.999521}
+      - {x: -5.6755447, y: 14.0550785}
+      - {x: -5.8101273, y: 21.176905}
       - {x: 10.365303, y: 21.24695}
       - {x: 10.141525, y: 13.873194}
       - {x: 24.592056, y: 13.67631}
-      - {x: 25.053062, y: -1.0056591}
-      - {x: 10.519493, y: -0.98313713}
+      - {x: 24.953217, y: -2.3040524}
+      - {x: 10.619354, y: -2.2813473}
       - {x: 10.567375, y: -23.129248}
       - {x: -45.210796, y: -23.26232}
 --- !u!61 &61030447221429612
@@ -1732,7 +1732,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1255864298401060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1774,7 +1774,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314366748316008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1858,7 +1858,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1697197629043254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

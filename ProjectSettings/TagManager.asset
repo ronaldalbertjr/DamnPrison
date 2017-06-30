@@ -10,6 +10,8 @@ TagManager:
   - Aux
   - Bullet
   - EnemyGun
+  - Porrete
+  - Untouchable
   layers:
   - Default
   - TransparentFX

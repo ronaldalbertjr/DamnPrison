@@ -234,9 +234,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     IEnumerator IDamaged(GameObject collision)
     {
-        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
         bodyAnim.SetBool("Damaged", true);
         legsAnim.SetBool("Damaged", true);
+        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
         Vector3 pos = collision.transform.position;
         int aux = Convert.ToInt32(bodyAnim.GetFloat("LookingAngle"));
         yield return new WaitForSeconds(0.2f);

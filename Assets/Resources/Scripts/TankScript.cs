@@ -53,15 +53,19 @@ public class TankScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")))  
-		{
-			shakeDuration = 0.5f;
-			StartCoroutine (Collision());
-			canCollide = false;
-		}
+        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")))
+        {
+            shakeDuration = 0.5f;
+            StartCoroutine(Collision());
+            canCollide = false;
+        }
         else if(canCollide && collision.gameObject.tag.Equals("Player"))
         {
             player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
+        }
+        else if (collision.gameObject.tag.Equals("Porrete") & running)
+        {
+            collision.gameObject.GetComponent<PorreteScript>().Damaged(true);
         }
     }
 
@@ -150,8 +154,7 @@ public class TankScript : MonoBehaviour
 			yield return new WaitForSecondsRealtime(0.001f);
 		}
 	}
-
-
+    
 	IEnumerator ChangeEnemyColor()
 	{
 		GetComponent<SpriteRenderer>().color = new Color(0.3f, 0, 0);
