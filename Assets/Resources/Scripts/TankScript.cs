@@ -38,6 +38,7 @@ public class TankScript : MonoBehaviour
 		anim.SetBool ("Running", true);
         Flip(player.transform, spRenderer);
 	}
+
 	void Update ()
     {
 		if (running && !dying) 
@@ -51,50 +52,18 @@ public class TankScript : MonoBehaviour
 		}
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")))
-        {
-            shakeDuration = 0.5f;
-            StartCoroutine(Collision());
-            canCollide = false;
-        }
-        else if(canCollide && collision.gameObject.tag.Equals("Player"))
-        {
-            player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
-        }
-        else if (collision.gameObject.tag.Equals("Porrete") & running)
-        {
-            collision.gameObject.GetComponent<PorreteScript>().Damaged(true);
-        }
-    }
-
-	private void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.tag.Equals ("Bullet") && GetComponent<TankScript>().isActiveAndEnabled && !dying) 
-		{
-            Damaged();
-			Destroy (col.gameObject);
-            if (health <= 0)
-            {
-                dying = true;
-                Time.timeScale = 1f;
-                boxColliderTrigger.numberOfEnemiesInRoom--;
-                anim.SetTrigger("Die");
-                Invoke("DestroyTank", dyingClip.length);
-            }
-        }
-	}
     private void DestroyTank()
     {
 		Destroy(gameObject);
     }
+
     public void Damaged()
     {
         health--;
         StartCoroutine(ChangeEnemyColor());
         StartCoroutine(ChangeTimeScale());
     }
+
 	public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
 	{
 		if (toLookAt.position.x > transform.position.x && !facingRight) 
@@ -128,6 +97,7 @@ public class TankScript : MonoBehaviour
 			Camera.main.transform.localPosition = camPosition;
 		}
 	}
+
     IEnumerator Collision()
     {
 		StartCoroutine (GoingBackWhenCollided ());
@@ -168,6 +138,49 @@ public class TankScript : MonoBehaviour
 		yield return new WaitForSeconds(0.03f); ;
 		Time.timeScale = 1;
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")))
+        {
+            shakeDuration = 0.5f;
+            StartCoroutine(Collision());
+            canCollide = false;
+        }
+        else if (canCollide && collision.gameObject.tag.Equals("Player"))
+        {
+            player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag.Equals("Bullet") && GetComponent<TankScript>().isActiveAndEnabled && !dying)
+        {
+            Damaged();
+            Destroy(col.gameObject);
+            if (health <= 0)
+            {
+                dying = true;
+                Time.timeScale = 1f;
+                boxColliderTrigger.numberOfEnemiesInRoom--;
+                anim.SetTrigger("Die");
+                Invoke("DestroyTank", dyingClip.length);
+            }
+        }
+        else if (col.gameObject.tag.Equals("Porrete") && running)
+        {
+            col.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
+        }
+        else if (col.gameObject.tag.Equals("EnemyGun") && running)
+        {
+            col.gameObject.GetComponent<RangedEnemyScript>().Damaged(this.gameObject, true);
+        }
+        else if (col.gameObject.GetComponent<DogScript>())
+        {
+            col.gameObject.GetComponent<DogScript>().Damaged(this.gameObject, true);
+        }
+    }
 
 
 }

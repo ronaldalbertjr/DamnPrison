@@ -26,6 +26,7 @@ public class PorreteScript : MonoBehaviour
     bool attacking;
     bool facingRight;
     bool damaged;
+
     void OnEnable()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
@@ -41,6 +42,7 @@ public class PorreteScript : MonoBehaviour
         damaged = false;
         Flip(player.transform, spRenderer, hitAreaCollider);
     }
+
     void Update ()
     {
         Flip(player.transform, spRenderer, hitAreaCollider);
@@ -73,22 +75,23 @@ public class PorreteScript : MonoBehaviour
             ChangeScale(facingRight, spRenderer, hitAreaCollider);
         }
     }
+
     void ChangeScale(bool flip, SpriteRenderer spRenderer, BoxCollider2D hitAreaCollider)
     {
         spRenderer.flipX = flip;
         hitAreaCollider.offset = new Vector2(-hitAreaCollider.offset.x, hitAreaCollider.offset.y);
     }
 
-    public void Damaged(bool hittenByTank = false)
+    public void Damaged(GameObject tank = null, bool hittenByTank = false)
     {
         health--;
         if (health != 5)
         {
-            StartCoroutine(IDamaged(hittenByTank));
+            StartCoroutine(IDamaged(hittenByTank, tank));
         }
         else if(health == 5)
         {
-            StartCoroutine(IFatalDamaged(hittenByTank));
+            StartCoroutine(IFatalDamaged(hittenByTank, tank));
         }
         if (health <= 0)
         {
@@ -98,20 +101,13 @@ public class PorreteScript : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.tag.Equals("Bullet") && GetComponent<PorreteScript>().isActiveAndEnabled)
-        {
-            Damaged();
-            Destroy(col.gameObject);
-        }
-    }
-
-    IEnumerator IDamaged(bool hittenByTank)
+    IEnumerator IDamaged(bool hittenByTank, GameObject tank)
     {
         damaged = true;
-        StartCoroutine(GoingBackWhenShot(hittenByTank));
+        if (hittenByTank)
+            StartCoroutine(HittenByTank(tank));
+        else
+            StartCoroutine(GoingBackWhenShot());
         StartCoroutine(ChangeEnemyColor());
         StartCoroutine(ChangeTimeScale());
         if(health > 5) anim.SetTrigger("TakenDamage");
@@ -120,10 +116,13 @@ public class PorreteScript : MonoBehaviour
         damaged = false;
     }
 
-    IEnumerator IFatalDamaged(bool hittenByTank)
+    IEnumerator IFatalDamaged(bool hittenByTank, GameObject tank)
     {
         damaged = true;
-        StartCoroutine(GoingBackWhenShot(hittenByTank));
+        if (hittenByTank)
+            StartCoroutine(HittenByTank(tank));
+        else
+            StartCoroutine(GoingBackWhenShot());
         StartCoroutine(ChangeEnemyColor());
         StartCoroutine(ChangeTimeScale());
         anim.SetTrigger("Rising");
@@ -137,6 +136,51 @@ public class PorreteScript : MonoBehaviour
         damaged = false;
     }
 
+    IEnumerator HittenByTank(GameObject tank)
+    {
+        Vector3 differenceVector = transform.position - tank.transform.position;
+        if (Mathf.Abs(differenceVector.x) < Mathf.Abs(differenceVector.y))
+        {
+            if (transform.position.x < tank.transform.position.x)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, -1) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, 1) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+
+        else
+        {
+            if (transform.position.y < tank.transform.position.y)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(-1, 0) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(1, 0) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+        anim.SetBool("Shot", false);
+    }
+
     IEnumerator PorreteAttacking()
     {
         attacking = true;
@@ -147,17 +191,14 @@ public class PorreteScript : MonoBehaviour
         attacking = false;
     }
 
-    IEnumerator GoingBackWhenShot(bool hittenByTank)
+    IEnumerator GoingBackWhenShot()
     {
-        float multiplier = 0;
-        float counterMultiplier = 1;
-        if (hittenByTank)
-            counterMultiplier = 10;
+        float multiplier = 0;;
         Vector3 goingDirection = player.transform.position - transform.position;
         if(health > 5) multiplier = 0.05f;
         else if(health <= 5) multiplier = 0.08f;
         Vector3 goBackVector = new Vector3(-goingDirection.normalized.x, -goingDirection.normalized.y) * multiplier;
-        for (float i = 0; i < 10 * counterMultiplier; i++)
+        for (float i = 0; i < 10; i++)
         {
             transform.position += goBackVector;
             yield return new WaitForSecondsRealtime(0.001f);
@@ -176,6 +217,15 @@ public class PorreteScript : MonoBehaviour
         Time.timeScale = 0.3f;
         yield return new WaitForSeconds(0.03f); ;
         Time.timeScale = 1;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag.Equals("Bullet") && GetComponent<PorreteScript>().isActiveAndEnabled)
+        {
+            Damaged();
+            Destroy(col.gameObject);
+        }
     }
 
 

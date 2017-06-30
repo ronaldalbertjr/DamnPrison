@@ -16,6 +16,7 @@ public class RangedEnemyScript : MonoBehaviour
     float angle;
     float health;
     #endregion
+
     void OnEnable ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
@@ -49,10 +50,10 @@ public class RangedEnemyScript : MonoBehaviour
         ChangeRotation(aux, anim);
     }
 
-    public void Damaged()
+    public void Damaged(GameObject tank = null, bool hittenByTank = false)
     {
         health--;
-        StartCoroutine(Shot());
+        StartCoroutine(Shot(hittenByTank, tank));
         if (health <= 0)
         {
             Time.timeScale = 1;
@@ -103,15 +104,20 @@ public class RangedEnemyScript : MonoBehaviour
         }
     }
 
-    IEnumerator Shot()
+    IEnumerator Shot(bool hittenByTank, GameObject tank)
     {
         anim.SetBool("Shot", true);
-        int aux = Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat"));
-        Vector3 pos = player.transform.position;
+        if (hittenByTank)
+            StartCoroutine(HittenByTank(tank));
+        else
+        {
+            int aux = Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat"));
+            Vector3 pos = player.transform.position;
+            StartCoroutine(GoingBackWhenShot(aux, pos));
+        }
         yield return new WaitForSeconds(0.2f);
         StartCoroutine(ChangeTimeScale());
         StartCoroutine(ChangeEnemyColor());
-        StartCoroutine(GoingBackWhenShot(aux, pos));
     }
 
     IEnumerator ChangeEnemyColor()
@@ -127,6 +133,50 @@ public class RangedEnemyScript : MonoBehaviour
         Time.timeScale = 0.3f;
         yield return new WaitForSeconds(0.03f); ;
         Time.timeScale = 1;
+    }
+
+    IEnumerator HittenByTank(GameObject tank)
+    {
+        Vector3 differenceVector = transform.position - tank.transform.position;
+        if (Mathf.Abs(differenceVector.x) < Mathf.Abs(differenceVector.y))
+        {
+            if (transform.position.x < tank.transform.position.x)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, 1) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, -1) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+        else
+        {
+            if (transform.position.y < tank.transform.position.y)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(1, 0) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(-1, 0) * 0.5f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+        anim.SetBool("Shot", false);
     }
 
     IEnumerator GoingBackWhenShot(int aux, Vector3 position)
