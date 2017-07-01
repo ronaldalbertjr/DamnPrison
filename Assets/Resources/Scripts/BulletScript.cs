@@ -3,16 +3,19 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour
 {
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    string thrownBy; 
-    
-	void Update ()
+    #region Variables
+        [SerializeField]
+        float speed;
+        [SerializeField]
+        string thrownBy;
+    #endregion
+
+    void Update ()
     {
         this.transform.position += transform.right * Time.deltaTime * speed; 
         
 	}
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("EnemyDefault") && thrownBy.Equals("Player") && col.GetComponent<DefaultEnemyScript>().isActiveAndEnabled)

@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class TankScript : MonoBehaviour
 {
-    [SerializeField]
-    AnimationClip hitAnimClip;
-    [SerializeField]
-    AnimationClip standingUpClip;
-    [SerializeField]
-    AnimationClip dyingClip;
-    [SerializeField]
-    float speed;
-    GameObject spawner;
-    GameObject player;
-    Animator anim;
-    Vector3 runDirection;
-	SpriteRenderer spRenderer;
-    BoxColliderTriggerScript boxColliderTrigger;
-    bool running;
-	bool canCollide;
-	bool facingRight;
-    bool invencible;
-    bool dying;
-	float shakeDuration;
-	int health;
-	public void Start ()
+    #region Variables
+        [SerializeField]
+        AnimationClip hitAnimClip;
+        [SerializeField]
+        AnimationClip standingUpClip;
+        [SerializeField]
+        AnimationClip dyingClip;
+        [SerializeField]
+        AudioSource tankCollidedWalkAudio;
+        [SerializeField]
+        float speed;
+        GameObject spawner;
+        GameObject player;
+        Animator anim;
+        Vector3 runDirection;
+	    SpriteRenderer spRenderer;
+        BoxColliderTriggerScript boxColliderTrigger;
+        bool running;
+	    bool canCollide;
+	    bool facingRight;
+        bool invencible;
+        bool dying;
+	    float shakeDuration;
+	    int health;
+    #endregion
+
+    public void Start ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         running = true;
@@ -145,6 +150,7 @@ public class TankScript : MonoBehaviour
         {
             shakeDuration = 0.5f;
             StartCoroutine(Collision());
+            tankCollidedWalkAudio.Play();
             canCollide = false;
         }
         else if (canCollide && collision.gameObject.tag.Equals("Player"))

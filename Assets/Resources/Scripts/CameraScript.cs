@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    [SerializeField]
-    Vector3 offset;
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    Transform playerPosition;
-    [SerializeField]
-    GameObject door;
-    [SerializeField]
-    Transform[] cameraBorders;
-    [SerializeField]
-    AnimationClip doorClosingAnimation;
+    #region Variables
+        [SerializeField]
+        Vector3 offset;
+        [SerializeField]
+        float speed;
+        [SerializeField]
+        Transform playerPosition;
+        [SerializeField]
+        GameObject door;
+        [SerializeField]
+        Transform[] cameraBorders;
+        [SerializeField]
+        AnimationClip doorClosingAnimation;
 
-    [HideInInspector]
-    public bool lookingAtClosedDoor = false;
+        [HideInInspector]
+        public bool lookingAtClosedDoor = false;
+    #endregion
 
     void Update ()
     {
@@ -39,6 +41,7 @@ public class CameraScript : MonoBehaviour
         }
         yield return new WaitForSecondsRealtime(0.15f);
         door.GetComponent<Animator>().SetBool("Closing", true);
+        door.GetComponent<DoorScript>().closingAudio.Play();
         yield return new WaitForSecondsRealtime(doorClosingAnimation.length);
         while (Vector3.Distance(playerPosition.transform.position, new Vector3(transform.position.x, transform.position.y, 0)) > 0.1f)
         {
@@ -63,6 +66,7 @@ public class CameraScript : MonoBehaviour
         }
         yield return new WaitForSecondsRealtime(0.15f);
         door.GetComponent<Animator>().SetBool("Closing", false);
+        door.GetComponent<DoorScript>().openingAudio.Play();
         yield return new WaitForSecondsRealtime(doorClosingAnimation.length);
         while (Vector3.Distance(playerPosition.transform.position, new Vector3(transform.position.x, transform.position.y, 0)) > 0.1f)
         {

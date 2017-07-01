@@ -5,19 +5,23 @@ using System;
 
 public class EnemyMovementDefaultScript: MonoBehaviour
 {
-    public Transform[] walkPositions;
-    [SerializeField]
-    float speed;
-    [HideInInspector]
-    public GameObject roomCollider;
-    Vector3 currentPosition;
-    int counter;
+    #region Variables
+        public Transform[] walkPositions;
+        [SerializeField]
+        float speed;
+        [HideInInspector]
+        public GameObject roomCollider;
+        Vector3 currentPosition;
+        int counter;
+    #endregion
+
     private void Start()
     {
         currentPosition = walkPositions[counter].position;
         if (GetComponent<RangedEnemyScript>() || GetComponent<TankScript>())
             GetComponent<Animator>().SetBool("Walking", true);
     }
+
     void Update ()
     {
         ChangeRotation();

@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class BoxColliderTriggerScript : MonoBehaviour
 {
-    [SerializeField]
-    GameObject[] roomColliders;
-    public int maxPoints;
-    public GameObject[] enemies;
-    [SerializeField]
-    Transform[] placesToSpawn;
-    public GameObject door;
-    GameObject cameraGameObject;
-    [HideInInspector]
-    public float numberOfEnemiesInRoom;
-    [HideInInspector]
-    public int pointsInTheRoom;
-    [HideInInspector]
-    public bool thereWereEnemiesInTheRoom;
+    #region Variables
+        [SerializeField]
+        GameObject[] roomColliders;
+        public int maxPoints;
+        public GameObject[] enemies;
+        [SerializeField]
+        Transform[] placesToSpawn;
+        public GameObject door;
+        GameObject cameraGameObject;
+        [HideInInspector]
+        public float numberOfEnemiesInRoom;
+        [HideInInspector]
+        public int pointsInTheRoom;
+        [HideInInspector]
+        public bool thereWereEnemiesInTheRoom;
+    #endregion
+
     private void Start()
     {
         cameraGameObject = Camera.main.gameObject;
     }
+
     private void Update()
     {
         if (numberOfEnemiesInRoom <= 0 && thereWereEnemiesInTheRoom)
@@ -33,6 +37,7 @@ public class BoxColliderTriggerScript : MonoBehaviour
         }
 
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {  
         if(col.tag.Equals("Player"))

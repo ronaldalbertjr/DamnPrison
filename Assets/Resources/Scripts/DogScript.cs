@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class DogScript : MonoBehaviour
 {
-    [SerializeField]
-    AnimationClip biteClip;
-    GameObject spawner;
-    GameObject player;
-    BoxColliderTriggerScript boxColliderTrigger;
-    Vector3 lastFrameVector;
-    Animator anim;
-    float health;
-    bool biting;
-    bool damaged;
+    #region Variables
+        [SerializeField]
+        AnimationClip biteClip;
+        GameObject spawner;
+        GameObject player;
+        BoxColliderTriggerScript boxColliderTrigger;
+        Vector3 lastFrameVector;
+        Animator anim;
+        float health;
+        bool biting;
+        bool damaged;
+    #endregion
 
-	public void Start ()
+    public void Start ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         health = 5;

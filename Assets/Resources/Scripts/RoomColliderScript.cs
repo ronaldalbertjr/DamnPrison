@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RoomColliderScript : MonoBehaviour
 {
-    public List<GameObject> enemiesInRoom;
-    bool hasBeenEntered;
+    #region Variables
+        public List<GameObject> enemiesInRoom;
+        bool hasBeenEntered;
+    #endregion
 
     private void Start()
     {

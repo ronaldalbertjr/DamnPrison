@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    GameObject cam;
-    GameObject gameManager;
-    GameObject player;
-    BoxColliderTriggerScript boxColliderTrigger;
-    public bool canOpen = true;
-    public bool doorClosing;
-    [SerializeField]
-    string doorPos;
+    #region Variables
+        GameObject cam;
+        GameObject gameManager;
+        GameObject player;
+        BoxColliderTriggerScript boxColliderTrigger;
+        public bool canOpen = true;
+        public bool doorClosing;
+        [SerializeField]
+        string doorPos;
+        public AudioSource openingAudio;
+        public AudioSource closingAudio;
+    #endregion
 
     private void Awake()
     {
         cam = Camera.main.gameObject;
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
     }
+
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");

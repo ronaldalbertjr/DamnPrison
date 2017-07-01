@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField]
-    Transform[] spawnPoints;
-    [SerializeField]
-    GameObject[] enemy;
+    #region Variables
+        [SerializeField]
+        Transform[] spawnPoints;
+        [SerializeField]
+        GameObject[] enemy;
+    #endregion
 
     public void Instantiate()
     {

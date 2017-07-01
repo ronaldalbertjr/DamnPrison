@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
-    [SerializeField]
-    Transform[] walkPositions;
-    [SerializeField]
-    RoomColliderScript roomCollider;
-    [SerializeField]
-    BoxColliderTriggerScript boxCollider;
-    bool fit;
-	void Start ()
+    #region Variables
+        [SerializeField]
+        Transform[] walkPositions;
+        [SerializeField]
+        RoomColliderScript roomCollider;
+        [SerializeField]
+        BoxColliderTriggerScript boxCollider;
+        bool fit;
+    #endregion
+
+    void Start ()
     {
         fit = false;
         while (!fit)

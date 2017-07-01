@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PorreteAreaHitScript : MonoBehaviour
 {
-    [HideInInspector]
-    public bool playerInsideArea;
-    GameObject player;
+    #region Variables
+        [HideInInspector]
+        public bool playerInsideArea;
+        GameObject player;
+    #endregion
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.Equals(player))
@@ -18,6 +22,7 @@ public class PorreteAreaHitScript : MonoBehaviour
             playerInsideArea = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D col)
     {
         if(col.gameObject.Equals(player))

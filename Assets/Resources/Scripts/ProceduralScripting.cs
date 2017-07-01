@@ -57,22 +57,24 @@ class Room
 
 public class ProceduralScripting : MonoBehaviour
 {
-    [SerializeField]
-    GameObject[] roomsGameObject;
-    [SerializeField]
-    Transform[] roomPositions;
+    #region Variables
+        [SerializeField]
+        GameObject[] roomsGameObject;
+        [SerializeField]
+        Transform[] roomPositions;
 
-    List<Room> rooms = new List<Room>();
-    System.Random rnd = new System.Random();
+        List<Room> rooms = new List<Room>();
+        System.Random rnd = new System.Random();
     
-    [HideInInspector]
-    public GameObject[,] grid = new GameObject[3, 3];
-    [HideInInspector]
-    public GameObject[,] g = new GameObject[3, 3];
-	[HideInInspector]
-	public int lin;
-	[HideInInspector]
-	public int col;
+        [HideInInspector]
+        public GameObject[,] grid = new GameObject[3, 3];
+        [HideInInspector]
+        public GameObject[,] g = new GameObject[3, 3];
+	    [HideInInspector]
+	    public int lin;
+	    [HideInInspector]
+	    public int col;
+    #endregion
 
     void Awake()
     {
@@ -81,6 +83,7 @@ public class ProceduralScripting : MonoBehaviour
         GenerateGrid();
         InstantiateRooms();
     }
+
     void GenerateGrid()
     {
         foreach (GameObject r in roomsGameObject)

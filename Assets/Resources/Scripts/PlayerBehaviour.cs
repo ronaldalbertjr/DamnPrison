@@ -5,46 +5,48 @@ using System;
 public class PlayerBehaviour : MonoBehaviour 
 {
     #region Variables
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    GameObject aux;
-    [SerializeField]
-    GameObject body;
-    [SerializeField]
-    GameObject legs;
-    [SerializeField]
-    GameObject gun;
-    [SerializeField]
-    GameObject bullet;
-    [SerializeField]
-    AnimationClip animShottingClip;
-    [SerializeField]
-    Transform mainCamera;
-	[SerializeField]
-	GameObject gameManager;
+        [SerializeField]
+        float speed;
+        [SerializeField]
+        GameObject aux;
+        [SerializeField]
+        GameObject body;
+        [SerializeField]
+        GameObject legs;
+        [SerializeField]
+        GameObject gun;
+        [SerializeField]
+        GameObject bullet;
+        [SerializeField]
+        AnimationClip animShottingClip;
+        [SerializeField]
+        Transform mainCamera;
+	    [SerializeField]
+	    GameObject gameManager;
+        [SerializeField]
+        AudioSource walkingAudio;
+        [SerializeField]
+        AudioSource gunAudio;
 
-    Animator bodyAnim;
-    Animator legsAnim;
-    Animator gunAnim;
-    SpriteRenderer bodySpriteRenderer;
-    SpriteRenderer legsSpriteRenderer;
-    SpriteRenderer gunSpriteRenderer;
-    GameObject door;
+        Animator bodyAnim;
+        Animator legsAnim;
+        Animator gunAnim;
+        SpriteRenderer bodySpriteRenderer;
+        SpriteRenderer legsSpriteRenderer;
+        SpriteRenderer gunSpriteRenderer;
+        GameObject door;
     
-    public GameObject currentRoom;
-    public bool playerCanMove;
-    private bool collidingWithDoor;
-	private float shakeDuration;
-	private float shakeAmount;
-	private float decreaseFactor;
-	private Vector3 camPosition;
-	private bool canShock;
-    float angle;
-    float w;
-    float h;
-    float time = 1;
-    bool canEnterDoor = true;
+        public GameObject currentRoom;
+        public bool playerCanMove;
+        private bool collidingWithDoor;
+	    private float shakeDuration;
+	    private float shakeAmount;
+	    private float decreaseFactor;
+	    private Vector3 camPosition;
+	    private bool canShock;
+        float angle;
+        float time = 1;
+        bool canEnterDoor = true;
     #endregion
 
     void Awake()
@@ -62,6 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
         shakeAmount = 0.3f;
         decreaseFactor = 1;
     }
+
 	void Update () 
 	{
         if (playerCanMove)
@@ -95,6 +98,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.up + Vector3.right) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 2);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
@@ -102,6 +106,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.up + Vector3.left) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 2);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
@@ -109,6 +114,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.down + Vector3.right) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 0);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
@@ -116,6 +122,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += (Vector3.down + Vector3.left) * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 0);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.W))
         {
@@ -123,6 +130,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.up * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 2);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.D))
         {
@@ -130,6 +138,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.right * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 1);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -137,6 +146,7 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.left * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 3);
+            walkingAudio.UnPause();
         }
         else if (Input.GetKey(KeyCode.S))
         {
@@ -144,13 +154,16 @@ public class PlayerBehaviour : MonoBehaviour
             legsAnim.SetBool("Walking", true);
             this.transform.position += Vector3.down * speed * Time.deltaTime;
             legsAnim.SetFloat("WalkingLeg", 0);
+            walkingAudio.UnPause();
         }
         else
         {
             bodyAnim.SetBool("Walking", false);
             legsAnim.SetBool("Walking", false);
+            walkingAudio.Pause();
         }
     }
+
     void ChangeRotation()
     {
         angle = aux.transform.eulerAngles.z;
@@ -222,9 +235,11 @@ public class PlayerBehaviour : MonoBehaviour
             mainCamera.localPosition = camPosition;
         }
     }
+
     public void ShotBullet()
     {
         Instantiate(bullet, gun.transform.position, Quaternion.Euler(0 ,0f, aux.transform.eulerAngles.z + 90f));
+        gunAudio.Play();
     }
 
     public void Damaged(GameObject col)
@@ -333,6 +348,7 @@ public class PlayerBehaviour : MonoBehaviour
             canEnterDoor = false;
         }
     }
+
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.tag.Equals("Door"))

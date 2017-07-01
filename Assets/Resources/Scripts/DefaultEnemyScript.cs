@@ -5,14 +5,15 @@ using System;
 public class DefaultEnemyScript : MonoBehaviour
 {
     #region Variables
-    GameObject spawner;
-    GameObject bullet;
-    GameObject player;
-    GameObject aux;
-    BoxColliderTriggerScript boxColliderTrigger;
-    Animator anim;
-    float health;
+        GameObject spawner;
+        GameObject bullet;
+        GameObject player;
+        GameObject aux;
+        BoxColliderTriggerScript boxColliderTrigger;
+        Animator anim;
+        float health;
     #endregion
+
     public void Start()
     {
         health = 5;

@@ -3,14 +3,18 @@ using System.Collections;
 
 public class ArmaScript : MonoBehaviour
 {
-    Vector3 mousePosition;
-    Vector3 lookPosition;
-    Quaternion rotation;
-    Rigidbody2D body;
+    #region Variables
+        Vector3 mousePosition;
+        Vector3 lookPosition;
+        Quaternion rotation;
+        Rigidbody2D body;
+    #endregion
+
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
     }
+
 	void FixedUpdate ()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -9,6 +9,7 @@ public class PauseScript : MonoBehaviour
     {
         GetComponent<Canvas>().enabled = false;
     }
+
 	void Update ()
     {
         if(Input.GetKey(KeyCode.Escape))

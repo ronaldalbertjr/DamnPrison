@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class PorreteScript : MonoBehaviour
 {
-    [SerializeField]
-    AnimationClip attackingAnimClip;
-    [SerializeField]
-    AnimationClip hittenAnimClip;
-    [SerializeField]
-    AnimationClip shieldFallingClip;
-    [SerializeField]
-    AnimationClip risingClip;
-    [SerializeField]
-    GameObject shieldPrefab;
-    GameObject player;
-    GameObject hitArea;
-    BoxCollider2D hitAreaCollider;
-    PorreteAreaHitScript hitAreaScript;
-    BoxColliderTriggerScript boxColliderTrigger;
-    SpriteRenderer spRenderer;
-    Animator anim;
-    float health;
-    bool playerInsideArea;
-    bool attacking;
-    bool facingRight;
-    bool damaged;
+    #region Variables
+        [SerializeField]
+        AnimationClip attackingAnimClip;
+        [SerializeField]
+        AnimationClip hittenAnimClip;
+        [SerializeField]
+        AnimationClip shieldFallingClip;
+        [SerializeField]
+        AnimationClip risingClip;
+        [SerializeField]
+        GameObject shieldPrefab;
+        [SerializeField]
+        AudioSource porreteAttackAudio;
+        GameObject player;
+        GameObject hitArea;
+        BoxCollider2D hitAreaCollider;
+        PorreteAreaHitScript hitAreaScript;
+        BoxColliderTriggerScript boxColliderTrigger;
+        SpriteRenderer spRenderer;
+        Animator anim;
+        float health;
+        bool playerInsideArea;
+        bool attacking;
+        bool facingRight;
+        bool damaged;
+    #endregion
 
     void OnEnable()
     {
@@ -54,6 +58,7 @@ public class PorreteScript : MonoBehaviour
         else if(!attacking && !damaged)
         {
             GetComponent<PolyNavAgent>().Stop();
+            porreteAttackAudio.Play();
             StartCoroutine(PorreteAttacking());
         }
         else if(damaged)
@@ -178,7 +183,6 @@ public class PorreteScript : MonoBehaviour
                 }
             }
         }
-        anim.SetBool("Shot", false);
     }
 
     IEnumerator PorreteAttacking()
