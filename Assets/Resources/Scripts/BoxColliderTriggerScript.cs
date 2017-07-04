@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoxColliderTriggerScript : MonoBehaviour
 {
+    
     #region Variables
         [SerializeField]
         GameObject[] roomColliders;
@@ -13,12 +14,13 @@ public class BoxColliderTriggerScript : MonoBehaviour
         Transform[] placesToSpawn;
         public GameObject door;
         GameObject cameraGameObject;
-        [HideInInspector]
         public float numberOfEnemiesInRoom;
         [HideInInspector]
         public int pointsInTheRoom;
         [HideInInspector]
         public bool thereWereEnemiesInTheRoom;
+        [HideInInspector]
+        public bool thereIsAlreadyATank = false;
     #endregion
 
     private void Start()

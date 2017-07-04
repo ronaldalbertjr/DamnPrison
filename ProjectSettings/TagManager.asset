@@ -12,6 +12,7 @@ TagManager:
   - EnemyGun
   - Porrete
   - Untouchable
+  - Dog
   layers:
   - Default
   - TransparentFX

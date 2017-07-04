@@ -1514,7 +1514,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389917000060682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -194.32799, y: -193.64679, z: 0.04563626}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.95154405, y: 0.95154405, z: 0.95154405}
   m_Children: []
   m_Father: {fileID: 4914604245463936}
@@ -1635,7 +1635,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489296320647624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2613.2817, y: 16.236034, z: 0}
+  m_LocalPosition: {x: -4924.911, y: -5037.0664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4760738612447594}
@@ -1673,7 +1673,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786398227466670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -194.32799, y: -193.64679, z: 0.04563626}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.95154405, y: 0.95154405, z: 0.95154405}
   m_Children: []
   m_Father: {fileID: 4914604245463936}
@@ -3019,9 +3019,10 @@ MonoBehaviour:
   - {fileID: 4063992282030708}
   - {fileID: 4038073034535532}
   door: {fileID: 1314371264159822}
-  numberOfEnemiesInRoom: 8
+  numberOfEnemiesInRoom: 0
   pointsInTheRoom: 0
   thereWereEnemiesInTheRoom: 0
+  thereIsAlreadyATank: 0
 --- !u!114 &114841729726077906
 MonoBehaviour:
   m_ObjectHideFlags: 1

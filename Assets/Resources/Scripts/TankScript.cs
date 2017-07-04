@@ -19,8 +19,12 @@ public class TankScript : MonoBehaviour
         GameObject player;
         Animator anim;
         Vector3 runDirection;
+        [HideInInspector]
+        public Vector3 differenceVector;
+        Vector3 lastFrameVector;
 	    SpriteRenderer spRenderer;
-        BoxColliderTriggerScript boxColliderTrigger;
+        [HideInInspector]
+        public BoxColliderTriggerScript boxColliderTrigger;
         bool running;
 	    bool canCollide;
 	    bool facingRight;
@@ -42,10 +46,13 @@ public class TankScript : MonoBehaviour
 		canCollide = true;
 		anim.SetBool ("Running", true);
         Flip(player.transform, spRenderer);
+        lastFrameVector = transform.position;
 	}
 
 	void Update ()
     {
+        differenceVector = transform.position - lastFrameVector;
+        lastFrameVector = transform.position;
 		if (running && !dying) 
 		{
 			transform.position += runDirection.normalized * Time.deltaTime * speed;
@@ -182,7 +189,7 @@ public class TankScript : MonoBehaviour
         {
             col.gameObject.GetComponent<RangedEnemyScript>().Damaged(this.gameObject, true);
         }
-        else if (col.gameObject.GetComponent<DogScript>())
+        else if (col.gameObject.tag.Equals("Dog") && running)
         {
             col.gameObject.GetComponent<DogScript>().Damaged(this.gameObject, true);
         }

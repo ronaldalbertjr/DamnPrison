@@ -21,7 +21,8 @@ public class PorreteScript : MonoBehaviour
         GameObject hitArea;
         BoxCollider2D hitAreaCollider;
         PorreteAreaHitScript hitAreaScript;
-        BoxColliderTriggerScript boxColliderTrigger;
+        [HideInInspector]
+        public BoxColliderTriggerScript boxColliderTrigger;
         SpriteRenderer spRenderer;
         Animator anim;
         float health;
@@ -110,7 +111,7 @@ public class PorreteScript : MonoBehaviour
     {
         damaged = true;
         if (hittenByTank)
-            StartCoroutine(HittenByTank(tank));
+            StartCoroutine(HittenByTank(tank.GetComponent<TankScript>().differenceVector));
         else
             StartCoroutine(GoingBackWhenShot());
         StartCoroutine(ChangeEnemyColor());
@@ -125,7 +126,7 @@ public class PorreteScript : MonoBehaviour
     {
         damaged = true;
         if (hittenByTank)
-            StartCoroutine(HittenByTank(tank));
+            StartCoroutine(HittenByTank(tank.GetComponent<TankScript>().differenceVector));
         else
             StartCoroutine(GoingBackWhenShot());
         StartCoroutine(ChangeEnemyColor());
@@ -141,47 +142,13 @@ public class PorreteScript : MonoBehaviour
         damaged = false;
     }
 
-    IEnumerator HittenByTank(GameObject tank)
+    IEnumerator HittenByTank(Vector3 diffVector)
     {
-        Vector3 differenceVector = transform.position - tank.transform.position;
-        if (Mathf.Abs(differenceVector.x) < Mathf.Abs(differenceVector.y))
+        Vector3 toSum = diffVector + new Vector3(1f, -1f);
+        for(int i = 0; i < 10; i++)
         {
-            if (transform.position.x < tank.transform.position.x)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(0, -1) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(0, 1) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
-        }
-
-        else
-        {
-            if (transform.position.y < tank.transform.position.y)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(-1, 0) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(1, 0) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
+            transform.position += toSum * 0.5f;
+            yield return new WaitForSeconds(0.001f);
         }
     }
 
@@ -223,12 +190,63 @@ public class PorreteScript : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    IEnumerator ChangeWalkingDirection(GameObject enemy)
+    {
+        Vector3 differenceVector = transform.position - enemy.transform.position;
+        if (Mathf.Abs(differenceVector.x) < Mathf.Abs(differenceVector.y))
+        {
+            if (transform.position.x < enemy.transform.position.x)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(-1, 0) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(1, 0) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+        else
+        {
+            if (transform.position.y < enemy.transform.position.y)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, -1) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, 1) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("Bullet") && GetComponent<PorreteScript>().isActiveAndEnabled)
         {
             Damaged();
             Destroy(col.gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
+        {
+            StartCoroutine(ChangeWalkingDirection(col.gameObject));
         }
     }
 

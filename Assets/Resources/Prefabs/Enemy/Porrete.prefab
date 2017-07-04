@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987578947934932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.049904, y: -2523.7046, z: 0}
+  m_LocalPosition: {x: -2461.5361, y: 2521.0503, z: 0}
   m_LocalScale: {x: 10.56901, y: 10.56901, z: 10.56901}
   m_Children:
   - {fileID: 4586483989593918}
@@ -235,7 +235,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.061448365, y: -0.020997599}
   serializedVersion: 2
-  m_Size: {x: 0.46960357, y: 0.40812495}
+  m_Size: {x: 0.65, y: 0.65}
 --- !u!82 &82764499667833416
 AudioSource:
   m_ObjectHideFlags: 1
@@ -303,7 +303,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -378,6 +378,8 @@ MonoBehaviour:
   risingClip: {fileID: 7400000, guid: f7c7784dd4b137d4fba7a7e51599e032, type: 2}
   shieldPrefab: {fileID: 1501933959525210, guid: f48c16050ac27f14d979ee40ce8460ee,
     type: 2}
+  porreteAttackAudio: {fileID: 82764499667833416}
+  boxColliderTrigger: {fileID: 0}
 --- !u!114 &114905404473239212
 MonoBehaviour:
   m_ObjectHideFlags: 1

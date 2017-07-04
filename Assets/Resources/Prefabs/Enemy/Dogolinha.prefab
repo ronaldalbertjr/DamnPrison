@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114579092918566882}
   m_Layer: 0
   m_Name: Dogolinha
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137889981541468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.538666, y: 2531.7256, z: 0}
+  m_LocalPosition: {x: 202.41853, y: 2578.4307, z: 0}
   m_LocalScale: {x: 10.522532, y: 10.522532, z: 10.522532}
   m_Children:
   - {fileID: 4975574725636794}
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.35, y: 0.35}
+  m_Size: {x: 0.5, y: 0.5}
 --- !u!95 &95328936800493990
 Animator:
   serializedVersion: 3
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3.5
+  maxSpeed: 7
   mass: 20
   stoppingDistance: 0.1
   slowingDistance: 1
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   biteClip: {fileID: 7400000, guid: b2970be9fc270f247a58683b67ff389d, type: 2}
+  boxColliderTrigger: {fileID: 0}
 --- !u!114 &114579092918566882
 MonoBehaviour:
   m_ObjectHideFlags: 1

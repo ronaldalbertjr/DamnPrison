@@ -11,7 +11,8 @@ public class RangedEnemyScript : MonoBehaviour
     GameObject player;
     GameObject aux;
     Animator anim;
-    BoxColliderTriggerScript boxColliderTrigger;
+    [HideInInspector]
+    public BoxColliderTriggerScript boxColliderTrigger;
     float time = 1.5f;
     float angle;
     float health;
@@ -108,7 +109,7 @@ public class RangedEnemyScript : MonoBehaviour
     {
         anim.SetBool("Shot", true);
         if (hittenByTank)
-            StartCoroutine(HittenByTank(tank));
+            StartCoroutine(HittenByTank(tank.GetComponent<TankScript>().differenceVector));
         else
         {
             int aux = Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat"));
@@ -135,46 +136,13 @@ public class RangedEnemyScript : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    IEnumerator HittenByTank(GameObject tank)
+    IEnumerator HittenByTank(Vector3 diffVector)
     {
-        Vector3 differenceVector = transform.position - tank.transform.position;
-        if (Mathf.Abs(differenceVector.x) < Mathf.Abs(differenceVector.y))
+        Vector3 toSum = diffVector + new Vector3(1f, -1f);
+        for (int i = 0; i < 10; i++)
         {
-            if (transform.position.x < tank.transform.position.x)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(0, 1) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(0, -1) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
-        }
-        else
-        {
-            if (transform.position.y < tank.transform.position.y)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(1, 0) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    transform.position += new Vector3(-1, 0) * 0.5f;
-                    yield return new WaitForSeconds(0.001f);
-                }
-            }
+            transform.position += toSum * 0.5f;
+            yield return new WaitForSeconds(0.001f);
         }
         anim.SetBool("Shot", false);
     }
@@ -227,5 +195,56 @@ public class RangedEnemyScript : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
         }
         anim.SetBool("Shot", false);
+    }
+
+    IEnumerator ChangeWalkingDirection(GameObject enemy)
+    {
+        Vector3 differenceVector = transform.position - enemy.transform.position;
+        if (Mathf.Abs(differenceVector.x) < Mathf.Abs(differenceVector.y))
+        {
+            if (transform.position.x < enemy.transform.position.x)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(-1, 0) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(1, 0) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+        else
+        {
+            if (transform.position.y < enemy.transform.position.y)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, -1) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    transform.position += new Vector3(0, 1) * 0.005f;
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
+        {
+            StartCoroutine(ChangeWalkingDirection(col.gameObject));
+        }
     }
 }
