@@ -129,7 +129,7 @@ public class TankScript : MonoBehaviour
 
 	IEnumerator GoingBackWhenCollided()
 	{
-		Vector3 goBackVector = new Vector3(-runDirection.normalized.x, -runDirection.normalized.y) * 0.25f;
+		Vector3 goBackVector = new Vector3(-runDirection.normalized.x, -runDirection.normalized.y) * 0.3f;
 		for (float i = 0; i < 10; i++)
 		{
 			transform.position += goBackVector;
@@ -164,6 +164,19 @@ public class TankScript : MonoBehaviour
         {
             player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
         }
+        else if (collision.gameObject.tag.Equals("Porrete") && running)
+        {
+            if(!collision.gameObject.GetComponent<PorreteScript>().duringHit)
+                collision.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
+        }
+        else if (collision.gameObject.tag.Equals("EnemyGun") && running)
+        {
+            collision.gameObject.GetComponent<RangedEnemyScript>().Damaged(this.gameObject, true);
+        }
+        else if (collision.gameObject.tag.Equals("Dog") && running)
+        {
+            collision.gameObject.GetComponent<DogScript>().Damaged(this.gameObject, true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -180,18 +193,6 @@ public class TankScript : MonoBehaviour
                 anim.SetTrigger("Die");
                 Invoke("DestroyTank", dyingClip.length);
             }
-        }
-        else if (col.gameObject.tag.Equals("Porrete") && running)
-        {
-            col.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
-        }
-        else if (col.gameObject.tag.Equals("EnemyGun") && running)
-        {
-            col.gameObject.GetComponent<RangedEnemyScript>().Damaged(this.gameObject, true);
-        }
-        else if (col.gameObject.tag.Equals("Dog") && running)
-        {
-            col.gameObject.GetComponent<DogScript>().Damaged(this.gameObject, true);
         }
     }
 

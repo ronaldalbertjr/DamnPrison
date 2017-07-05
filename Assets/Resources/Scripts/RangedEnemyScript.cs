@@ -109,7 +109,7 @@ public class RangedEnemyScript : MonoBehaviour
     {
         anim.SetBool("Shot", true);
         if (hittenByTank)
-            StartCoroutine(HittenByTank(tank.GetComponent<TankScript>().differenceVector));
+            StartCoroutine(HittenByTank(tank));
         else
         {
             int aux = Convert.ToInt32(anim.GetFloat("EnemyWalkingFloat"));
@@ -136,12 +136,36 @@ public class RangedEnemyScript : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    IEnumerator HittenByTank(Vector3 diffVector)
+    IEnumerator HittenByTank(GameObject tank)
     {
-        Vector3 toSum = diffVector + new Vector3(1f, -1f);
+        Vector3 auxVector = new Vector3(0, 0);
+        if(tank.transform.position.x < transform.position.x)
+        {
+            if(tank.transform.position.y < transform.position.y)
+            {
+                auxVector = new Vector3(1F, 1F);
+            }
+            else if(tank.transform.position.y > transform.position.y)
+            {
+                auxVector = new Vector3(1F, -1F);
+            }
+        }
+        else if(tank.transform.position.x > transform.position.x)
+        {
+            if (tank.transform.position.y < transform.position.y)
+            {
+                auxVector = new Vector3(-1F, 1F);
+            }
+            else if (tank.transform.position.y > transform.position.y)
+            {
+                auxVector = new Vector3(-1F, -1F);
+            }
+        }
+        Vector3 diffVector = tank.GetComponent<TankScript>().differenceVector.normalized;
+        Vector3 toSum = diffVector + auxVector ;
         for (int i = 0; i < 10; i++)
         {
-            transform.position += toSum * 0.5f;
+            transform.position += toSum * 0.25f;
             yield return new WaitForSeconds(0.001f);
         }
         anim.SetBool("Shot", false);

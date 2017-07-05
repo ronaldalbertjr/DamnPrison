@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137889981541468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 202.41853, y: 2578.4307, z: 0}
+  m_LocalPosition: {x: 205.66965, y: 2578.7493, z: 0}
   m_LocalScale: {x: 10.522532, y: 10.522532, z: 10.522532}
   m_Children:
   - {fileID: 4975574725636794}
@@ -113,7 +113,7 @@ PolygonCollider2D:
     - - {x: -0.13499999, y: 0.11}
       - {x: -0.13499999, y: -0.11}
       - {x: 0.065, y: -0.11}
-      - {x: 0.13499999, y: -0.01}
+      - {x: 0.14431746, y: -0.1078183}
       - {x: 0.13499999, y: 0.089999996}
       - {x: 0.095, y: 0.11}
 --- !u!61 &61019698098121468
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 7
+  maxSpeed: 5
   mass: 20
   stoppingDistance: 0.1
   slowingDistance: 1
