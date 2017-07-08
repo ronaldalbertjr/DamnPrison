@@ -36,7 +36,6 @@ static class AStar {
 				
 				#if DEBUG
 				sw.Stop();
-				UnityEngine.Debug.Log("Path Found: " + sw.ElapsedMilliseconds + " ms.");
 				#endif
 
 				success = true;

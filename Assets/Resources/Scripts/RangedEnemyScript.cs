@@ -13,15 +13,16 @@ public class RangedEnemyScript : MonoBehaviour
     Animator anim;
     [HideInInspector]
     public BoxColliderTriggerScript boxColliderTrigger;
-    float time = 1.5f;
+    float time;
     float angle;
     float health;
+    bool walking;
     #endregion
 
     void OnEnable ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
-        health = 5;
+        health = 3;
         aux = transform.FindChild("AuxRotationEnemy").gameObject;
         aux.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         anim = GetComponent<Animator>();
@@ -36,10 +37,12 @@ public class RangedEnemyScript : MonoBehaviour
         {
             this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
             anim.SetBool("Walking", true);
+            ChangeRotation(anim);
         }
         else
         {
             anim.SetBool("Walking", false);
+            OtherChangeRotation(aux, anim);
             this.GetComponent<PolyNavAgent>().Stop();
             time += Time.deltaTime;
             if (time >= 1.5f)
@@ -48,7 +51,6 @@ public class RangedEnemyScript : MonoBehaviour
                 ShotBullet();
             }
         }
-        ChangeRotation(aux, anim);
     }
 
     public void Damaged(GameObject tank = null, bool hittenByTank = false)
@@ -68,7 +70,53 @@ public class RangedEnemyScript : MonoBehaviour
         Instantiate(bullet, this.transform.position, Quaternion.Euler(0, 0f, aux.transform.eulerAngles.z + 90f));
     }
 
-    public void ChangeRotation(GameObject aux, Animator anim)
+    public void ChangeRotation(Animator anim)
+    {
+        Vector3 goingPosition = GetComponent<PolyNavAgent>().movingDirection;
+        if(Mathf.Round(goingPosition.x) != 0 && Mathf.Round(goingPosition.y) != 0)
+        {
+            if(goingPosition.x > 0 && goingPosition.y > 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 5);
+            }
+            else if(goingPosition.x < 0 && goingPosition.y > 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 4);
+            }
+            else if(goingPosition.x > 0 && goingPosition.y < 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 7);
+            }
+            else if(goingPosition.x < 0 && goingPosition.y < 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 6);
+            }
+        }
+        else if(Mathf.Round(goingPosition.x) != 0  && Mathf.Round(goingPosition.y) == 0)
+        {
+            if(goingPosition.x > 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 3);
+            }
+            else if(goingPosition.x < 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 1);
+            }
+        }
+        else if(Mathf.Round(goingPosition.x) == 0 && Mathf.Round(goingPosition.y) != 0)
+        {
+            if(goingPosition.y > 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 2);
+            }
+            else if(goingPosition.y < 0)
+            {
+                anim.SetFloat("EnemyWalkingFloat", 0);
+            }
+        }
+    }
+
+    public void OtherChangeRotation(GameObject aux, Animator anim)
     {
         angle = aux.transform.eulerAngles.z;
         if (angle > 157.5 && angle < 202.5)
@@ -266,9 +314,9 @@ public class RangedEnemyScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
+        /*if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
         {
             StartCoroutine(ChangeWalkingDirection(col.gameObject));
-        }
+        }*/
     }
 }

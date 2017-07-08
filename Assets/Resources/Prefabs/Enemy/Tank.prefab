@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4923646169506122}
   - component: {fileID: 61555408630193030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TouchingDangerZone
   m_TagString: Untouchable
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4749452354225730}
   - component: {fileID: 82572026401554642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TankCollideWithWallAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,8 @@ GameObject:
   - component: {fileID: 114078766510721186}
   - component: {fileID: 114129069124368898}
   - component: {fileID: 61119053647934744}
-  m_Layer: 0
+  - component: {fileID: 114004776095822338}
+  m_Layer: 8
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930228424549308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.177847, y: -5.3287687, z: 0}
+  m_LocalPosition: {x: 38.692585, y: -7.87416, z: 0}
   m_LocalScale: {x: 9.594777, y: 9.594777, z: 9.594777}
   m_Children:
   - {fileID: 4923646169506122}
@@ -277,6 +278,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114004776095822338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930228424549308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 3.5
+  mass: 20
+  stoppingDistance: 0.1
+  slowingDistance: 1
+  accelerationRate: 2
+  decelerationRate: 2
+  rotateTransform: 0
+  rotateSpeed: 350
+  avoidRadius: 0
+  lookAheadDistance: 1
+  repath: 1
+  restrict: 1
+  closerPointOnInvalid: 1
+  debugPath: 0
 --- !u!114 &114078766510721186
 MonoBehaviour:
   m_ObjectHideFlags: 1

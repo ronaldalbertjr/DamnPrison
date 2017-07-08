@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114970238162303622}
   m_Layer: 0
   m_Name: Domo
-  m_TagString: Background
+  m_TagString: Objeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

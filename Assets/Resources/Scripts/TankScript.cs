@@ -19,6 +19,7 @@ public class TankScript : MonoBehaviour
         GameObject player;
         Animator anim;
         Vector3 runDirection;
+        Vector3 checkDirection;
         [HideInInspector]
         public Vector3 differenceVector;
         Vector3 lastFrameVector;
@@ -26,6 +27,7 @@ public class TankScript : MonoBehaviour
         [HideInInspector]
         public BoxColliderTriggerScript boxColliderTrigger;
         bool running;
+        bool canRun;
 	    bool canCollide;
 	    bool facingRight;
         bool invencible;
@@ -38,12 +40,14 @@ public class TankScript : MonoBehaviour
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         running = true;
-		health = 20;
+		health = 10;
 		spRenderer = GetComponent<SpriteRenderer> ();
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         runDirection = player.transform.position - transform.position;
 		canCollide = true;
+        canRun = true;
+        anim.SetBool("Walking", false);
 		anim.SetBool ("Running", true);
         Flip(player.transform, spRenderer);
         lastFrameVector = transform.position;
@@ -53,9 +57,22 @@ public class TankScript : MonoBehaviour
     {
         differenceVector = transform.position - lastFrameVector;
         lastFrameVector = transform.position;
-		if (running && !dying) 
+        checkDirection = player.transform.position - transform.position;
+		if (running && !dying && anim.GetBool("Running")) 
 		{
-			transform.position += runDirection.normalized * Time.deltaTime * speed;
+            if (canRun)
+            {
+                GetComponent<PolyNavAgent>().Stop();
+                transform.position += runDirection.normalized * Time.deltaTime * speed;
+                anim.SetBool("Walking", false);
+                anim.SetBool("Running", true);
+            }
+            else if (!canRun && !GetComponent<PolyNavAgent>().hasPath)
+            {
+                ChangePositionUntilItCanRun();
+                anim.SetBool("Running", false);
+                anim.SetBool("Walking", true);
+            }
 		} 
 		else
 		{
@@ -109,9 +126,105 @@ public class TankScript : MonoBehaviour
 			Camera.main.transform.localPosition = camPosition;
 		}
 	}
+    
+    void CheckRun()
+    {
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, checkDirection, Mathf.Infinity, layerMask);
+        if(hit.collider.tag.Equals("Player"))
+        {
+            canRun = true;
+        }
+        else
+        {
+            canRun = false;
+        }
+    }
+    
+    void ChangePositionUntilItCanRun()
+    {
+        Queue<Vector3> queue = new Queue<Vector3>();
+        HashSet<Vector3> path = new HashSet<Vector3>();
+        Vector3 positionToWalkTo;
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
+        queue.Enqueue(transform.position);
+        while (queue.Count > 0)
+        {
+            Vector3 positionDequeued = queue.Dequeue();
+            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0.1f, 0)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
+            {
+                Debug.Log("Checking");
+                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(0.1f, 0), checkDirection, Mathf.Infinity, layerMask);
+                if (hit.collider.tag.Equals("Player"))
+                {
+                    positionToWalkTo = positionDequeued + new Vector3(0.1f, 0);
+                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
+                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
+                    break;
+                }
+                else
+                {
+                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
+                    path.Add(positionDequeued + new Vector3(0, -0.1f));
+                }
+
+            }
+            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0, 0.1f)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(0, 0.1f), checkDirection, Mathf.Infinity, layerMask);
+                if (hit.collider.tag.Equals("Player"))
+                {
+                    positionToWalkTo = positionDequeued + new Vector3(0, 0.1f);
+                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
+                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
+                    break;
+                }
+                else
+                {
+                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
+                    path.Add(positionDequeued + new Vector3(0, -0.1f));
+                }
+            }
+            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(-0.1f, 0)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(-0.1f, 0), checkDirection, Mathf.Infinity, layerMask);
+                if (hit.collider.tag.Equals("Player"))
+                {
+                    positionToWalkTo = positionDequeued + new Vector3(-0.1f, 0);
+                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
+                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
+                    break;
+                }
+                else
+                {
+                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
+                    path.Add(positionDequeued + new Vector3(0, -0.1f));
+                }
+            }
+            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0, -0.1f)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(0, -0.1f), checkDirection, Mathf.Infinity, layerMask);
+                if (hit.collider.tag.Equals("Player"))
+                {
+                    positionToWalkTo = positionDequeued + new Vector3(0, -0.1f);
+                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
+                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
+                    break;
+                }
+                else
+                {
+                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
+                    path.Add(positionDequeued + new Vector3(0, -0.1f));
+                }
+            }
+        }
+    }
 
     IEnumerator Collision()
     {
+        canRun = false;
 		StartCoroutine (GoingBackWhenCollided ());
         anim.SetTrigger("Hit");
         anim.SetBool("HitWall", true);
@@ -123,6 +236,7 @@ public class TankScript : MonoBehaviour
         anim.SetBool("HitWall", false);
         yield return new WaitForSecondsRealtime(standingUpClip.length * 2f);
 		runDirection = player.transform.position - transform.position;
+        CheckRun();
         running = true;
 		canCollide = true;
     }
@@ -160,14 +274,13 @@ public class TankScript : MonoBehaviour
             tankCollidedWalkAudio.Play();
             canCollide = false;
         }
-        else if (canCollide && collision.gameObject.tag.Equals("Player"))
+        else if (canCollide && collision.gameObject.tag.Equals("Player") && collision.gameObject.GetComponent<PlayerBehaviour>().playerCanMove)
         {
             player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
         }
         else if (collision.gameObject.tag.Equals("Porrete") && running)
         {
-            if(!collision.gameObject.GetComponent<PorreteScript>().duringHit)
-                collision.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
+            collision.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
         }
         else if (collision.gameObject.tag.Equals("EnemyGun") && running)
         {

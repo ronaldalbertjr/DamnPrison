@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114374139182879104}
   - component: {fileID: 114907546448994660}
   - component: {fileID: 60416393054298650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'enemyGun '
   m_TagString: EnemyGun
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 212712359989746982}
   - component: {fileID: 50844291379396348}
   - component: {fileID: 114837468594556336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AuxRotationEnemy
   m_TagString: Aux
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4939069332139682}
   - component: {fileID: 61407103808486060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TouchingDangerZone
   m_TagString: Untouchable
   m_Icon: {fileID: 0}

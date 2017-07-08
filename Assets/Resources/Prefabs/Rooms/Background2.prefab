@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4027214737527048}
   - component: {fileID: 61278213641055308}
   - component: {fileID: 114897265976985406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: roomCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 61510419050597068}
   m_Layer: 0
   m_Name: PrisonerDead
-  m_TagString: Untagged
+  m_TagString: Objeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 4385384454818740}
   - component: {fileID: 61147267844890946}
   - component: {fileID: 114081052372086836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BoxColliderTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 4163049459292184}
   - component: {fileID: 61175804165158786}
   - component: {fileID: 114336535668059344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: roomCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1083,7 +1083,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061352402120438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.60588, y: -2517.3538, z: 0}
+  m_LocalPosition: {x: -27.431154, y: 2510.6394, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4165253970694150}
@@ -1343,15 +1343,15 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: 14.3439865, y: -4.6814117}
-      - {x: 14.215202, y: -11.992691}
-      - {x: 52.24449, y: -12.192314}
-      - {x: 51.85784, y: 7.6384125}
+    - - {x: 14.289797, y: -4.6814117}
+      - {x: 14.32358, y: -11.992691}
+      - {x: 51.797626, y: -11.88356}
+      - {x: 51.75248, y: 7.6384125}
       - {x: 14.329399, y: 7.7060394}
       - {x: 14.180351, y: 7.1837425}
       - {x: 14.143776, y: 3.3237152}
-      - {x: -2.2153392, y: 3.4350433}
-      - {x: -2.0385509, y: 7.6889496}
+      - {x: -2.0754943, y: 3.2253265}
+      - {x: -2.1986232, y: 7.7690277}
       - {x: -39.732338, y: 7.722397}
       - {x: -39.65013, y: -11.830685}
       - {x: -41.51204, y: -11.693123}
@@ -1361,6 +1361,7 @@ PolygonCollider2D:
       - {x: -2.5516343, y: 17.903515}
       - {x: 14.165581, y: 17.956654}
       - {x: 53.740303, y: 17.183899}
+      - {x: 53.844284, y: 1.4743385}
       - {x: 53.948265, y: -14.235222}
       - {x: 14.446917, y: -13.980644}
       - {x: 11.973545, y: -14.15255}
@@ -1368,8 +1369,8 @@ PolygonCollider2D:
       - {x: -2.4770722, y: -14.009483}
       - {x: -41.732388, y: -13.959343}
       - {x: -41.823997, y: -11.8505745}
-      - {x: -2.2117648, y: -11.962746}
-      - {x: -2.2175975, y: -4.8288574}
+      - {x: -2.2999282, y: -11.940689}
+      - {x: -2.305757, y: -4.652603}
 --- !u!61 &61147267844890946
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1901,6 +1902,7 @@ MonoBehaviour:
   numberOfEnemiesInRoom: 0
   pointsInTheRoom: 0
   thereWereEnemiesInTheRoom: 0
+  thereIsAlreadyATank: 0
 --- !u!114 &114200993533591888
 MonoBehaviour:
   m_ObjectHideFlags: 1

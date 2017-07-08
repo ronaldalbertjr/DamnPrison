@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 61365400050657356}
   m_Layer: 0
   m_Name: PrisonerDead2
-  m_TagString: Background
+  m_TagString: Objeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114004242158662590}
   - component: {fileID: 114372241746293744}
   - component: {fileID: 114579092918566882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dogolinha
   m_TagString: Dog
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975574725636794}
   - component: {fileID: 61019698098121468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TouchingDangerZone
   m_TagString: Untouchable
   m_Icon: {fileID: 0}

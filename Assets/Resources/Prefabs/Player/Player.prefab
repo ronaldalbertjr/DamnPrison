@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95926234879644034}
   m_Layer: 0
   m_Name: Corpo
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 95366268131708682}
   m_Layer: 0
   m_Name: Perna
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,9 +308,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.024582827, y: -0.01778251}
+  m_Offset: {x: -0.015234539, y: -0.0094619235}
   serializedVersion: 2
-  m_Size: {x: 0.51212543, y: 0.72733545}
+  m_Size: {x: 0.34967038, y: 0.57090485}
 --- !u!82 &82392875526973570
 AudioSource:
   m_ObjectHideFlags: 1
@@ -580,6 +580,7 @@ MonoBehaviour:
   gunAudio: {fileID: 82392875526973570}
   currentRoom: {fileID: 0}
   playerCanMove: 0
+  canBeHitten: 0
 --- !u!114 &114567770702897520
 MonoBehaviour:
   m_ObjectHideFlags: 1

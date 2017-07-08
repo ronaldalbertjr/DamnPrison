@@ -28,7 +28,7 @@ public class BulletScript : MonoBehaviour
             col.GetComponent<RangedEnemyScript>().Damaged();
             Destroy(gameObject);
         }
-        else if (col.tag.Equals("Player") && thrownBy.Equals("Enemy"))
+        else if (col.tag.Equals("Player") && thrownBy.Equals("Enemy") && col.GetComponent<PlayerBehaviour>().canBeHitten)
         {
             col.gameObject.GetComponent<PlayerBehaviour>().Damaged(col.gameObject);
             Destroy(gameObject);

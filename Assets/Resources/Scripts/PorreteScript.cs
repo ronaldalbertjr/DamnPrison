@@ -29,8 +29,6 @@ public class PorreteScript : MonoBehaviour
         bool playerInsideArea;
         bool attacking;
         bool facingRight;
-        [HideInInspector]
-        public bool duringHit;
         bool damaged;
     #endregion
 
@@ -47,7 +45,6 @@ public class PorreteScript : MonoBehaviour
         attacking = false;
         playerInsideArea = false;
         damaged = false;
-        duringHit = false;
         Flip(player.transform, spRenderer, hitAreaCollider);
     }
 
@@ -140,14 +137,13 @@ public class PorreteScript : MonoBehaviour
         anim.SetFloat("WithShield", 1);
         yield return new WaitForSecondsRealtime(shieldFallingClip.length);
         Destroy(shield);
-        GetComponent<PolyNavAgent>().maxSpeed = 5f;
+        GetComponent<PolyNavAgent>().maxSpeed = 10f;
         yield return new WaitForSecondsRealtime(risingClip.length/2 - 0.5f);
         damaged = false;
     }
 
     IEnumerator HittenByTank(GameObject tank)
     {
-        duringHit = true;
         Vector3 auxVector = new Vector3(0, 0);
         if (tank.transform.position.x < transform.position.x)
         {
@@ -178,9 +174,7 @@ public class PorreteScript : MonoBehaviour
             transform.position += toSum * 0.25f;
             yield return new WaitForSeconds(0.001f);
         }
-        anim.SetBool("Shot", false);
         yield return new WaitForSeconds(1f);
-        duringHit = false;
     }
 
     IEnumerator PorreteAttacking()
@@ -275,10 +269,11 @@ public class PorreteScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
+        /*
         if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
         {
             StartCoroutine(ChangeWalkingDirection(col.gameObject));
-        }
+        }*/
     }
 
 

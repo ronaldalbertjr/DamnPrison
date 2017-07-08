@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4839316796240336}
   - component: {fileID: 82764499667833416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PorreteAttackAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4448539568789032}
   - component: {fileID: 61545796520753062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TouchingDangerZone
   m_TagString: Untouchable
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4891859086867600}
   - component: {fileID: 61539661621123384}
   - component: {fileID: 114314181688725864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PorreteAttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4586483989593918}
   - component: {fileID: 212093016332377634}
   - component: {fileID: 95874467265454166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PorreteSpriteRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 114408123728516776}
   - component: {fileID: 114905404473239212}
   - component: {fileID: 114248858694781434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Porrete
   m_TagString: Porrete
   m_Icon: {fileID: 0}
@@ -380,6 +380,7 @@ MonoBehaviour:
     type: 2}
   porreteAttackAudio: {fileID: 82764499667833416}
   boxColliderTrigger: {fileID: 0}
+  duringHit: 0
 --- !u!114 &114905404473239212
 MonoBehaviour:
   m_ObjectHideFlags: 1

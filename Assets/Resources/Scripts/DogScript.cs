@@ -21,7 +21,7 @@ public class DogScript : MonoBehaviour
     public void Start ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
-        health = 5;
+        health = 3;
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         biting = false;
@@ -30,30 +30,31 @@ public class DogScript : MonoBehaviour
 	void Update ()
     {
         if(!damaged)
-            ChangeAnimation(player.transform, anim);
+            ChangeAnimation(anim);
         GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
 	}
 
-    public void ChangeAnimation(Transform toLookAt, Animator anim)
+    public void ChangeAnimation(Animator anim)
     {
-        /*
-        Vector3 diferenceVector = transform.position - lastFrameVector;
-        if(Mathf.Abs(diferenceVector.x) < Mathf.Abs(diferenceVector.y))
+        Vector3 diferenceVector = GetComponent<PolyNavAgent>().movingDirection;
+        if (Mathf.Abs(diferenceVector.x) < Mathf.Abs(diferenceVector.y))
         {
-            if (lastFrameVector.y < transform.position.y)
+            if (diferenceVector.y > 0)
                 anim.SetFloat("WalkingFloat", 0);
             else
                 anim.SetFloat("WalkingFloat", 2);
         }
         else
         {
-            if (lastFrameVector.x < transform.position.x)
+            if (diferenceVector.x > 0)
                 anim.SetFloat("WalkingFloat", 1);
             else
                 anim.SetFloat("WalkingFloat", 3);
         }
-        lastFrameVector = transform.position;
-        */
+    }
+    
+    public void OtherChangeAnimation(Transform toLookAt, Animator anim)
+    {
         Vector3 diferenceVector = toLookAt.position - transform.position;
         if (Mathf.Abs(diferenceVector.x) < Mathf.Abs(diferenceVector.y))
         {
@@ -68,8 +69,7 @@ public class DogScript : MonoBehaviour
                 anim.SetFloat("WalkingFloat", 1);
             else
                 anim.SetFloat("WalkingFloat", 3);
-        }
-    }
+        } }
 
     void Bite()
     {
@@ -168,22 +168,22 @@ public class DogScript : MonoBehaviour
         {
             if (tank.transform.position.y < transform.position.y)
             {
-                auxVector = new Vector3(1F, 1F);
+                auxVector = new Vector3(-1F, -1F);
             }
             else if (tank.transform.position.y > transform.position.y)
             {
-                auxVector = new Vector3(1F, -1F);
+                auxVector = new Vector3(-1F, 1F);
             }
         }
         else if (tank.transform.position.x > transform.position.x)
         {
             if (tank.transform.position.y < transform.position.y)
             {
-                auxVector = new Vector3(-1F, 1F);
+                auxVector = new Vector3(1F, -1F);
             }
             else if (tank.transform.position.y > transform.position.y)
             {
-                auxVector = new Vector3(-1F, -1F);
+                auxVector = new Vector3(1F, 1F);
             }
         }
         Vector3 diffVector = tank.GetComponent<TankScript>().differenceVector.normalized;
@@ -212,15 +212,15 @@ public class DogScript : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.tag.Equals("Player"))
+        if (col.tag.Equals("Player") && col.GetComponent<PlayerBehaviour>().canBeHitten)
         {
             if (!biting) Bite();
         }
 
-        if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
+       /* if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
         {
             StartCoroutine(ChangeWalkingDirection(col.gameObject));
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)

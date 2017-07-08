@@ -38,6 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
     
         public GameObject currentRoom;
         public bool playerCanMove;
+        public bool canBeHitten;
         private bool collidingWithDoor;
 	    private float shakeDuration;
 	    private float shakeAmount;
@@ -46,12 +47,14 @@ public class PlayerBehaviour : MonoBehaviour
 	    private bool canShock;
         float angle;
         float time = 1;
+        int health = 15;
         bool canEnterDoor = true;
     #endregion
 
     void Awake()
     {
         playerCanMove = true;
+        canBeHitten = true;
         Cursor.visible = true;
         bodyAnim = body.GetComponent<Animator>();
         legsAnim = legs.GetComponent<Animator>();
@@ -87,6 +90,10 @@ public class PlayerBehaviour : MonoBehaviour
                 gunAnim.SetBool("Shotting", false);
                 bodyAnim.SetBool("Shotting", false);
             }
+        }
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
 	}
 
@@ -249,6 +256,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     IEnumerator IDamaged(GameObject collision)
     {
+        canBeHitten = false;
         bodyAnim.SetBool("Damaged", true);
         legsAnim.SetBool("Damaged", true);
         gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
@@ -261,12 +269,24 @@ public class PlayerBehaviour : MonoBehaviour
 
     IEnumerator ChangePlayerColor()
     {
-        bodySpriteRenderer.color = new Color(0.3f, 0, 0);
-        legsSpriteRenderer.color = new Color(0.3f, 0, 0);
-        yield return new WaitForSeconds(0.05f);
-        bodySpriteRenderer.color = new Color(1, 1, 1);
-        legsSpriteRenderer.color = new Color(1, 1, 1);
+        for (int i = 0; i < 10; i++)
+        {
+            if (bodySpriteRenderer.color.a.Equals(1))
+            {
+                bodySpriteRenderer.color = new Color(bodySpriteRenderer.color.r, bodySpriteRenderer.color.g, bodySpriteRenderer.color.b, 0);
+                legsSpriteRenderer.color = new Color(legsSpriteRenderer.color.r, legsSpriteRenderer.color.g, legsSpriteRenderer.color.b, 0);
+                gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
+            }
+            else
+            {
+                bodySpriteRenderer.color = new Color(bodySpriteRenderer.color.r, bodySpriteRenderer.color.g, bodySpriteRenderer.color.b, 1);
+                legsSpriteRenderer.color = new Color(legsSpriteRenderer.color.r, legsSpriteRenderer.color.g, legsSpriteRenderer.color.b, 1);
+                gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
+            }
+            yield return new WaitForSeconds(0.05f);
+        }
         yield return 0;
+        canBeHitten = true;
     }
 
     IEnumerator GoingBackWhenShot(int aux, Vector3 position)

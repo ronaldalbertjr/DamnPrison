@@ -50,7 +50,7 @@ public class EnemyMovementDefaultScript: MonoBehaviour
             if (GetComponent<DefaultEnemyScript>())
                 GetComponent<DefaultEnemyScript>().ChangeRotation(transform.GetChild(0).gameObject, GetComponent<Animator>());
             else if (GetComponent<RangedEnemyScript>())
-                GetComponent<RangedEnemyScript>().ChangeRotation(transform.GetChild(0).gameObject, GetComponent<Animator>());
+                GetComponent<RangedEnemyScript>().OtherChangeRotation(transform.GetChild(0).gameObject, GetComponent<Animator>());
         }
         else if(GetComponent<TankScript>())
         {
@@ -62,7 +62,7 @@ public class EnemyMovementDefaultScript: MonoBehaviour
         }
         else if(GetComponent<DogScript>())
         {
-            GetComponent<DogScript>().ChangeAnimation(walkPositions[counter], GetComponent<Animator>());
+            GetComponent<DogScript>().OtherChangeAnimation(walkPositions[counter], GetComponent<Animator>());
         }
     }
 

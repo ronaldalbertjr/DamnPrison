@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 50153883685738270}
   - component: {fileID: 61292584614167244}
   - component: {fileID: 114702666883601904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy
   m_TagString: EnemyDefault
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 212555478922451042}
   - component: {fileID: 50107640749726618}
   - component: {fileID: 114110408079952132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AuxRotationEnemy
   m_TagString: Aux
   m_Icon: {fileID: 0}

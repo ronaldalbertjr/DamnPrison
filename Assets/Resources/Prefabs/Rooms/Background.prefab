@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 4010225941053570}
   - component: {fileID: 61461664811132826}
   - component: {fileID: 114051760088714920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BoxColliderTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,8 +732,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -1.5398126, y: 0.7263065}
-  - {x: 1.5450804, y: 0.7258523}
+  - {x: -1.4558885, y: 0.5971929}
+  - {x: 1.5257133, y: 0.59028304}
 --- !u!68 &68852429947676188
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -929,9 +929,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomColliders: []
+  maxPoints: 0
+  enemies: []
+  placesToSpawn: []
   door: {fileID: 1539959002039158}
   numberOfEnemiesInRoom: 0
+  pointsInTheRoom: 0
   thereWereEnemiesInTheRoom: 0
+  thereIsAlreadyATank: 0
 --- !u!114 &114293967226658710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -946,6 +951,8 @@ MonoBehaviour:
   canOpen: 1
   doorClosing: 0
   doorPos: Down
+  openingAudio: {fileID: 0}
+  closingAudio: {fileID: 0}
 --- !u!114 &114594037534612560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -960,6 +967,8 @@ MonoBehaviour:
   canOpen: 1
   doorClosing: 0
   doorPos: Left
+  openingAudio: {fileID: 0}
+  closingAudio: {fileID: 0}
 --- !u!114 &114701856821215146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -974,6 +983,8 @@ MonoBehaviour:
   canOpen: 1
   doorClosing: 0
   doorPos: Up
+  openingAudio: {fileID: 0}
+  closingAudio: {fileID: 0}
 --- !u!114 &114747515336078276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -988,6 +999,8 @@ MonoBehaviour:
   canOpen: 1
   doorClosing: 0
   doorPos: Right
+  openingAudio: {fileID: 0}
+  closingAudio: {fileID: 0}
 --- !u!212 &212211327630481854
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1087,7 +1100,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -757220231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 04a722380c2678b46a219ab68cd70df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1157,7 +1170,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -757220231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 04a722380c2678b46a219ab68cd70df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1192,7 +1205,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -757220231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300028, guid: 04a722380c2678b46a219ab68cd70df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1297,7 +1310,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -757220231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: a53bfc987c7742444beda7e9684ad11e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
