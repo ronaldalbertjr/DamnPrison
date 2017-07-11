@@ -146,7 +146,7 @@ public class TankScript : MonoBehaviour
     {
         Queue<Vector3> queue = new Queue<Vector3>();
         HashSet<Vector3> path = new HashSet<Vector3>();
-        Vector3 positionToWalkTo;
+        Vector3 positionToWalkTo = new Vector3(0,0,0);
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
         queue.Enqueue(transform.position);
@@ -219,6 +219,8 @@ public class TankScript : MonoBehaviour
                     path.Add(positionDequeued + new Vector3(0, -0.1f));
                 }
             }
+
+            GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
         }
     }
 
