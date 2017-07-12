@@ -53,12 +53,12 @@ GameObject:
   - component: {fileID: 4496071571665808}
   - component: {fileID: 212820878659689826}
   - component: {fileID: 95915460532476956}
-  - component: {fileID: 60172314659428138}
   - component: {fileID: 50140621910153920}
   - component: {fileID: 114078766510721186}
   - component: {fileID: 114129069124368898}
   - component: {fileID: 61119053647934744}
   - component: {fileID: 114004776095822338}
+  - component: {fileID: 61434821851756810}
   m_Layer: 8
   m_Name: Tank
   m_TagString: Untagged
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930228424549308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.89739, y: 2529.8557, z: 0}
+  m_LocalPosition: {x: -17.469484, y: 2517.406, z: 0}
   m_LocalScale: {x: 9.594777, y: 9.594777, z: 9.594777}
   m_Children:
   - {fileID: 4923646169506122}
@@ -127,32 +127,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &60172314659428138
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1930228424549308}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 0.14629117, y: -0.05835524}
-      - {x: 0.16182613, y: -0.046081726}
-      - {x: 0.16261035, y: 0.16173063}
-      - {x: 0.047592606, y: 0.25356457}
-      - {x: 0.014630245, y: 0.31050918}
-      - {x: -0.09170007, y: 0.19151725}
-      - {x: -0.12734799, y: 0.11322548}
-      - {x: -0.13180432, y: -0.043702554}
-      - {x: -0.10552524, y: -0.20947069}
-      - {x: 0.08795427, y: -0.21915233}
-      - {x: 0.1257402, y: -0.13430555}
-      - {x: 0.16625905, y: -0.11237451}
 --- !u!61 &61119053647934744
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -167,6 +141,20 @@ BoxCollider2D:
   m_Offset: {x: 0.01874831, y: 0.02033068}
   serializedVersion: 2
   m_Size: {x: 0.48255715, y: 0.5769234}
+--- !u!61 &61434821851756810
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930228424549308}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.01726454, y: -0.03488531}
+  serializedVersion: 2
+  m_Size: {x: 0.42523044, y: 0.5098483}
 --- !u!61 &61555408630193030
 BoxCollider2D:
   m_ObjectHideFlags: 1

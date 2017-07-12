@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 4858850518450028}
   - component: {fileID: 61163634316859148}
   - component: {fileID: 114014607156438736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomCollider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 4270413144933628}
   - component: {fileID: 61463648530324012}
   - component: {fileID: 114052570807781868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BoxColliderTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 4361688830784240}
   - component: {fileID: 61743658246547228}
   - component: {fileID: 114501630025028516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 4254224046570162}
   - component: {fileID: 61294568393230344}
   - component: {fileID: 114497614084895572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1531,7 +1531,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636970163860088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 606.3435, y: 2529.801, z: 0}
+  m_LocalPosition: {x: 53.60429, y: 38.375797, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4897309460868424}

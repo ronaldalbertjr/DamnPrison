@@ -19,7 +19,6 @@ public class TankScript : MonoBehaviour
         GameObject player;
         Animator anim;
         Vector3 runDirection;
-        Vector3 checkDirection;
         [HideInInspector]
         public Vector3 differenceVector;
         Vector3 lastFrameVector;
@@ -57,7 +56,6 @@ public class TankScript : MonoBehaviour
     {
         differenceVector = transform.position - lastFrameVector;
         lastFrameVector = transform.position;
-        checkDirection = player.transform.position - transform.position;
 		if (running && !dying && anim.GetBool("Running")) 
 		{
             if (canRun)
@@ -129,17 +127,14 @@ public class TankScript : MonoBehaviour
     
     void CheckRun()
     {
+        Vector3 checkDirection = player.transform.position - transform.position;
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, checkDirection, Mathf.Infinity, layerMask);
         if(hit.collider.tag.Equals("Player"))
-        {
             canRun = true;
-        }
         else
-        {
             canRun = false;
-        }
     }
     
     void ChangePositionUntilItCanRun()
@@ -147,81 +142,48 @@ public class TankScript : MonoBehaviour
         Queue<Vector3> queue = new Queue<Vector3>();
         HashSet<Vector3> path = new HashSet<Vector3>();
         Vector3 positionToWalkTo = new Vector3(0,0,0);
+        Vector3 checkDirection = new Vector3(0, 0, 0);
         int layerMask = 1 << 8;
         layerMask = ~layerMask;
         queue.Enqueue(transform.position);
         while (queue.Count > 0)
         {
             Vector3 positionDequeued = queue.Dequeue();
-            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0.1f, 0)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
+            checkDirection = player.transform.position - positionDequeued;
+            RaycastHit2D hit = Physics2D.Raycast(positionDequeued, checkDirection, Mathf.Infinity, layerMask);
+            if (hit.collider.tag.Equals("Player"))
             {
-                Debug.Log("Checking");
-                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(0.1f, 0), checkDirection, Mathf.Infinity, layerMask);
-                if (hit.collider.tag.Equals("Player"))
-                {
-                    positionToWalkTo = positionDequeued + new Vector3(0.1f, 0);
-                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
-                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
-                    break;
-                }
-                else
-                {
-                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
-                    path.Add(positionDequeued + new Vector3(0, -0.1f));
-                }
-
+                positionToWalkTo = positionDequeued;
+                GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
+                Debug.DrawLine(transform.position, positionToWalkTo, Color.red, 20);
+                Debug.DrawLine(positionDequeued, hit.collider.transform.position, Color.red, 20);
+                break;
             }
-            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0, 0.1f)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
+            else
             {
-                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(0, 0.1f), checkDirection, Mathf.Infinity, layerMask);
-                if (hit.collider.tag.Equals("Player"))
+                if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0.1f, 0)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
                 {
-                    positionToWalkTo = positionDequeued + new Vector3(0, 0.1f);
-                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
-                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
-                    break;
+                    queue.Enqueue(positionDequeued + new Vector3(0.1f, 0));
+                    path.Add(positionDequeued + new Vector3(0.1f, 0));
                 }
-                else
+                if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0, 0.1f)) && !path.Contains(positionDequeued + new Vector3(0, 0.1f)))
                 {
-                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
-                    path.Add(positionDequeued + new Vector3(0, -0.1f));
+                    queue.Enqueue(positionDequeued + new Vector3(0, 0.1f));
+                    path.Add(positionDequeued + new Vector3(0, 0.1f));
                 }
-            }
-            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(-0.1f, 0)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
-            {
-                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(-0.1f, 0), checkDirection, Mathf.Infinity, layerMask);
-                if (hit.collider.tag.Equals("Player"))
+                if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(-0.1f, 0)) && !path.Contains(positionDequeued + new Vector3(-0.1f, 0)))
                 {
-                    positionToWalkTo = positionDequeued + new Vector3(-0.1f, 0);
-                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
-                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
-                    break;
+                    queue.Enqueue(positionDequeued + new Vector3(-0.1f, 0));
+                    path.Add(positionDequeued + new Vector3(-0.1f, 0));
                 }
-                else
+                if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0, -0.1f)) && !path.Contains(positionDequeued + new Vector3(0, -0.1f)))
                 {
                     queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
                     path.Add(positionDequeued + new Vector3(0, -0.1f));
                 }
             }
-            if (boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionDequeued + new Vector3(0, -0.1f)) && !path.Contains(positionDequeued + new Vector3(0.1f, 0)))
-            {
-                RaycastHit2D hit = Physics2D.Raycast(positionDequeued + new Vector3(0, -0.1f), checkDirection, Mathf.Infinity, layerMask);
-                if (hit.collider.tag.Equals("Player"))
-                {
-                    positionToWalkTo = positionDequeued + new Vector3(0, -0.1f);
-                    GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
-                    Debug.DrawLine(transform.position, positionToWalkTo, Color.red);
-                    break;
-                }
-                else
-                {
-                    queue.Enqueue(positionDequeued + new Vector3(0, -0.1f));
-                    path.Add(positionDequeued + new Vector3(0, -0.1f));
-                }
-            }
-
-            GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
         }
+        GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
     }
 
     IEnumerator Collision()
@@ -269,7 +231,7 @@ public class TankScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")))
+        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")) && !GetComponent<PolyNavAgent>().hasPath)
         {
             shakeDuration = 0.5f;
             StartCoroutine(Collision());

@@ -193,7 +193,6 @@ public class DogScript : MonoBehaviour
             transform.position += toSum * 0.25f;
             yield return new WaitForSeconds(0.001f);
         }
-        anim.SetBool("Shot", false);
     }
 
     IEnumerator ChangeEnemyColor()

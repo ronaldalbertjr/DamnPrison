@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4391501955286726}
   - component: {fileID: 61370005364062332}
   - component: {fileID: 114181362491789378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomCollider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 4547334250477822}
   - component: {fileID: 61156970529728030}
   - component: {fileID: 114793629728408976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BoxColliderTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 4508189138251694}
   - component: {fileID: 61463624892070990}
   - component: {fileID: 114565478616231848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 4425689133523116}
   - component: {fileID: 61300343914534280}
   - component: {fileID: 114730366001602448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
