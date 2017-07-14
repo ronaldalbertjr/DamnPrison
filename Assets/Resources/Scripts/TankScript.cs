@@ -35,7 +35,7 @@ public class TankScript : MonoBehaviour
 	    int health;
     #endregion
 
-    public void Start ()
+    public void Start()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         running = true;
@@ -52,12 +52,12 @@ public class TankScript : MonoBehaviour
         lastFrameVector = transform.position;
 	}
 
-	void Update ()
+	void Update()
     {
         differenceVector = transform.position - lastFrameVector;
         lastFrameVector = transform.position;
-		if (running && !dying && anim.GetBool("Running")) 
-		{
+        if (running && !dying && anim.GetBool("Running"))
+        {
             if (canRun)
             {
                 GetComponent<PolyNavAgent>().Stop();
@@ -71,13 +71,13 @@ public class TankScript : MonoBehaviour
                 anim.SetBool("Running", false);
                 anim.SetBool("Walking", true);
             }
-		} 
-		else
-		{
-			CameraShake (0.3f, 1f);
-			Flip (player.transform, spRenderer);
-		}
-	}
+        }
+        else if(!dying)
+        {
+            CameraShake(0.3f, 1f);
+            Flip(player.transform, spRenderer);
+        }
+    }
 
     private void DestroyTank()
     {
@@ -183,6 +183,23 @@ public class TankScript : MonoBehaviour
                 }
             }
         }
+        if(!boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionToWalkTo + new Vector3(1f, 0)))
+        {
+            positionToWalkTo += new Vector3(-1f, 0);
+        }
+        if (!boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionToWalkTo + new Vector3(-1f, 0)))
+        {
+            positionToWalkTo += new Vector3(1f, 0);
+        }
+        if (!boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionToWalkTo + new Vector3(0, 1f)))
+        {
+            positionToWalkTo += new Vector3(0, -1f);
+        }
+        if (!boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(positionToWalkTo + new Vector3(0, -1f)))
+        {
+            positionToWalkTo += new Vector3(0, 1f);
+        }
+
         GetComponent<PolyNavAgent>().SetDestination(positionToWalkTo);
     }
 
@@ -201,6 +218,7 @@ public class TankScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(standingUpClip.length * 2f);
 		runDirection = player.transform.position - transform.position;
         CheckRun();
+        Destroy(GetComponent<PolyNavObstacle>());
         running = true;
 		canCollide = true;
     }
@@ -213,7 +231,8 @@ public class TankScript : MonoBehaviour
 			transform.position += goBackVector;
 			yield return new WaitForSecondsRealtime(0.001f);
 		}
-	}
+        gameObject.AddComponent<PolyNavObstacle>();
+    }
     
 	IEnumerator ChangeEnemyColor()
 	{
@@ -238,19 +257,19 @@ public class TankScript : MonoBehaviour
             tankCollidedWalkAudio.Play();
             canCollide = false;
         }
-        else if (canCollide && collision.gameObject.tag.Equals("Player") && collision.gameObject.GetComponent<PlayerBehaviour>().playerCanMove)
+        else if (canCollide && collision.gameObject.tag.Equals("Player") && collision.gameObject.GetComponent<PlayerBehaviour>().playerCanMove && !GetComponent<PolyNavAgent>().hasPath)
         {
             player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
         }
-        else if (collision.gameObject.tag.Equals("Porrete") && running)
+        else if (collision.gameObject.tag.Equals("Porrete") && running && !GetComponent<PolyNavAgent>().hasPath)
         {
             collision.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
         }
-        else if (collision.gameObject.tag.Equals("EnemyGun") && running)
+        else if (collision.gameObject.tag.Equals("EnemyGun") && running && !GetComponent<PolyNavAgent>().hasPath)
         {
             collision.gameObject.GetComponent<RangedEnemyScript>().Damaged(this.gameObject, true);
         }
-        else if (collision.gameObject.tag.Equals("Dog") && running)
+        else if (collision.gameObject.tag.Equals("Dog") && running && !GetComponent<PolyNavAgent>().hasPath)
         {
             collision.gameObject.GetComponent<DogScript>().Damaged(this.gameObject, true);
         }
@@ -260,18 +279,19 @@ public class TankScript : MonoBehaviour
     {
         if (col.tag.Equals("Bullet") && GetComponent<TankScript>().isActiveAndEnabled && !dying)
         {
-            Damaged();
             Destroy(col.gameObject);
             if (health <= 0)
             {
+                gameObject.AddComponent<PolyNavObstacle>();
+                canCollide = false;
+                running = false;
                 dying = true;
                 Time.timeScale = 1f;
                 boxColliderTrigger.numberOfEnemiesInRoom--;
                 anim.SetTrigger("Die");
-                Invoke("DestroyTank", dyingClip.length);
             }
+            else
+                Damaged();
         }
     }
-
-
 }

@@ -269,22 +269,22 @@ public class PlayerBehaviour : MonoBehaviour
 
     IEnumerator ChangePlayerColor()
     {
+        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
         for (int i = 0; i < 10; i++)
         {
             if (bodySpriteRenderer.color.a.Equals(1))
             {
                 bodySpriteRenderer.color = new Color(bodySpriteRenderer.color.r, bodySpriteRenderer.color.g, bodySpriteRenderer.color.b, 0);
                 legsSpriteRenderer.color = new Color(legsSpriteRenderer.color.r, legsSpriteRenderer.color.g, legsSpriteRenderer.color.b, 0);
-                gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
             }
             else
             {
                 bodySpriteRenderer.color = new Color(bodySpriteRenderer.color.r, bodySpriteRenderer.color.g, bodySpriteRenderer.color.b, 1);
                 legsSpriteRenderer.color = new Color(legsSpriteRenderer.color.r, legsSpriteRenderer.color.g, legsSpriteRenderer.color.b, 1);
-                gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
             }
             yield return new WaitForSeconds(0.05f);
         }
+        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
         yield return 0;
         canBeHitten = true;
     }

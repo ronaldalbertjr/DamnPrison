@@ -56,9 +56,9 @@ GameObject:
   - component: {fileID: 50140621910153920}
   - component: {fileID: 114078766510721186}
   - component: {fileID: 114129069124368898}
+  - component: {fileID: 61434821851756810}
   - component: {fileID: 61119053647934744}
   - component: {fileID: 114004776095822338}
-  - component: {fileID: 61434821851756810}
   m_Layer: 8
   m_Name: Tank
   m_TagString: Untagged
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930228424549308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.469484, y: 2517.406, z: 0}
+  m_LocalPosition: {x: 49.94152, y: 2525.5938, z: 0}
   m_LocalScale: {x: 9.594777, y: 9.594777, z: 9.594777}
   m_Children:
   - {fileID: 4923646169506122}
@@ -152,9 +152,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.01726454, y: -0.03488531}
+  m_Offset: {x: 0.016212143, y: -0.017684383}
   serializedVersion: 2
-  m_Size: {x: 0.42523044, y: 0.5098483}
+  m_Size: {x: 0.45608166, y: 0.50444764}
 --- !u!61 &61555408630193030
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -285,11 +285,11 @@ MonoBehaviour:
   decelerationRate: 2
   rotateTransform: 0
   rotateSpeed: 350
-  avoidRadius: 0
+  avoidRadius: 2
   lookAheadDistance: 1
-  repath: 1
-  restrict: 1
-  closerPointOnInvalid: 1
+  repath: 0
+  restrict: 0
+  closerPointOnInvalid: 0
   debugPath: 0
 --- !u!114 &114078766510721186
 MonoBehaviour:
@@ -355,7 +355,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 8601777da0b33fa4eb59f07f6c4a63b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

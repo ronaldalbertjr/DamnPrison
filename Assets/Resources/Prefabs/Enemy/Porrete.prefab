@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987578947934932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2461.5361, y: 2521.0503, z: 0}
+  m_LocalPosition: {x: 5.1590543, y: -6.542222, z: 0}
   m_LocalScale: {x: 10.56901, y: 10.56901, z: 10.56901}
   m_Children:
   - {fileID: 4586483989593918}
@@ -219,9 +219,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.19602415, y: 0.04594813}
+  m_Offset: {x: -0.1475674, y: -0.0025084345}
   serializedVersion: 2
-  m_Size: {x: 0.21186005, y: 0.40586334}
+  m_Size: {x: 0.30877322, y: 0.50277644}
 --- !u!61 &61545796520753062
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -380,7 +380,6 @@ MonoBehaviour:
     type: 2}
   porreteAttackAudio: {fileID: 82764499667833416}
   boxColliderTrigger: {fileID: 0}
-  duringHit: 0
 --- !u!114 &114905404473239212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,12 +399,12 @@ MonoBehaviour:
   decelerationRate: 2
   rotateTransform: 0
   rotateSpeed: 350
-  avoidRadius: 0
+  avoidRadius: 2.5
   lookAheadDistance: 1
   repath: 1
   restrict: 1
-  closerPointOnInvalid: 1
-  debugPath: 1
+  closerPointOnInvalid: 0
+  debugPath: 0
 --- !u!212 &212093016332377634
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -436,7 +435,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300100, guid: 51ff20e37ae35f74493bcb8a9f5f862f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
