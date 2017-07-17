@@ -50,7 +50,8 @@ public class TankScript : MonoBehaviour
 		anim.SetBool ("Running", true);
         Flip(player.transform, spRenderer);
         lastFrameVector = transform.position;
-	}
+        GetComponent<PolyNavAgent>().OnDestinationReached += setCanRunTrue;
+    }
 
 	void Update()
     {
@@ -135,6 +136,11 @@ public class TankScript : MonoBehaviour
             canRun = true;
         else
             canRun = false;
+    }
+    
+    void setCanRunTrue()
+    {
+        canRun = true;
     }
     
     void ChangePositionUntilItCanRun()
@@ -250,6 +256,11 @@ public class TankScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(GetComponent<PolyNavAgent>().hasPath)
+        {
+            canRun = true;
+            anim.SetBool("Running", true);
+        }
         if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")) && !GetComponent<PolyNavAgent>().hasPath)
         {
             shakeDuration = 0.5f;
@@ -272,6 +283,17 @@ public class TankScript : MonoBehaviour
         else if (collision.gameObject.tag.Equals("Dog") && running && !GetComponent<PolyNavAgent>().hasPath)
         {
             collision.gameObject.GetComponent<DogScript>().Damaged(this.gameObject, true);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (canCollide && (collision.gameObject.tag.Equals("Background") || collision.gameObject.tag.Equals("Door")) && !GetComponent<PolyNavAgent>().hasPath)
+        {
+            shakeDuration = 0.5f;
+            StartCoroutine(Collision());
+            tankCollidedWalkAudio.Play();
+            canCollide = false;
         }
     }
 

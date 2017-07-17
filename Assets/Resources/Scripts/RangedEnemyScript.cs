@@ -14,12 +14,14 @@ public class RangedEnemyScript : MonoBehaviour
     [HideInInspector]
     public BoxColliderTriggerScript boxColliderTrigger;
     float time;
+    float timeToMove;
     float angle;
     float health;
     bool walking;
+    bool canShoot = true;
     #endregion
 
-    void OnEnable ()
+    void Start ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
         health = 3;
@@ -29,27 +31,33 @@ public class RangedEnemyScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         aux.GetComponent<EnemyArmaScript>().pointPosition = player.transform.transform;
         bullet = (GameObject)Resources.Load("Prefabs/Weapons/enemyBullet", typeof(GameObject));
+        GetComponent<PolyNavAgent>().OnDestinationReached += setCanShootTrue;
     }
-	
-    void Update ()
+
+    void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > 10)
+        if (canShoot)
         {
-            this.GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
-            anim.SetBool("Walking", true);
-            ChangeRotation(anim);
-        }
-        else
-        {
-            anim.SetBool("Walking", false);
+            GetComponent<PolyNavAgent>().Stop();
+            canShoot = CheckShot(transform.position);
             OtherChangeRotation(aux, anim);
-            this.GetComponent<PolyNavAgent>().Stop();
+            anim.SetBool("Walking", false);
             time += Time.deltaTime;
+            timeToMove += Time.deltaTime;
             if (time >= 1.5f)
             {
                 time = 0;
                 ShotBullet();
             }
+            if (timeToMove >= 5)
+            {
+                timeToMove = 0;
+                FindPositionToShoot();
+            }
+        }
+        else if(!GetComponent<PolyNavAgent>().hasPath)
+        {
+            FindPositionToShoot();
         }
     }
 
@@ -151,6 +159,46 @@ public class RangedEnemyScript : MonoBehaviour
         {
             anim.SetFloat("EnemyWalkingFloat", 2);
         }
+    }
+
+    void FindPositionToShoot()
+    {
+        bool canGo = false;
+        canShoot = false;
+        Vector3 newPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-20, 20), transform.position.y + UnityEngine.Random.Range(-20, 20));
+        while(!canGo)
+        {
+            if(boxColliderTrigger.GetComponent<Collider2D>().bounds.Contains(newPosition) && Vector3.Distance(player.transform.position, newPosition) > 10f)
+            {
+                //canGo = CheckShot(newPosition);
+                canGo = true;
+            }
+            else
+            {
+                newPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-10, 10), transform.position.y + UnityEngine.Random.Range(-10, 10));
+            }
+        }
+        GetComponent<PolyNavAgent>().SetDestination(newPosition);
+        anim.SetBool("Walking", true);
+    }
+
+    void setCanShootTrue()
+    {
+        canShoot = true;
+    }
+
+    bool CheckShot(Vector3 position)
+    {
+        Vector3 checkDirection = player.transform.position - position;
+        bool reachedPlayer;
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
+        RaycastHit2D hit = Physics2D.Raycast(position, checkDirection, Mathf.Infinity, layerMask);
+        if (hit.collider.tag.Equals("Player"))
+            reachedPlayer = true;
+        else
+            reachedPlayer = false;
+        return reachedPlayer;
     }
 
     IEnumerator Shot(bool hittenByTank, GameObject tank)
@@ -318,5 +366,13 @@ public class RangedEnemyScript : MonoBehaviour
         {
             StartCoroutine(ChangeWalkingDirection(col.gameObject));
         }*/
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (GetComponent<PolyNavAgent>().hasPath)
+        {
+            canShoot = true;
+        }
     }
 }
