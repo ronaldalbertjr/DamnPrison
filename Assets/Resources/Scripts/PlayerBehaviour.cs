@@ -77,7 +77,7 @@ public class PlayerBehaviour : MonoBehaviour
             ChangeRotation();
             CheckDifferentVisions();
             CameraShake();
-            if (Input.GetMouseButton(0) && time >= 0.8)
+            if (Input.GetMouseButton(0) && time >= 0.8 && canBeHitten)
             {
                 time = 0;
                 gunAnim.SetBool("Shotting", true);
@@ -99,75 +99,78 @@ public class PlayerBehaviour : MonoBehaviour
 
     void ChangeMovement()
     {
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        if (canBeHitten)
         {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += (Vector3.up + Vector3.right) * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 2);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += (Vector3.up + Vector3.left) * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 2);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += (Vector3.down + Vector3.right) * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 0);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += (Vector3.down + Vector3.left) * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 0);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += Vector3.up * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 2);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += Vector3.right * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 1);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += Vector3.left * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 3);
-            walkingAudio.UnPause();
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            bodyAnim.SetBool("Walking", true);
-            legsAnim.SetBool("Walking", true);
-            this.transform.position += Vector3.down * speed * Time.deltaTime;
-            legsAnim.SetFloat("WalkingLeg", 0);
-            walkingAudio.UnPause();
-        }
-        else
-        {
-            bodyAnim.SetBool("Walking", false);
-            legsAnim.SetBool("Walking", false);
-            walkingAudio.Pause();
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += (Vector3.up + Vector3.right) * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 2);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += (Vector3.up + Vector3.left) * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 2);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += (Vector3.down + Vector3.right) * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 0);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += (Vector3.down + Vector3.left) * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 0);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += Vector3.up * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 2);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += Vector3.right * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 1);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += Vector3.left * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 3);
+                walkingAudio.UnPause();
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                bodyAnim.SetBool("Walking", true);
+                legsAnim.SetBool("Walking", true);
+                this.transform.position += Vector3.down * speed * Time.deltaTime;
+                legsAnim.SetFloat("WalkingLeg", 0);
+                walkingAudio.UnPause();
+            }
+            else
+            {
+                bodyAnim.SetBool("Walking", false);
+                legsAnim.SetBool("Walking", false);
+                walkingAudio.Pause();
+            }
         }
     }
 
@@ -251,20 +254,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Damaged(GameObject col)
     {
-        StartCoroutine(IDamaged(col));
-    }
-
-    IEnumerator IDamaged(GameObject collision)
-    {
         canBeHitten = false;
         bodyAnim.SetBool("Damaged", true);
         legsAnim.SetBool("Damaged", true);
         gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
-        Vector3 pos = collision.transform.position;
-        int aux = Convert.ToInt32(bodyAnim.GetFloat("LookingAngle"));
-        yield return new WaitForSeconds(0.2f);
         StartCoroutine(ChangePlayerColor());
-        StartCoroutine(GoingBackWhenShot(aux, pos));
+        StartCoroutine(GoingBackWhenShot(col));
     }
 
     IEnumerator ChangePlayerColor()
@@ -282,81 +277,36 @@ public class PlayerBehaviour : MonoBehaviour
                 bodySpriteRenderer.color = new Color(bodySpriteRenderer.color.r, bodySpriteRenderer.color.g, bodySpriteRenderer.color.b, 1);
                 legsSpriteRenderer.color = new Color(legsSpriteRenderer.color.r, legsSpriteRenderer.color.g, legsSpriteRenderer.color.b, 1);
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSecondsRealtime(0.05f);
         }
         gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
-        yield return 0;
         canBeHitten = true;
     }
 
-    IEnumerator GoingBackWhenShot(int aux, Vector3 position)
+    IEnumerator GoingBackWhenShot(GameObject aux)
     {
+
+        float multiplier = 0.2f;
+        Vector3 goingDirection = aux.transform.position - transform.position;
+        Vector3 goBackVector = new Vector3(-goingDirection.normalized.x, -goingDirection.normalized.y) * multiplier;
         for (float i = 0; i < 10; i++)
         {
-            switch (aux)
-            {
-                case 0:
-                    transform.position += new Vector3(0f, 0.1f, 0f);
-                    if (position.x < transform.position.x)
-                    {
-                        bodyAnim.SetFloat("DamagedFloat", 1);
-                        legsAnim.SetFloat("DamagedFloat", 1);
-                    }
-                    else
-                    {
-                        bodyAnim.SetFloat("DamagedFloat", 0);
-                        legsAnim.SetFloat("DamagedFloat", 0);
-                    }
-                    break;
-                case 1:
-                    transform.position += new Vector3(-0.1f, 0f, 0f);
-                    bodyAnim.SetFloat("DamagedFloat", 1);
-                    legsAnim.SetFloat("DamagedFloat", 1);
-                    break;
-                case 2:
-                    transform.position += new Vector3(0f, -0.1f, 0f);
-                    if (position.x < transform.position.x)
-                    {
-                        bodyAnim.SetFloat("DamagedFloat", 1);
-                        legsAnim.SetFloat("DamagedFloat", 1);
-                    }
-                    else
-                    {
-                        bodyAnim.SetFloat("DamagedFloat", 0);
-                        legsAnim.SetFloat("DamagedFloat", 0);
-                    }
-                    break;
-                case 3:
-                    transform.position += new Vector3(0.1f, 0f, 0f);
-                    bodyAnim.SetFloat("DamagedFloat", 0);
-                    legsAnim.SetFloat("DamagedFloat", 0);
-                    break;
-                case 4:
-                    transform.position += new Vector3(-0.1f, -0.1f, 0f);
-                    bodyAnim.SetFloat("DamagedFloat", 1);
-                    legsAnim.SetFloat("DamagedFloat", 1);
-                    break;
-                case 5:
-                    transform.position += new Vector3(0.1f, -0.1f, 0f);
-                    bodyAnim.SetFloat("DamagedFloat", 0);
-                    legsAnim.SetFloat("DamagedFloat", 0);
-                    break;
-                case 6:
-                    transform.position += new Vector3(-0.1f, 0.1f, 0f);
-                    bodyAnim.SetFloat("DamagedFloat", 1);
-                    legsAnim.SetFloat("DamagedFloat", 1);
-                    break;
-                case 7:
-                    transform.position += new Vector3(0.1f, 0.1f, 0f);
-                    bodyAnim.SetFloat("DamagedFloat", 0);
-                    legsAnim.SetFloat("DamagedFloat", 0);
-                    break;
-            }
-            yield return new WaitForSeconds(0.001f);
+            transform.position += goBackVector;
+            yield return new WaitForSecondsRealtime(0.001f);
         }
+        if (goBackVector.x > 0f)
+        {
+            bodyAnim.SetFloat("DamagedFloat", 0);
+            legsAnim.SetFloat("DamagedFloat", 0);
+        }
+        else if (goBackVector.x < 0f)
+        {
+            bodyAnim.SetFloat("DamagedFloat", 1);
+            legsAnim.SetFloat("DamagedFloat", 1);
+        }
+        yield return new WaitForSeconds(0.5f);
         bodyAnim.SetBool("Damaged", false);
         legsAnim.SetBool("Damaged", false);
-        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
     }
 
     private void OnTriggerStay2D(Collider2D col)

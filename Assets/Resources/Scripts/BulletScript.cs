@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour
         }
         else if (col.tag.Equals("Player") && thrownBy.Equals("Enemy") && col.GetComponent<PlayerBehaviour>().canBeHitten)
         {
-            col.gameObject.GetComponent<PlayerBehaviour>().Damaged(col.gameObject);
+            col.gameObject.GetComponent<PlayerBehaviour>().Damaged(gameObject);
             Destroy(gameObject);
         }
         else if (col.tag.Equals("Background"))

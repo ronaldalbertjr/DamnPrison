@@ -366,13 +366,11 @@ public class RangedEnemyScript : MonoBehaviour
         {
             StartCoroutine(ChangeWalkingDirection(col.gameObject));
         }*/
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
         if (GetComponent<PolyNavAgent>().hasPath)
         {
             canShoot = true;
         }
     }
+    
 }

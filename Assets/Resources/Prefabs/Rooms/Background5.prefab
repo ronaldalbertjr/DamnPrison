@@ -1040,7 +1040,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291670193537050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.55374, y: 17.258955, z: 0}
+  m_LocalPosition: {x: 2529.3943, y: -11.039298, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4822727426982862}
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   walkPositions:
   - {fileID: 4667673530383070}
   - {fileID: 4337782109413552}
-  roomCollider: {fileID: 114103054226375534}
+  roomCollider: {fileID: 114222092502711702}
   boxCollider: {fileID: 114077773928606914}
 --- !u!114 &114054355019652836
 MonoBehaviour:

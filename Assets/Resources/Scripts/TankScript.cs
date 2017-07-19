@@ -270,7 +270,7 @@ public class TankScript : MonoBehaviour
         }
         else if (canCollide && collision.gameObject.tag.Equals("Player") && collision.gameObject.GetComponent<PlayerBehaviour>().playerCanMove && !GetComponent<PolyNavAgent>().hasPath)
         {
-            player.GetComponent<PlayerBehaviour>().Damaged(collision.gameObject);
+            player.GetComponent<PlayerBehaviour>().Damaged(gameObject);
         }
         else if (collision.gameObject.tag.Equals("Porrete") && running && !GetComponent<PolyNavAgent>().hasPath)
         {
