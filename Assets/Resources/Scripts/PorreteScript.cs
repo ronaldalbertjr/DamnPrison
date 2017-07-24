@@ -30,6 +30,7 @@ public class PorreteScript : MonoBehaviour
         bool attacking;
         bool facingRight;
         bool damaged;
+        bool isDead;
     #endregion
 
     void OnEnable()
@@ -45,26 +46,35 @@ public class PorreteScript : MonoBehaviour
         attacking = false;
         playerInsideArea = false;
         damaged = false;
+        isDead = false;
         Flip(player.transform, spRenderer, hitAreaCollider);
     }
 
     void Update ()
     {
-        Flip(player.transform, spRenderer, hitAreaCollider);
-        playerInsideArea = hitAreaScript.playerInsideArea;
-        if(!playerInsideArea && !attacking && !damaged)
+        if (!isDead)
         {
-            GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
-        }
-        else if(!attacking && !damaged)
-        {
-            GetComponent<PolyNavAgent>().Stop();
-            porreteAttackAudio.Play();
-            StartCoroutine(PorreteAttacking());
-        }
-        else if(damaged)
-        {
-            GetComponent<PolyNavAgent>().Stop();
+            Flip(player.transform, spRenderer, hitAreaCollider);
+            playerInsideArea = hitAreaScript.playerInsideArea;
+            if (!playerInsideArea && !attacking && !damaged)
+            {
+                GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
+            }
+            else if (!attacking && !damaged)
+            {
+                GetComponent<PolyNavAgent>().Stop();
+                porreteAttackAudio.Play();
+                StartCoroutine(PorreteAttacking());
+            }
+            else if (damaged)
+            {
+                GetComponent<PolyNavAgent>().Stop();
+            }
+            if(health <= 0)
+            {
+                isDead = true;
+                anim.SetTrigger("Die");
+            }
         }
 	}
 
@@ -101,7 +111,6 @@ public class PorreteScript : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
             Time.timeScale = 1;
             boxColliderTrigger.numberOfEnemiesInRoom--;
         }
@@ -260,7 +269,7 @@ public class PorreteScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Bullet") && GetComponent<PorreteScript>().isActiveAndEnabled)
+        if (col.tag.Equals("Bullet") && GetComponent<PorreteScript>().isActiveAndEnabled && !isDead)
         {
             Damaged();
             Destroy(col.gameObject);
