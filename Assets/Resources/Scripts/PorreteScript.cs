@@ -70,10 +70,14 @@ public class PorreteScript : MonoBehaviour
             {
                 GetComponent<PolyNavAgent>().Stop();
             }
-            if(health <= 0)
+            if(health <=0 )
             {
                 isDead = true;
                 anim.SetTrigger("Die");
+                Destroy(GetComponent<PolygonCollider2D>());
+                BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
+                collider.offset = new Vector2(-0.006154618f, -0.1244677f);
+                collider.size = new Vector2(0.4460849f, 0.1728561f);
             }
         }
 	}
@@ -100,19 +104,22 @@ public class PorreteScript : MonoBehaviour
 
     public void Damaged(GameObject tank = null, bool hittenByTank = false)
     {
-        health--;
-        if (health != 5)
+        if (!isDead)
         {
-            StartCoroutine(IDamaged(hittenByTank, tank));
-        }
-        else if(health == 5)
-        {
-            StartCoroutine(IFatalDamaged(hittenByTank, tank));
-        }
-        if (health <= 0)
-        {
-            Time.timeScale = 1;
-            boxColliderTrigger.numberOfEnemiesInRoom--;
+            health--;
+            if (health != 5)
+            {
+                StartCoroutine(IDamaged(hittenByTank, tank));
+            }
+            else if (health == 5)
+            {
+                StartCoroutine(IFatalDamaged(hittenByTank, tank));
+            }
+            if (health <= 0)
+            {
+                Time.timeScale = 1;
+                boxColliderTrigger.numberOfEnemiesInRoom--;
+            }
         }
     }
 

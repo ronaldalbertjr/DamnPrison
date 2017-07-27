@@ -30,7 +30,7 @@ public class TankScript : MonoBehaviour
 	    bool canCollide;
 	    bool facingRight;
         bool invencible;
-        bool dying;
+        bool die;
 	    float shakeDuration;
 	    int health;
     #endregion
@@ -46,6 +46,7 @@ public class TankScript : MonoBehaviour
         runDirection = player.transform.position - transform.position;
 		canCollide = true;
         canRun = true;
+        die = false;
         anim.SetBool("Walking", false);
 		anim.SetBool ("Running", true);
         Flip(player.transform, spRenderer);
@@ -57,7 +58,7 @@ public class TankScript : MonoBehaviour
     {
         differenceVector = transform.position - lastFrameVector;
         lastFrameVector = transform.position;
-        if (running && !dying && anim.GetBool("Running"))
+        if (running && !die && anim.GetBool("Running"))
         {
             if (canRun)
             {
@@ -73,7 +74,7 @@ public class TankScript : MonoBehaviour
                 anim.SetBool("Walking", true);
             }
         }
-        else if(!dying)
+        else if(!die)
         {
             CameraShake(0.3f, 1f);
             Flip(player.transform, spRenderer);
@@ -268,15 +269,15 @@ public class TankScript : MonoBehaviour
             tankCollidedWalkAudio.Play();
             canCollide = false;
         }
-        else if (canCollide && collision.gameObject.tag.Equals("Player") && collision.gameObject.GetComponent<PlayerBehaviour>().playerCanMove && !GetComponent<PolyNavAgent>().hasPath)
+        else if (canCollide && collision.gameObject.tag.Equals("Player") && collision.gameObject.GetComponent<PlayerBehaviour>().playerCanMove && !GetComponent<PolyNavAgent>().hasPath && !die)
         {
             player.GetComponent<PlayerBehaviour>().Damaged(gameObject);
         }
-        else if (collision.gameObject.tag.Equals("Porrete") && running && !GetComponent<PolyNavAgent>().hasPath)
+        else if (collision.gameObject.tag.Equals("Porrete") && running && !GetComponent<PolyNavAgent>().hasPath && !die)
         {
             collision.gameObject.GetComponent<PorreteScript>().Damaged(this.gameObject, true);
         }
-        else if (collision.gameObject.tag.Equals("EnemyGun") && running && !GetComponent<PolyNavAgent>().hasPath)
+        else if (collision.gameObject.tag.Equals("EnemyGun") && running && !GetComponent<PolyNavAgent>().hasPath && !die)
         {
             collision.gameObject.GetComponent<RangedEnemyScript>().Damaged(this.gameObject, true);
         }
@@ -299,7 +300,7 @@ public class TankScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Bullet") && GetComponent<TankScript>().isActiveAndEnabled && !dying)
+        if (col.tag.Equals("Bullet") && GetComponent<TankScript>().isActiveAndEnabled && !die)
         {
             Destroy(col.gameObject);
             if (health <= 0)
@@ -307,7 +308,7 @@ public class TankScript : MonoBehaviour
                 gameObject.AddComponent<PolyNavObstacle>();
                 canCollide = false;
                 running = false;
-                dying = true;
+                die = true;
                 Time.timeScale = 1f;
                 boxColliderTrigger.numberOfEnemiesInRoom--;
                 anim.SetTrigger("Die");
