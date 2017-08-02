@@ -175,7 +175,7 @@ public class RangedEnemyScript : MonoBehaviour
             }
             else
             {
-                newPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-10, 10), transform.position.y + UnityEngine.Random.Range(-10, 10));
+                newPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-20, 20), transform.position.y + UnityEngine.Random.Range(-20, 20));
             }
         }
         GetComponent<PolyNavAgent>().SetDestination(newPosition);
@@ -366,11 +366,14 @@ public class RangedEnemyScript : MonoBehaviour
         {
             StartCoroutine(ChangeWalkingDirection(col.gameObject));
         }*/
+    }
 
+    private void OnCollisionStay2D(Collision2D col)
+    {
         if (GetComponent<PolyNavAgent>().hasPath)
         {
             canShoot = true;
         }
     }
-    
+
 }
