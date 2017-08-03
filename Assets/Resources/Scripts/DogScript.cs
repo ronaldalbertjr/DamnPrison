@@ -215,11 +215,6 @@ public class DogScript : MonoBehaviour
         {
             if (!biting) Bite();
         }
-
-       /* if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
-        {
-            StartCoroutine(ChangeWalkingDirection(col.gameObject));
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)

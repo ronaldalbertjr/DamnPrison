@@ -27,22 +27,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1523787362373434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4448539568789032}
-  - component: {fileID: 61545796520753062}
-  m_Layer: 8
-  m_Name: TouchingDangerZone
-  m_TagString: Untouchable
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1734058974674392
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,28 +88,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987578947934932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.19724, y: 2493.2195, z: 0}
+  m_LocalPosition: {x: -2464.0688, y: 2511.463, z: 0}
   m_LocalScale: {x: 10.56901, y: 10.56901, z: 10.56901}
   m_Children:
   - {fileID: 4586483989593918}
   - {fileID: 4891859086867600}
-  - {fileID: 4448539568789032}
   - {fileID: 4839316796240336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4448539568789032
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1523787362373434}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4122975629323556}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4586483989593918
 Transform:
@@ -151,7 +121,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4122975629323556}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4891859086867600
 Transform:
@@ -222,20 +192,6 @@ BoxCollider2D:
   m_Offset: {x: -0.1475674, y: -0.0025084345}
   serializedVersion: 2
   m_Size: {x: 0.30877322, y: 0.50277644}
---- !u!61 &61545796520753062
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1523787362373434}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.061448365, y: -0.020997599}
-  serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.65}
 --- !u!82 &82764499667833416
 AudioSource:
   m_ObjectHideFlags: 1
@@ -392,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 2
-  mass: 20
+  mass: 1e+13
   stoppingDistance: 0.1
   slowingDistance: 1
   accelerationRate: 2

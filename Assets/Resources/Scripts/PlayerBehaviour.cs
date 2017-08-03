@@ -70,7 +70,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 	void Update () 
 	{
-        if (playerCanMove)
+        if (playerCanMove && Time.deltaTime != 0)
         {
             time += Time.deltaTime;
             ChangeMovement();

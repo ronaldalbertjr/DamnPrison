@@ -25,7 +25,12 @@ public class PauseScript : MonoBehaviour
         GetComponent<Canvas>().enabled = false;
     }
 
-    public void OnBackToMenuPressed()
+    public void OnButtonHover(GameObject button)
+    {
+        button.GetComponent<Animator>().SetTrigger("Highlighted");
+    }
+
+    public void OnBackToTitle()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MenuScene");

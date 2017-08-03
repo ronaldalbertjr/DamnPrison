@@ -360,14 +360,6 @@ public class RangedEnemyScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        /*if (col.tag.Equals("Untouchable") && this.isActiveAndEnabled)
-        {
-            StartCoroutine(ChangeWalkingDirection(col.gameObject));
-        }*/
-    }
-
     private void OnCollisionStay2D(Collision2D col)
     {
         if (GetComponent<PolyNavAgent>().hasPath)

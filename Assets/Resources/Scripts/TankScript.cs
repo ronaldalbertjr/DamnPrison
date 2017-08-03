@@ -306,6 +306,7 @@ public class TankScript : MonoBehaviour
             if (health <= 0)
             {
                 gameObject.AddComponent<PolyNavObstacle>();
+                Destroy(gameObject.GetComponent<Collider2D>());
                 canCollide = false;
                 running = false;
                 die = true;
