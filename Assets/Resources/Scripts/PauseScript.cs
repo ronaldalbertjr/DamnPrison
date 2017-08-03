@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
+    #region Variables
+        [SerializeField]
+        GameObject menuPanel;
+        [SerializeField]
+        GameObject exitPanel;
+    #endregion
+
     void Start()
     {
         GetComponent<Canvas>().enabled = false;
@@ -25,14 +32,26 @@ public class PauseScript : MonoBehaviour
         GetComponent<Canvas>().enabled = false;
     }
 
-    public void OnButtonHover(GameObject button)
-    {
-        button.GetComponent<Animator>().SetTrigger("Highlighted");
-    }
-
-    public void OnBackToTitle()
+    public void OnBackToTitlePressed()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void OnExitPressed()
+    {
+        menuPanel.SetActive(false);
+        exitPanel.SetActive(true);
+    }
+    
+    public void OnYesPressed()
+    {
+        Application.Quit();
+    }
+
+    public void OnNoPressed()
+    {
+        menuPanel.SetActive(true);
+        exitPanel.SetActive(false);
     }
 }

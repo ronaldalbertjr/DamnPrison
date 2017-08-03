@@ -75,9 +75,6 @@ public class PorreteScript : MonoBehaviour
                 isDead = true;
                 anim.SetTrigger("Die");
                 Destroy(GetComponent<PolygonCollider2D>());
-                BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
-                collider.offset = new Vector2(-0.006154618f, -0.1244677f);
-                collider.size = new Vector2(0.4460849f, 0.1728561f);
             }
         }
 	}
