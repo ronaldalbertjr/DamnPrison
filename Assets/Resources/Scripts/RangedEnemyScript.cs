@@ -19,12 +19,14 @@ public class RangedEnemyScript : MonoBehaviour
     float health;
     bool walking;
     bool canShoot = true;
+    [HideInInspector]
+    public bool isDead;
     #endregion
 
     void Start ()
     {
         boxColliderTrigger = transform.parent.FindChild("BoxColliderTrigger").GetComponent<BoxColliderTriggerScript>();
-        health = 3;
+        health = 5;
         aux = transform.FindChild("AuxRotationEnemy").gameObject;
         aux.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         anim = GetComponent<Animator>();
@@ -36,28 +38,31 @@ public class RangedEnemyScript : MonoBehaviour
 
     void Update()
     {
-        if (canShoot)
+        if (!isDead)
         {
-            GetComponent<PolyNavAgent>().Stop();
-            canShoot = CheckShot(transform.position);
-            OtherChangeRotation(aux, anim);
-            anim.SetBool("Walking", false);
-            time += Time.deltaTime;
-            timeToMove += Time.deltaTime;
-            if (time >= 1.5f)
+            if (canShoot)
             {
-                time = 0;
-                ShotBullet();
+                GetComponent<PolyNavAgent>().Stop();
+                canShoot = CheckShot(transform.position);
+                OtherChangeRotation(aux, anim);
+                anim.SetBool("Walking", false);
+                time += Time.deltaTime;
+                timeToMove += Time.deltaTime;
+                if (time >= 1.5f)
+                {
+                    time = 0;
+                    ShotBullet();
+                }
+                if (timeToMove >= 5)
+                {
+                    timeToMove = 0;
+                    FindPositionToShoot();
+                }
             }
-            if (timeToMove >= 5)
+            else if (!GetComponent<PolyNavAgent>().hasPath)
             {
-                timeToMove = 0;
                 FindPositionToShoot();
             }
-        }
-        else if(!GetComponent<PolyNavAgent>().hasPath)
-        {
-            FindPositionToShoot();
         }
     }
 
@@ -67,8 +72,11 @@ public class RangedEnemyScript : MonoBehaviour
         StartCoroutine(Shot(hittenByTank, tank));
         if (health <= 0)
         {
+            GetComponent<PolyNavAgent>().Stop();
+            anim.SetTrigger("Die");
+            isDead = true;
+            Destroy(GetComponent<Collider2D>());
             Time.timeScale = 1;
-            Destroy(gameObject);
             boxColliderTrigger.numberOfEnemiesInRoom--;
         }
     }

@@ -23,7 +23,7 @@ public class BulletScript : MonoBehaviour
             col.GetComponent<DefaultEnemyScript>().Damaged();
             Destroy(gameObject);
         }
-        if (col.tag.Equals("EnemyGun") && thrownBy.Equals("Player") && col.GetComponent<RangedEnemyScript>().isActiveAndEnabled)
+        if (col.tag.Equals("EnemyGun") && thrownBy.Equals("Player") && col.GetComponent<RangedEnemyScript>().isActiveAndEnabled && !col.GetComponent<RangedEnemyScript>().isDead)
         {
             col.GetComponent<RangedEnemyScript>().Damaged();
             Destroy(gameObject);

@@ -16,6 +16,7 @@ public class DogScript : MonoBehaviour
         float health;
         bool biting;
         bool damaged;
+        bool isDead;
     #endregion
 
     public void Start ()
@@ -29,9 +30,12 @@ public class DogScript : MonoBehaviour
 
 	void Update ()
     {
-        if(!damaged)
-            ChangeAnimation(anim);
-        GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
+        if (!isDead)
+        {
+            if (!damaged)
+                ChangeAnimation(anim);
+            GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
+        }
 	}
 
     public void ChangeAnimation(Animator anim)
@@ -88,7 +92,10 @@ public class DogScript : MonoBehaviour
         StartCoroutine(ChangeTimeScale());
         if (health <= 0)
         {
-            Destroy(gameObject);
+            isDead = true;
+            Destroy(GetComponent<Collider2D>());
+            anim.SetTrigger("Die");
+            GetComponent<PolyNavAgent>().Stop();
             Time.timeScale = 1;
             boxColliderTrigger.numberOfEnemiesInRoom--;
         }
