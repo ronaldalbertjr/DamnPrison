@@ -54,6 +54,9 @@ TagManager:
   - name: BelowDefault
     uniqueID: 3537747065
     locked: 0
+  - name: DeadEnemy
+    uniqueID: 3757337371
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -78,6 +78,7 @@ public class RangedEnemyScript : MonoBehaviour
             Destroy(GetComponent<Collider2D>());
             Time.timeScale = 1;
             boxColliderTrigger.numberOfEnemiesInRoom--;
+            GetComponent<SpriteRenderer>().sortingLayerName = "DeadEnemy";
         }
     }
 

@@ -70,11 +70,12 @@ public class PorreteScript : MonoBehaviour
             {
                 GetComponent<PolyNavAgent>().Stop();
             }
-            if(health <=0 )
+            if(health <= 0 )
             {
                 isDead = true;
                 anim.SetTrigger("Die");
                 Destroy(GetComponent<PolygonCollider2D>());
+                spRenderer.sortingLayerName = "DeadEnemy";
             }
         }
 	}

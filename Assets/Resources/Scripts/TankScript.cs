@@ -307,6 +307,7 @@ public class TankScript : MonoBehaviour
             {
                 gameObject.AddComponent<PolyNavObstacle>();
                 Destroy(gameObject.GetComponent<Collider2D>());
+                spRenderer.sortingLayerName = "DeadEnemy";
                 canCollide = false;
                 running = false;
                 die = true;

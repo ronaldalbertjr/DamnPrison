@@ -98,6 +98,7 @@ public class DogScript : MonoBehaviour
             GetComponent<PolyNavAgent>().Stop();
             Time.timeScale = 1;
             boxColliderTrigger.numberOfEnemiesInRoom--;
+            GetComponent<SpriteRenderer>().sortingLayerName = "DeadEnemy";
         }
     }
 
