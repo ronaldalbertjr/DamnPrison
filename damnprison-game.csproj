@@ -94,6 +94,7 @@
     <Compile Include="Assets\Resources\Scripts\EnemySpawnerScript.cs" />
     <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Resources\Scripts\MuscleliniScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\MuscleliniShadowScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerBehaviour.cs" />
     <Compile Include="Assets\Resources\Scripts\PorreteAreaHitScript.cs" />

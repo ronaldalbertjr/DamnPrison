@@ -91,9 +91,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.004470151, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.65}
+  m_Size: {x: 0.8089394, y: 0.65}
 --- !u!95 &95548126425423380
 Animator:
   serializedVersion: 3
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchAnimClip: {fileID: 7400000, guid: 221710b2969827d4eb102ab0dd167aa6, type: 2}
+  jumpAnimClip: {fileID: 7400000, guid: 22e695b5f65fb3f428b997e79025bbe5, type: 2}
 --- !u!212 &212034462530326106
 SpriteRenderer:
   m_ObjectHideFlags: 1

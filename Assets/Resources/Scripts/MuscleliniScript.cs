@@ -4,7 +4,6 @@ using UnityEngine;
 
 enum MuscleliniAttacks
 {
-    Idle,
     JumpAttack,
     PunchAttack
 }
@@ -38,9 +37,10 @@ public class MuscleliniScript : MonoBehaviour
         anim = GetComponent<Animator>();
         spRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
-        currentAttack = MuscleliniAttacks.Idle;
+        currentAttack = MuscleliniAttacks.PunchAttack;
         punching = false;
         punchingCoroutineRunning = false;
+        jumpingCoroutineRunning = false;
         isDead = false;
 	}
 	
@@ -49,43 +49,39 @@ public class MuscleliniScript : MonoBehaviour
         if (!isDead)
         {
             Flip(player.transform, spRenderer);
-            if (currentAttack == MuscleliniAttacks.Idle)
+            if(!jumpingCoroutineRunning) timeToAttack += Time.deltaTime;
+            if (timeToAttack >= 10)
             {
-                anim.SetBool("Running", false);
-                timeToAttack += Time.deltaTime;
-                if (timeToAttack >= 5)
-                {
-                    timeToAttack = 0;
-                    if (Random.Range(0, 10) < 9) currentAttack = MuscleliniAttacks.PunchAttack;
-                    else currentAttack = MuscleliniAttacks.JumpAttack;
-                }
+                timeToAttack = 0;
+                currentAttack = MuscleliniAttacks.JumpAttack;
             }
-            else
-            {
-                switch(currentAttack)
-                {
-                    case MuscleliniAttacks.PunchAttack:
-
-                        if (punching)
-                        {
-                            if(!punchingCoroutineRunning) StartCoroutine(Punching());
-                        }
-                        else
-                        {
-                            anim.SetBool("Running", true);
-                            GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
-                        }
-                        break;
-                    case MuscleliniAttacks.JumpAttack:
-                        if(jumpingCoroutineRunning)
-                        {
-                            StartCoroutine(Jumping());
-                        }
-                        break;
-                }
-            }
+            CheckAttack(currentAttack);
         }
 	}
+
+    void CheckAttack(MuscleliniAttacks currentAttack)
+    {
+        switch (currentAttack)
+        {
+            case MuscleliniAttacks.PunchAttack:
+                if (punching)
+                {
+                    if (!punchingCoroutineRunning) StartCoroutine(Punching());
+                }
+                else
+                {
+                    anim.SetBool("Running", true);
+                    GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
+                }
+                break;
+            case MuscleliniAttacks.JumpAttack:
+                if (!jumpingCoroutineRunning)
+                {
+                    StartCoroutine(Jumping());
+                }
+                break;
+        }
+    }
 
     public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
     {
@@ -117,9 +113,7 @@ public class MuscleliniScript : MonoBehaviour
             player.GetComponent<PlayerBehaviour>().Damaged(gameObject);
         }
         yield return new WaitForSecondsRealtime(0.5f);
-        currentAttack = MuscleliniAttacks.Idle;
         punching = false;
-        anim.SetBool("Running", false);
         punchingCoroutineRunning = false;
     }
 
@@ -128,7 +122,7 @@ public class MuscleliniScript : MonoBehaviour
         jumpingCoroutineRunning = true;
         anim.SetTrigger("Jump");
         yield return new WaitForSecondsRealtime(jumpAnimClip.length);
-        transform.position += new Vector3(0, 10000000000);
+        transform.position += new Vector3(0, 9999999999999);
         jumpingCoroutineRunning = false;
     }
 
