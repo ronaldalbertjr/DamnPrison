@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114430550666991942}
   m_Layer: 8
   m_Name: Musclelini
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punchAnimClip: {fileID: 7400000, guid: 221710b2969827d4eb102ab0dd167aa6, type: 2}
   jumpAnimClip: {fileID: 7400000, guid: 22e695b5f65fb3f428b997e79025bbe5, type: 2}
+  muscleliniShadow: {fileID: 1328749811509344, guid: ac52def735854334db9cfbba2856bb7f,
+    type: 2}
 --- !u!212 &212034462530326106
 SpriteRenderer:
   m_ObjectHideFlags: 1

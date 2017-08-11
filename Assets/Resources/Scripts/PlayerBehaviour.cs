@@ -255,6 +255,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void Damaged(GameObject col)
     {
         canBeHitten = false;
+        playerCanMove = false;
         bodyAnim.SetBool("Damaged", true);
         legsAnim.SetBool("Damaged", true);
         gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
@@ -264,7 +265,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     IEnumerator ChangePlayerColor()
     {
-        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
+        gunSpriteRenderer.enabled = false;
         for (int i = 0; i < 10; i++)
         {
             if (bodySpriteRenderer.color.a.Equals(1))
@@ -279,14 +280,23 @@ public class PlayerBehaviour : MonoBehaviour
             }
             yield return new WaitForSecondsRealtime(0.05f);
         }
+        gunSpriteRenderer.enabled = true;
         gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 1);
         canBeHitten = true;
+        playerCanMove = true;
     }
 
     IEnumerator GoingBackWhenShot(GameObject aux)
     {
-
-        float multiplier = 0.2f;
+        float multiplier;
+        if (!aux.tag.Equals("Boss"))
+        {
+            multiplier = 0.2f;
+        }
+        else
+        {
+            multiplier = 0.7f;
+        }
         Vector3 goingDirection = aux.transform.position - transform.position;
         Vector3 goBackVector = new Vector3(-goingDirection.normalized.x, -goingDirection.normalized.y) * multiplier;
         for (float i = 0; i < 10; i++)

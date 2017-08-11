@@ -37,5 +37,16 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        else if(col.tag.Equals("Boss"))
+        {
+            Destroy(gameObject);
+            if (col.GetComponent<MuscleliniScript>().health <= 0)
+            {
+                Destroy(col.gameObject);
+            }
+            else
+                col.gameObject.GetComponent<MuscleliniScript>().Damaged();
+        }
     }
 }

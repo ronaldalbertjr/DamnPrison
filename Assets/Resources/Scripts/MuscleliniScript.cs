@@ -15,14 +15,18 @@ public class MuscleliniScript : MonoBehaviour
         AnimationClip punchAnimClip;
         [SerializeField]
         AnimationClip jumpAnimClip;
+        [SerializeField]
+        GameObject muscleliniShadow;
 
         Animator anim;
         GameObject player;
+        GameObject inGameShadow;
         SpriteRenderer spRenderer;
 
         MuscleliniAttacks currentAttack;
 
         float timeToAttack = 0;
+        public float health = 50;
         bool isDead;
         bool punching;
         bool playerInsideArea;
@@ -70,17 +74,38 @@ public class MuscleliniScript : MonoBehaviour
                 }
                 else
                 {
-                    anim.SetBool("Running", true);
+                    anim.SetBool("Run", true);
                     GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
                 }
                 break;
             case MuscleliniAttacks.JumpAttack:
+                GetComponent<PolyNavAgent>().Stop();
                 if (!jumpingCoroutineRunning)
                 {
                     StartCoroutine(Jumping());
                 }
                 break;
         }
+    }
+
+    void CameraShake(float shakeAmount, float shakeDuration)
+    {
+        Vector3 camPosition = Camera.main.transform.position;
+        if (shakeDuration > 0)
+        {
+            Camera.main.transform.localPosition = camPosition + Random.insideUnitSphere * shakeAmount;
+            shakeDuration -= Time.deltaTime;
+        }
+        else
+        {
+            shakeDuration = 0f;
+            Camera.main.transform.localPosition = camPosition;
+        }
+    }
+
+    void ChangeScale(bool flip, SpriteRenderer spRenderer)
+    {
+        spRenderer.flipX = flip;
     }
 
     public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
@@ -97,9 +122,16 @@ public class MuscleliniScript : MonoBehaviour
         }
     }
 
-    void ChangeScale(bool flip, SpriteRenderer spRenderer)
+    public void StartFalling(Vector3 position)
     {
-        spRenderer.flipX = flip;
+        StartCoroutine(Falling(position));
+    }
+
+    public void Damaged()
+    {
+        health--;
+        StartCoroutine(ChangeEnemyColor());
+        StartCoroutine(ChangeTimeScale());
     }
 
     IEnumerator Punching()
@@ -122,7 +154,39 @@ public class MuscleliniScript : MonoBehaviour
         jumpingCoroutineRunning = true;
         anim.SetTrigger("Jump");
         yield return new WaitForSecondsRealtime(jumpAnimClip.length);
-        transform.position += new Vector3(0, 9999999999999);
+        inGameShadow = (GameObject) Instantiate(muscleliniShadow, transform.position, transform.rotation);
+        spRenderer.enabled = false;
+    }
+
+    IEnumerator ChangeEnemyColor()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(0.3f, 0, 0);
+        yield return new WaitForSecondsRealtime(0.05f);
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+    }
+
+    IEnumerator ChangeTimeScale()
+    {
+        Time.timeScale = 0.3f;
+        yield return new WaitForSeconds(0.03f); ;
+        Time.timeScale = 1;
+    }
+
+    public IEnumerator Falling(Vector3 positionToFall)
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        transform.position = positionToFall;
+        spRenderer.enabled = true;
+        anim.SetBool("Fall", true);
+        Destroy(inGameShadow);
+        if (playerInsideArea)
+        {
+            player.GetComponent<PlayerBehaviour>().Damaged(gameObject);
+        }
+        CameraShake(0.5f, 1f);
+        yield return new WaitForSecondsRealtime(1f);
+        anim.SetBool("Fall", false);
+        currentAttack = MuscleliniAttacks.PunchAttack;
         jumpingCoroutineRunning = false;
     }
 
