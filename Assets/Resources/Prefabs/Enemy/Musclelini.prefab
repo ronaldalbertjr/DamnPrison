@@ -77,9 +77,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.013611575, y: 0.0027222582}
+  m_Offset: {x: -0.055429757, y: -0.030542953}
   serializedVersion: 2
-  m_Size: {x: 1.0885674, y: 0.73167}
+  m_Size: {x: 1.2266504, y: 0.7982003}
 --- !u!61 &61989327234857012
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -91,9 +91,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.004470151, y: 0}
+  m_Offset: {x: -0.040595535, y: -0.0023822244}
   serializedVersion: 2
-  m_Size: {x: 0.8089394, y: 0.65}
+  m_Size: {x: 1.0211939, y: 0.69413775}
 --- !u!95 &95548126425423380
 Animator:
   serializedVersion: 3
@@ -151,6 +151,8 @@ MonoBehaviour:
   jumpAnimClip: {fileID: 7400000, guid: 22e695b5f65fb3f428b997e79025bbe5, type: 2}
   muscleliniShadow: {fileID: 1328749811509344, guid: ac52def735854334db9cfbba2856bb7f,
     type: 2}
+  boxCollider: {fileID: 61989327234857012}
+  health: 50
 --- !u!212 &212034462530326106
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5fc356284014b774ca3fac969716e666, type: 3}
+  m_Sprite: {fileID: 21300030, guid: 05db5f90c90a1064599bfec408ec5e3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

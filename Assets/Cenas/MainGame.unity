@@ -6573,6 +6573,9 @@ GameObject:
   - component: {fileID: 2080873503}
   - component: {fileID: 2080873502}
   - component: {fileID: 2080873504}
+  - component: {fileID: 2080873505}
+  - component: {fileID: 2080873506}
+  - component: {fileID: 2080873507}
   m_Layer: 0
   m_Name: BossRoom
   m_TagString: Untagged
@@ -6643,6 +6646,51 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.9092364, y: 1.1552278}
   - {x: 2.9233165, y: 1.1592371}
+--- !u!68 &2080873505
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2080873501}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -2.8857632, y: 1.1745088}
+  - {x: -2.8869326, y: -1.7222147}
+--- !u!68 &2080873506
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2080873501}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -2.9002717, y: -1.7128435}
+  - {x: 2.9200704, y: -1.7164621}
+--- !u!68 &2080873507
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2080873501}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: 2.8831708, y: 1.5518551}
+  - {x: 2.8862026, y: -1.74605}
 --- !u!1 &2144168782
 GameObject:
   m_ObjectHideFlags: 0

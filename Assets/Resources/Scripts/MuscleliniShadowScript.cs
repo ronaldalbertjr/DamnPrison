@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MuscleliniShadowScript : MonoBehaviour
 {
-    GameObject player;
-    MuscleliniScript musclelini;
-    bool shadowFollowing;
+    #region Variables
+        GameObject player;
+        MuscleliniScript musclelini;
+        bool shadowFollowing;
+        float timeToFall;
+    #endregion
 
     private void Start()
     {
@@ -18,8 +21,16 @@ public class MuscleliniShadowScript : MonoBehaviour
 
     private void Update()
     {
-        if(shadowFollowing)
-        GetComponent<PolyNavAgent>().SetDestination(player.transform.position + new Vector3(0, -1.5f));
+        if (shadowFollowing)
+        {
+            GetComponent<PolyNavAgent>().SetDestination(player.transform.position + new Vector3(0, -1.5f));
+            timeToFall += Time.deltaTime;
+            if(timeToFall >= 5)
+            {
+                GetTheTankToFall();
+                shadowFollowing = false;
+            }
+        }
     }
 
     private void GetTheTankToFall()

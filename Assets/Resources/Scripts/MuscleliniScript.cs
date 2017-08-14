@@ -17,6 +17,8 @@ public class MuscleliniScript : MonoBehaviour
         AnimationClip jumpAnimClip;
         [SerializeField]
         GameObject muscleliniShadow;
+        [SerializeField]
+        BoxCollider2D boxCollider;
 
         Animator anim;
         GameObject player;
@@ -52,7 +54,7 @@ public class MuscleliniScript : MonoBehaviour
     {
         if (!isDead)
         {
-            Flip(player.transform, spRenderer);
+            if(!jumpingCoroutineRunning) Flip(player.transform, spRenderer);
             if(!jumpingCoroutineRunning) timeToAttack += Time.deltaTime;
             if (timeToAttack >= 10)
             {
@@ -108,6 +110,18 @@ public class MuscleliniScript : MonoBehaviour
         spRenderer.flipX = flip;
     }
 
+    void ChangeSpriteLayer(GameObject player)
+    {
+        if(player.transform.position.y < transform.position.y)
+        {
+            spRenderer.sortingOrder = -4;
+        }
+        else
+        {
+            spRenderer.sortingOrder = 1;
+        }
+    }
+
     public void Flip(Transform toLookAt, SpriteRenderer spRenderer)
     {
         if (toLookAt.position.x > transform.position.x && !facingRight)
@@ -156,6 +170,7 @@ public class MuscleliniScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(jumpAnimClip.length);
         inGameShadow = (GameObject) Instantiate(muscleliniShadow, transform.position, transform.rotation);
         spRenderer.enabled = false;
+        boxCollider.enabled = false;
     }
 
     IEnumerator ChangeEnemyColor()
@@ -174,20 +189,29 @@ public class MuscleliniScript : MonoBehaviour
 
     public IEnumerator Falling(Vector3 positionToFall)
     {
-        yield return new WaitForSecondsRealtime(2f);
         transform.position = positionToFall;
+        yield return new WaitForSecondsRealtime(1f);
         spRenderer.enabled = true;
         anim.SetBool("Fall", true);
         Destroy(inGameShadow);
+        CameraShake(1f, 2f);
         if (playerInsideArea)
         {
             player.GetComponent<PlayerBehaviour>().Damaged(gameObject);
         }
-        CameraShake(0.5f, 1f);
+        boxCollider.enabled = true;
         yield return new WaitForSecondsRealtime(1f);
         anim.SetBool("Fall", false);
         currentAttack = MuscleliniAttacks.PunchAttack;
         jumpingCoroutineRunning = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag.Equals("Player"))
+        {
+            playerInsideArea = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
