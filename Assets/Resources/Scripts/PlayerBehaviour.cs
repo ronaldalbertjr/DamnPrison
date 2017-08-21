@@ -2,6 +2,18 @@
 using System.Collections;
 using System;
 
+enum ToLookPositions 
+{
+    Left,
+    Right,
+    Up,
+    Down,
+    LeftUp,
+    RightUp,
+    LeftDown,
+    RightDown
+}
+
 public class PlayerBehaviour : MonoBehaviour 
 {
     #region Variables
@@ -27,7 +39,10 @@ public class PlayerBehaviour : MonoBehaviour
         AudioSource walkingAudio;
         [SerializeField]
         AudioSource gunAudio;
+        [SerializeField]
+        AnimationClip rollingAnimation;
 
+        ToLookPositions lookingPosition;
         Animator bodyAnim;
         Animator legsAnim;
         Animator gunAnim;
@@ -45,9 +60,13 @@ public class PlayerBehaviour : MonoBehaviour
 	    private float decreaseFactor;
 	    private Vector3 camPosition;
 	    private bool canShock;
+        private bool rolling;
         float angle;
         float time = 1;
+        float rollTime;
         int health = 15;
+        float walkingDirX;
+        float walkingDirY;
         bool canEnterDoor = true;
     #endregion
 
@@ -68,16 +87,22 @@ public class PlayerBehaviour : MonoBehaviour
         decreaseFactor = 1;
     }
 
-	void Update () 
+	void Update() 
 	{
         if (playerCanMove && Time.deltaTime != 0)
         {
             time += Time.deltaTime;
+            rollTime += Time.deltaTime;
             ChangeMovement();
             ChangeRotation();
             CheckDifferentVisions();
             CameraShake();
-            if (Input.GetMouseButton(0) && time >= 0.8 && canBeHitten)
+            if(Input.GetMouseButton(1) && rollTime >= 0.5f)
+            {
+                StartCoroutine(Rolling(lookingPosition));
+                rollTime = 0;
+            }
+            if (Input.GetMouseButton(0) && time >= 0.8 && canBeHitten && !rolling)
             {
                 time = 0;
                 gunAnim.SetBool("Shotting", true);
@@ -99,7 +124,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void ChangeMovement()
     {
-        if (canBeHitten)
+        if (canBeHitten && !rolling)
         {
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
@@ -181,41 +206,49 @@ public class PlayerBehaviour : MonoBehaviour
         {
             bodyAnim.SetFloat("LookingAngle", 0);
             gunAnim.SetFloat("GunPosition", 0);
+            lookingPosition = ToLookPositions.Down;
         }
         else if (angle > 247.5 && angle < 292.5)
         {
             bodyAnim.SetFloat("LookingAngle", 1);
             gunAnim.SetFloat("GunPosition", 1);
+            lookingPosition = ToLookPositions.Left;
         }
         else if (angle > 67.5 && angle < 112.5)
         {
             bodyAnim.SetFloat("LookingAngle", 3);
             gunAnim.SetFloat("GunPosition", 3);
+            lookingPosition = ToLookPositions.Right;
         }
         else if(angle >= 22.5 && angle <= 67.5)
         {
             bodyAnim.SetFloat("LookingAngle", 5);
             gunAnim.SetFloat("GunPosition", 5);
+            lookingPosition = ToLookPositions.LeftUp;
         }
         else if(angle >= 292.5 && angle <= 337.5)
         {
             bodyAnim.SetFloat("LookingAngle", 4);
             gunAnim.SetFloat("GunPosition", 4);
+            lookingPosition = ToLookPositions.RightUp;
         }
         else if(angle >= 112.5 && angle <= 157.5)
         {
             bodyAnim.SetFloat("LookingAngle", 7);
             gunAnim.SetFloat("GunPosition", 7);
+            lookingPosition = ToLookPositions.LeftDown;
         }
         else if(angle >= 202.5 && angle <= 247.5)
         {
             bodyAnim.SetFloat("LookingAngle", 6);
             gunAnim.SetFloat("GunPosition", 6);
+            lookingPosition = ToLookPositions.RightDown;
         }
         else if (angle < 22.5 || angle > 337.5)
         {
             bodyAnim.SetFloat("LookingAngle", 2);
             gunAnim.SetFloat("GunPosition", 2);
+            lookingPosition = ToLookPositions.Up;
         }
     }
 
@@ -317,6 +350,52 @@ public class PlayerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         bodyAnim.SetBool("Damaged", false);
         legsAnim.SetBool("Damaged", false);
+    }
+
+    IEnumerator Rolling(ToLookPositions toRoll)
+    {
+        rolling = true;
+        Vector3 toRollVector = new Vector3();
+        bodyAnim.SetTrigger("Roll");
+        gunSpriteRenderer.enabled = false;
+        legsSpriteRenderer.enabled = false;
+        switch (toRoll)
+        {
+            case ToLookPositions.Left:
+                toRollVector = new Vector3(1f, 0);
+                break;
+            case ToLookPositions.Right:
+                toRollVector = new Vector3(-1f, 0);
+                break;
+            case ToLookPositions.Up:
+                toRollVector = new Vector3(0, 1f);
+                break;
+            case ToLookPositions.Down:
+                toRollVector = new Vector3(0, -1f);
+                break;
+            case ToLookPositions.LeftUp:
+                toRollVector = new Vector3(-1f, 1f);
+                break;
+            case ToLookPositions.RightUp:
+                toRollVector = new Vector3(1f, 1f);
+                break;
+            case ToLookPositions.LeftDown:
+                toRollVector = new Vector3(-1f, -1f);
+                break;
+            case ToLookPositions.RightDown:
+                toRollVector = new Vector3(1f, -1f);
+                break;
+        }
+        for(int i = 0; i <= 10; i++)
+        {
+            mainCamera.transform.position = new Vector3(transform.position.x,transform.position.y, mainCamera.transform.position.z);
+            transform.position += toRollVector * speed * 0.1f;
+            yield return new WaitForSecondsRealtime(0.000001f);
+        }
+        yield return new WaitForSecondsRealtime(0.2f);
+        gunSpriteRenderer.enabled = true;
+        legsSpriteRenderer.enabled = true;
+        rolling = false;
     }
 
     private void OnTriggerStay2D(Collider2D col)
