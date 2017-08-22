@@ -30,7 +30,6 @@ public class MuscleliniScript : MonoBehaviour
         float timeToAttack = 0;
         public float health = 50;
         bool isDead;
-        bool isAngry;
         bool punching;
         bool playerInsideArea;
         bool facingRight;
@@ -66,7 +65,6 @@ public class MuscleliniScript : MonoBehaviour
             if(health <= 10)
             {
                 spRenderer.color = new Color(255f, 0f, 0f);
-                isAngry = true;
                 GetComponent<PolyNavAgent>().maxSpeed = 20;
             }
         }

@@ -6,6 +6,8 @@ using UnityEngine;
 public class RangedEnemyScript : MonoBehaviour
 {
     #region Variables
+    [SerializeField]
+    AnimationClip dieAnimClip;
     GameObject spawner;
     GameObject bullet;
     GameObject player;
@@ -75,7 +77,7 @@ public class RangedEnemyScript : MonoBehaviour
             GetComponent<PolyNavAgent>().Stop();
             anim.SetTrigger("Die");
             isDead = true;
-            Destroy(GetComponent<Collider2D>());
+            Invoke("DestroyBoxCollider", dieAnimClip.length);
             Time.timeScale = 1;
             boxColliderTrigger.numberOfEnemiesInRoom--;
             GetComponent<SpriteRenderer>().sortingLayerName = "DeadEnemy";
@@ -194,6 +196,11 @@ public class RangedEnemyScript : MonoBehaviour
     void setCanShootTrue()
     {
         canShoot = true;
+    }
+
+    void DestroyBoxCollider()
+    {
+        Destroy(GetComponent<Collider2D>());
     }
 
     bool CheckShot(Vector3 position)
