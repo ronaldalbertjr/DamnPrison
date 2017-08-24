@@ -349,15 +349,6 @@ Prefab:
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1132797699}
-    - target: {fileID: 1091318036242302, guid: fc1374d9e31b5d54ba0b646819fb3021, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114313606501075534, guid: fc1374d9e31b5d54ba0b646819fb3021,
-        type: 2}
-      propertyPath: rollingAnimation
-      value: 
-      objectReference: {fileID: 7400000, guid: c43c2dce5b379ed4badd45271456075b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc1374d9e31b5d54ba0b646819fb3021, type: 2}
   m_IsPrefabParent: 0

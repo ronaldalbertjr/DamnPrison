@@ -41,6 +41,7 @@ public class PlayerBehaviour : MonoBehaviour
         public GameObject currentRoom;
         public bool playerCanMove;
         public bool canBeHitten;
+        public bool dead;
         private bool collidingWithDoor;
 	    private float shakeDuration;
 	    private float shakeAmount;
@@ -53,7 +54,7 @@ public class PlayerBehaviour : MonoBehaviour
         float rollTime;
         float w;
         float h;
-        int health = 15;
+        public int health = 15;
         float walkingDirX;
         float walkingDirY;
         bool canEnterDoor = true;
@@ -63,6 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         playerCanMove = true;
         canBeHitten = true;
+        dead = false;
         Cursor.visible = true;
         bodyAnim = body.GetComponent<Animator>();
         legsAnim = legs.GetComponent<Animator>();
@@ -78,7 +80,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 	void Update() 
 	{
-        if (playerCanMove && Time.deltaTime != 0)
+        if (playerCanMove && Time.deltaTime != 0 && !dead)
         {
             time += Time.deltaTime;
             rollTime += Time.deltaTime;
@@ -107,9 +109,12 @@ public class PlayerBehaviour : MonoBehaviour
                 bodyAnim.SetBool("Shotting", false);
             }
         }
-        if(health <= 0)
+        if(health <= 0 && !dead)
         {
-            Destroy(gameObject);
+            gunSpriteRenderer.enabled = false;
+            legsSpriteRenderer.enabled = false;
+            bodyAnim.SetTrigger("Die");
+            dead = true;
         }
 	}
 
@@ -295,13 +300,17 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Damaged(GameObject col)
     {
-        canBeHitten = false;
-        playerCanMove = false;
-        bodyAnim.SetBool("Damaged", true);
-        legsAnim.SetBool("Damaged", true);
-        gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
-        StartCoroutine(ChangePlayerColor());
-        StartCoroutine(GoingBackWhenShot(col));
+        if (!dead)
+        {
+            canBeHitten = false;
+            playerCanMove = false;
+            bodyAnim.SetBool("Damaged", true);
+            legsAnim.SetBool("Damaged", true);
+            health--;
+            gunSpriteRenderer.color = new Color(gunSpriteRenderer.color.r, gunSpriteRenderer.color.g, gunSpriteRenderer.color.b, 0);
+            StartCoroutine(ChangePlayerColor());
+            StartCoroutine(GoingBackWhenShot(col));
+        }
     }
 
     IEnumerator ChangePlayerColor()
