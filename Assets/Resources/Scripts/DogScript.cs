@@ -11,9 +11,12 @@ public class DogScript : MonoBehaviour
         GameObject player;
         [HideInInspector]
         public BoxColliderTriggerScript boxColliderTrigger;
+        [HideInInspector]
+        public Vector3 startingPoint;
         Vector3 lastFrameVector;
         Animator anim;
         float health;
+        float biteTime;
         bool biting;
         bool damaged;
         bool isDead;
@@ -34,9 +37,15 @@ public class DogScript : MonoBehaviour
         {
             if (!damaged)
                 ChangeAnimation(anim);
+            biteTime += Time.deltaTime;
             GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
         }
-	}
+
+        if (!boxColliderTrigger.gameObject.GetComponent<Collider2D>().bounds.Contains(transform.position))
+        {
+            transform.position = startingPoint;
+        }
+    }
 
     public void ChangeAnimation(Animator anim)
     {
@@ -219,15 +228,16 @@ public class DogScript : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.tag.Equals("Player") && col.GetComponent<PlayerBehaviour>().canBeHitten && !col.GetComponent<PlayerBehaviour>().dead)
+        if (col.tag.Equals("Player") && col.GetComponent<PlayerBehaviour>().canBeHitten && !col.GetComponent<PlayerBehaviour>().dead && !isDead && biteTime > 1f)
         {
             if (!biting) Bite();
+            biteTime = 0;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Bullet") && GetComponent<DogScript>().isActiveAndEnabled)
+        if (col.tag.Equals("Bullet") && GetComponent<DogScript>().isActiveAndEnabled && !isDead)
         {
             Damaged();
             Destroy(col.gameObject);

@@ -191,8 +191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -289.19, y: -1.5}
-  m_SizeDelta: {x: -15, y: -2}
+  m_AnchoredPosition: {x: -327, y: -1.5}
+  m_SizeDelta: {x: 69, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &43621405
 MonoBehaviour:
@@ -226,7 +226,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Windowed:'
+  m_Text: 'Modo Janela:'
 --- !u!222 &43621406
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -412,10 +412,10 @@ RectTransform:
   m_Father: {fileID: 1576205140}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.30528337, y: 0.4183126}
-  m_AnchorMax: {x: 0.418, y: 0.5}
-  m_AnchoredPosition: {x: 0.70000076, y: -51}
-  m_SizeDelta: {x: -0.80000305, y: 0.29999924}
+  m_AnchorMin: {x: 0.30528337, y: 0.3221514}
+  m_AnchorMax: {x: 0.4125868, y: 0.3953028}
+  m_AnchoredPosition: {x: 3.2000008, y: 1}
+  m_SizeDelta: {x: 4.199997, y: 4.299999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250089298
 MonoBehaviour:
@@ -449,7 +449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YES
+  m_Text: SIM
 --- !u!222 &250089299
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -608,17 +608,17 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Fastest
+    - m_Text: Muito Rapido
       m_Image: {fileID: 0}
-    - m_Text: Fast
+    - m_Text: Rapido
       m_Image: {fileID: 0}
-    - m_Text: Simple
+    - m_Text: Simples
       m_Image: {fileID: 0}
-    - m_Text: Good
+    - m_Text: Bom
       m_Image: {fileID: 0}
-    - m_Text: Beautiful
+    - m_Text: Bonito
       m_Image: {fileID: 0}
-    - m_Text: Fantastic
+    - m_Text: Fantastico
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -895,7 +895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSED
+  m_Text: PAUSADO
 --- !u!222 &427472447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1965,7 +1965,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options Menu
+  m_Text: CONFIG MENU
 --- !u!222 &876019749
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2204,10 +2204,10 @@ RectTransform:
   m_Father: {fileID: 1576205140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.621521}
-  m_AnchorMax: {x: 1, y: 0.7094168}
-  m_AnchoredPosition: {x: 0.000045776367, y: -51}
-  m_SizeDelta: {x: -0.00012207031, y: 13}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.61315143}
+  m_AnchoredPosition: {x: 0.000045776367, y: 5.5}
+  m_SizeDelta: {x: -0.00012207031, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927547614
 MonoBehaviour:
@@ -2241,7 +2241,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ARE YOU SURE?
+  m_Text: TEM CERTEZA?
 --- !u!222 &927547615
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2714,9 +2714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'OPTIONS
-
-'
+  m_Text: CONFIG
 --- !u!222 &1028256527
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3652,7 +3650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fastest
+  m_Text: Muito Rapido
 --- !u!222 &1300473384
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3935,10 +3933,10 @@ RectTransform:
   m_Father: {fileID: 1576205140}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.558, y: 0.4183126}
-  m_AnchorMax: {x: 0.656, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -53}
-  m_SizeDelta: {x: -4, y: 0}
+  m_AnchorMin: {x: 0.558, y: 0.3221514}
+  m_AnchorMax: {x: 0.65374386, y: 0.3953028}
+  m_AnchoredPosition: {x: 2, y: -1}
+  m_SizeDelta: {x: -2, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1356172811
 Animator:
@@ -4041,9 +4039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'NO
-
-'
+  m_Text: NAO
 --- !u!222 &1356172814
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4501,7 +4497,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BACK TO PAUSED
+  m_Text: 'VOLTAR AO PAUSE
 
 '
 --- !u!222 &1531767104
@@ -4579,9 +4575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'RETURN TO TITLE
-
-'
+  m_Text: VOLTAR AO MENU
 --- !u!222 &1553723795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5225,10 +5219,10 @@ RectTransform:
   m_Father: {fileID: 512674616}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.24933141, y: 0.20969573}
+  m_AnchorMin: {x: 0.19283369, y: 0.22314963}
   m_AnchorMax: {x: 0.48049712, y: 0.35015213}
-  m_AnchoredPosition: {x: -0.7771669, y: 2.4430861}
-  m_SizeDelta: {x: -4.8978577, y: -11.966087}
+  m_AnchoredPosition: {x: 2, y: -1.0569134}
+  m_SizeDelta: {x: -10, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695680294
 MonoBehaviour:
@@ -5262,7 +5256,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quality:'
+  m_Text: 'Qualidade:'
 --- !u!222 &1695680295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5687,10 +5681,10 @@ RectTransform:
   m_Father: {fileID: 914866078}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38916862, y: 0.582}
-  m_AnchorMax: {x: 0.58561283, y: 0.66163164}
-  m_AnchoredPosition: {x: 0.71191406, y: -1.0435562}
-  m_SizeDelta: {x: -0.14529419, y: 0.6029053}
+  m_AnchorMin: {x: 0.3702786, y: 0.582}
+  m_AnchorMax: {x: 0.6101115, y: 0.665}
+  m_AnchoredPosition: {x: -3, y: -2.0435562}
+  m_SizeDelta: {x: 13, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1993818273
 Animator:
@@ -5793,9 +5787,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'RESUME
-
-'
+  m_Text: CONTINUAR
 --- !u!222 &1993818276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5940,7 +5932,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: SAIR
 --- !u!222 &2064083440
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6046,10 +6038,10 @@ RectTransform:
   m_Father: {fileID: 512674616}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.20600002, y: 0.39054358}
+  m_AnchorMin: {x: 0.06283369, y: 0.404}
   m_AnchorMax: {x: 0.52900004, y: 0.52500004}
-  m_AnchoredPosition: {x: -3.2760446, y: 1.9860333}
-  m_SizeDelta: {x: -3.8572693, y: -8.967533}
+  m_AnchoredPosition: {x: 0, y: -1.497}
+  m_SizeDelta: {x: 5.7302, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065292947
 MonoBehaviour:
@@ -6083,7 +6075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Resolution:'
+  m_Text: 'Tamanho de Tela:'
 --- !u!222 &2065292948
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class TankScript : MonoBehaviour
         [HideInInspector]
         public Vector3 differenceVector;
         Vector3 lastFrameVector;
+        [HideInInspector]
+        public Vector3 startingPoint;
 	    SpriteRenderer spRenderer;
         [HideInInspector]
         public BoxColliderTriggerScript boxColliderTrigger;
@@ -78,6 +80,10 @@ public class TankScript : MonoBehaviour
         {
             CameraShake(0.3f, 1f);
             Flip(player.transform, spRenderer);
+        }
+        if(!boxColliderTrigger.gameObject.GetComponent<Collider2D>().bounds.Contains(transform.position))
+        {
+            transform.position = startingPoint;
         }
     }
 
@@ -225,7 +231,6 @@ public class TankScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(standingUpClip.length * 2f);
 		runDirection = player.transform.position - transform.position;
         CheckRun();
-        Destroy(GetComponent<PolyNavObstacle>());
         running = true;
 		canCollide = true;
     }
@@ -238,7 +243,6 @@ public class TankScript : MonoBehaviour
 			transform.position += goBackVector;
 			yield return new WaitForSecondsRealtime(0.001f);
 		}
-        gameObject.AddComponent<PolyNavObstacle>();
     }
     
 	IEnumerator ChangeEnemyColor()
@@ -305,7 +309,6 @@ public class TankScript : MonoBehaviour
             Destroy(col.gameObject);
             if (health <= 0)
             {
-                gameObject.AddComponent<PolyNavObstacle>();
                 Destroy(gameObject.GetComponent<Collider2D>());
                 spRenderer.sortingLayerName = "DeadEnemy";
                 canCollide = false;

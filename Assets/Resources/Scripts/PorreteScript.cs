@@ -23,6 +23,8 @@ public class PorreteScript : MonoBehaviour
         PorreteAreaHitScript hitAreaScript;
         [HideInInspector]
         public BoxColliderTriggerScript boxColliderTrigger;
+        [HideInInspector]
+        public Vector3 startingPoint;
         SpriteRenderer spRenderer;
         Animator anim;
         float health;
@@ -60,7 +62,7 @@ public class PorreteScript : MonoBehaviour
             {
                 GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
             }
-            else if (!attacking && !damaged)
+            else if (!attacking && !damaged && !isDead)
             {
                 GetComponent<PolyNavAgent>().Stop();
                 porreteAttackAudio.Play();
@@ -78,7 +80,11 @@ public class PorreteScript : MonoBehaviour
                 spRenderer.sortingLayerName = "DeadEnemy";
             }
         }
-	}
+        if (!boxColliderTrigger.gameObject.GetComponent<Collider2D>().bounds.Contains(transform.position))
+        {
+            transform.position = startingPoint;
+        }
+    }
 
     public void Flip(Transform toLookAt, SpriteRenderer spRenderer, BoxCollider2D hitAreaCollider)
     {

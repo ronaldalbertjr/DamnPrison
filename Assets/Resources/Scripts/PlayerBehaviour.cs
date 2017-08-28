@@ -114,6 +114,7 @@ public class PlayerBehaviour : MonoBehaviour
             gunSpriteRenderer.enabled = false;
             legsSpriteRenderer.enabled = false;
             bodyAnim.SetTrigger("Die");
+            Destroy(GetComponent<Collider2D>());
             dead = true;
         }
 	}

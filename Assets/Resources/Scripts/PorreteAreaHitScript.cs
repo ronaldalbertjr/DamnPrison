@@ -17,7 +17,7 @@ public class PorreteAreaHitScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if(col.gameObject.Equals(player) && col.GetComponent<PlayerBehaviour>().canBeHitten)
+        if(col.gameObject.Equals(player) && col.GetComponent<PlayerBehaviour>().canBeHitten && !col.GetComponent<PlayerBehaviour>().dead)
         {
             playerInsideArea = true;
         }

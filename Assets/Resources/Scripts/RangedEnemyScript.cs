@@ -23,6 +23,8 @@ public class RangedEnemyScript : MonoBehaviour
     bool canShoot = true;
     [HideInInspector]
     public bool isDead;
+    [HideInInspector]
+    public Vector3 startingPoint;
     #endregion
 
     void Start ()
@@ -65,6 +67,10 @@ public class RangedEnemyScript : MonoBehaviour
             {
                 FindPositionToShoot();
             }
+        }
+        if (!boxColliderTrigger.gameObject.GetComponent<Collider2D>().bounds.Contains(transform.position))
+        {
+            transform.position = startingPoint;
         }
     }
 
