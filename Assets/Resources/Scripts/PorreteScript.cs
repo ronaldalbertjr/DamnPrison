@@ -58,7 +58,7 @@ public class PorreteScript : MonoBehaviour
         {
             Flip(player.transform, spRenderer, hitAreaCollider);
             playerInsideArea = hitAreaScript.playerInsideArea;
-            if (!playerInsideArea && !attacking && !damaged)
+            if (!playerInsideArea && !attacking && !damaged && !player.GetComponent<PlayerBehaviour>().dead)
             {
                 GetComponent<PolyNavAgent>().SetDestination(player.transform.position);
             }

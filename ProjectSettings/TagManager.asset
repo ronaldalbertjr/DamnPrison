@@ -15,6 +15,7 @@ TagManager:
   - Dog
   - Objeto
   - Boss
+  - Tank
   layers:
   - Default
   - TransparentFX

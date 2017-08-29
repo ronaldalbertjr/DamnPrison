@@ -56,6 +56,14 @@ public class EnemySpawnerScript : MonoBehaviour
                 GameObject newEnemy = Instantiate(enemy, this.transform.position, this.transform.rotation, transform.parent.parent.parent);
                 boxCollider.numberOfEnemiesInRoom++;
                 roomCollider.enemiesInRoom.Add(newEnemy);
+                if (newEnemy.GetComponent<TankScript>())
+                    newEnemy.GetComponent<TankScript>().startingPoint = transform.position;
+                else if (newEnemy.GetComponent<RangedEnemyScript>())
+                    newEnemy.GetComponent<RangedEnemyScript>().startingPoint = transform.position;
+                else if (newEnemy.GetComponent<PorreteScript>())
+                    newEnemy.GetComponent<PorreteScript>().startingPoint = transform.position;
+                else if (newEnemy.GetComponent<DogScript>())
+                    newEnemy.GetComponent<DogScript>().startingPoint = transform.position;
             }
         }
 	}

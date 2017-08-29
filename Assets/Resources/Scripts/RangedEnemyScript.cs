@@ -42,7 +42,7 @@ public class RangedEnemyScript : MonoBehaviour
 
     void Update()
     {
-        if (!isDead)
+        if (!isDead && !player.GetComponent<PlayerBehaviour>().dead)
         {
             if (canShoot)
             {

@@ -60,7 +60,7 @@ public class TankScript : MonoBehaviour
     {
         differenceVector = transform.position - lastFrameVector;
         lastFrameVector = transform.position;
-        if (running && !die && anim.GetBool("Running"))
+        if (running && !die && anim.GetBool("Running") && !player.GetComponent<PlayerBehaviour>().dead)
         {
             if (canRun)
             {

@@ -33,7 +33,7 @@ public class DogScript : MonoBehaviour
 
 	void Update ()
     {
-        if (!isDead)
+        if (!isDead && !player.GetComponent<PlayerBehaviour>().dead)
         {
             if (!damaged)
                 ChangeAnimation(anim);

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114004776095822338}
   m_Layer: 8
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   tankCollidedWalkAudio: {fileID: 82572026401554642}
   speed: 10
   differenceVector: {x: 0, y: 0, z: 0}
+  startingPoint: {x: 0, y: 0, z: 0}
   boxColliderTrigger: {fileID: 0}
 --- !u!114 &114129069124368898
 MonoBehaviour:

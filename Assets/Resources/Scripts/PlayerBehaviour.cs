@@ -111,8 +111,8 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if(health <= 0 && !dead)
         {
-            gunSpriteRenderer.enabled = false;
-            legsSpriteRenderer.enabled = false;
+            gun.SetActive(false);
+            legs.SetActive(false);
             bodyAnim.SetTrigger("Die");
             Destroy(GetComponent<Collider2D>());
             dead = true;
@@ -340,7 +340,7 @@ public class PlayerBehaviour : MonoBehaviour
     IEnumerator GoingBackWhenShot(GameObject aux)
     {
         float multiplier;
-        if (!aux.tag.Equals("Boss"))
+        if (!aux.tag.Equals("Boss") || !aux.tag.Equals("Tank"))
         {
             multiplier = 0.2f;
         }
@@ -365,7 +365,7 @@ public class PlayerBehaviour : MonoBehaviour
             bodyAnim.SetFloat("DamagedFloat", 1);
             legsAnim.SetFloat("DamagedFloat", 1);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         bodyAnim.SetBool("Damaged", false);
         legsAnim.SetBool("Damaged", false);
     }

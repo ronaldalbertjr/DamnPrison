@@ -44,7 +44,7 @@ public class RoomColliderScript : MonoBehaviour
                 }
                 else if (e.GetComponent<TankScript>())
                 {
-                    e.GetComponent<TankScript>().enabled = true;
+                    StartCoroutine(SetTankScriptEnabled(e));
                 }
                 else if (e.GetComponent<PorreteScript>())
                 {
@@ -56,5 +56,11 @@ public class RoomColliderScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator SetTankScriptEnabled(GameObject e)
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        e.GetComponent<TankScript>().enabled = true;
     }
 }

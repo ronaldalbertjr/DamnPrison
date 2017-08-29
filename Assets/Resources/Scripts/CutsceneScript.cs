@@ -17,6 +17,7 @@ public class CutsceneScript : MonoBehaviour
         GetComponent<AudioSource>().clip = movie.audioClip;
 
         movie.Play();
+        GetComponent<AudioSource>().Play();
         Invoke("RunGameScene", 36f);		
 	}
 
