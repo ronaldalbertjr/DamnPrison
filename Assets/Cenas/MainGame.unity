@@ -384,7 +384,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4209596415888342, guid: fc1374d9e31b5d54ba0b646819fb3021, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 4209596415888342, guid: fc1374d9e31b5d54ba0b646819fb3021, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1097,6 +1097,7 @@ MonoBehaviour:
   jogarText: {fileID: 1451171518}
   waterDrop: {fileID: 1647305228}
   menuOST: {fileID: 942984424}
+  startPressed: 0
 --- !u!1 &512674615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,10 +2873,10 @@ RectTransform:
   m_Father: {fileID: 914866078}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38916862, y: 0.4283684}
-  m_AnchorMax: {x: 0.58561283, y: 0.51154363}
-  m_AnchoredPosition: {x: 0.55667305, y: 0.30644608}
-  m_SizeDelta: {x: -0.45570374, y: -2.216877}
+  m_AnchorMin: {x: 0.3476686, y: 0.42089543}
+  m_AnchorMax: {x: 0.63189137, y: 0.51154363}
+  m_AnchoredPosition: {x: -2.5302048, y: 3}
+  m_SizeDelta: {x: 2, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028256526
 MonoBehaviour:
@@ -2909,7 +2910,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONFIG
+  m_Text: CONFIGURAR
 --- !u!222 &1028256527
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6487,8 +6488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06283369, y: 0.404}
   m_AnchorMax: {x: 0.52900004, y: 0.52500004}
-  m_AnchoredPosition: {x: 0, y: -1.497}
-  m_SizeDelta: {x: 5.7302, y: -2}
+  m_AnchoredPosition: {x: -1.5, y: -1.497}
+  m_SizeDelta: {x: 3, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065292947
 MonoBehaviour:

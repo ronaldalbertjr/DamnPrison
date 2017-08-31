@@ -35,7 +35,7 @@ public class PauseScript : MonoBehaviour
 
 	void Update ()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && Time.timeScale != 0)
         {
             GetComponent<Canvas>().enabled = true;
             Time.timeScale = 0;
@@ -85,7 +85,7 @@ public class PauseScript : MonoBehaviour
     public void OnBackToTitlePressed()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void OnOptionsPressed()

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -114,8 +115,14 @@ public class PlayerBehaviour : MonoBehaviour
             bodyAnim.SetTrigger("Die");
             Destroy(GetComponent<Collider2D>());
             dead = true;
+            Invoke("ReloadScene", 3);
         }
 	}
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     void ChangeMovement()
     {

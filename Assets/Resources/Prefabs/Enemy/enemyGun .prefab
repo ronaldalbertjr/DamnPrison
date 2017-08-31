@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114281413311541188}
   - component: {fileID: 114374139182879104}
   - component: {fileID: 114907546448994660}
-  - component: {fileID: 60416393054298650}
+  - component: {fileID: 61232549704756962}
   m_Layer: 8
   m_Name: 'enemyGun '
   m_TagString: EnemyGun
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242711291006334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3663.9053, y: 1003.1636, z: -10}
+  m_LocalPosition: {x: 992.8266, y: 315.98685, z: -10}
   m_LocalScale: {x: 9.854101, y: 9.854101, z: 9.854101}
   m_Children:
   - {fileID: 4013534630394652}
@@ -118,8 +118,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 3
---- !u!60 &60416393054298650
-PolygonCollider2D:
+--- !u!61 &61232549704756962
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -129,15 +129,9 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.11, y: 0.17999999}
-      - {x: -0.11379094, y: -0.20463862}
-      - {x: 0.096210375, y: -0.20842913}
-      - {x: 0.11, y: -0.089999996}
-      - {x: 0.11, y: 0.17}
-      - {x: 0.089999996, y: 0.17999999}
+  m_Offset: {x: 0.0022545739, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.26056027, y: 0.40506563}
 --- !u!95 &95976519669868866
 Animator:
   serializedVersion: 3
@@ -194,6 +188,7 @@ MonoBehaviour:
   dieAnimClip: {fileID: 7400000, guid: e6ae7b2ccece9a74d971fe18c948f1df, type: 2}
   boxColliderTrigger: {fileID: 0}
   isDead: 0
+  startingPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &114837468594556336
 MonoBehaviour:
   m_ObjectHideFlags: 1

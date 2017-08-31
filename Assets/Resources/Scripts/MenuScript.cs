@@ -15,7 +15,8 @@ public class MenuScript : MonoBehaviour
         AudioSource waterDrop;
         [SerializeField]
         AudioSource menuOST;
-        bool startPressed;
+        [HideInInspector]
+        public bool startPressed;
     #endregion
 
     private void Start()

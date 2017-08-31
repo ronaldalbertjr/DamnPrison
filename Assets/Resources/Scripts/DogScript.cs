@@ -102,7 +102,7 @@ public class DogScript : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
-            Destroy(GetComponent<Collider2D>());
+            Destroy(GetComponent<PolygonCollider2D>());
             anim.SetTrigger("Die");
             GetComponent<PolyNavAgent>().Stop();
             Time.timeScale = 1;
