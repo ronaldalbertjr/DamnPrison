@@ -16,6 +16,7 @@ TagManager:
   - Objeto
   - Boss
   - Tank
+  - BoxColliderTrigger
   layers:
   - Default
   - TransparentFX

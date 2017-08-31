@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 114996940342313690}
   m_Layer: 8
   m_Name: BoxColliderTrigger
-  m_TagString: Untagged
+  m_TagString: BoxColliderTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

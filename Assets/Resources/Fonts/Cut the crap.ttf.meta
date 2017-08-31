@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 98c03f5a72da7244db7cc3e862635284
+timeCreated: 1504150069
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cut the crap
+  fontNames:
+  - Cut the crap
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

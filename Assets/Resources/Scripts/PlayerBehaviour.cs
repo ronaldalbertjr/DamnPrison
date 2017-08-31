@@ -52,8 +52,8 @@ public class PlayerBehaviour : MonoBehaviour
         float angle;
         float time = 1;
         float rollTime;
-        float w;
-        float h;
+        int w;
+        int h;
         public int health = 15;
         float walkingDirX;
         float walkingDirY;
@@ -84,8 +84,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             time += Time.deltaTime;
             rollTime += Time.deltaTime;
-            w = Input.GetAxis("Horizontal");
-            h = Input.GetAxis("Vertical");
             ChangeMovement();
             ChangeRotation();
             CheckDifferentVisions();
@@ -129,6 +127,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += (Vector3.up + Vector3.right) * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 2);
+                w = 1;
+                h = 1;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
@@ -137,6 +137,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += (Vector3.up + Vector3.left) * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 2);
+                w = -1;
+                h = 1;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
@@ -145,6 +147,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += (Vector3.down + Vector3.right) * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 0);
+                w = 1;
+                h = -1;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
@@ -153,6 +157,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += (Vector3.down + Vector3.left) * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 0);
+                w = -1;
+                h = -1;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.W))
@@ -161,6 +167,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += Vector3.up * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 2);
+                w = 0;
+                h = 1;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.D))
@@ -169,6 +177,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += Vector3.right * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 1);
+                w = 1;
+                h = 0;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.A))
@@ -177,6 +187,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += Vector3.left * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 3);
+                w = -1;
+                h = 0;
                 walkingAudio.UnPause();
             }
             else if (Input.GetKey(KeyCode.S))
@@ -185,6 +197,8 @@ public class PlayerBehaviour : MonoBehaviour
                 legsAnim.SetBool("Walking", true);
                 this.transform.position += Vector3.down * speed * Time.deltaTime;
                 legsAnim.SetFloat("WalkingLeg", 0);
+                w = 0;
+                h = -1;
                 walkingAudio.UnPause();
             }
             else
@@ -192,6 +206,25 @@ public class PlayerBehaviour : MonoBehaviour
                 bodyAnim.SetBool("Walking", false);
                 legsAnim.SetBool("Walking", false);
                 walkingAudio.Pause();
+                switch((int) legsAnim.GetFloat("WalkingLeg"))
+                {
+                    case 0:
+                        w = 0;
+                        h = -1;
+                        break;
+                    case 1:
+                        w = 1;
+                        h = 0;
+                        break;
+                    case 2:
+                        w = 0;
+                        h = 1;
+                        break;
+                    case 3:
+                        w = -1;
+                        h = 0;
+                        break;
+                }
             }
         }
     }
@@ -370,7 +403,7 @@ public class PlayerBehaviour : MonoBehaviour
         legsAnim.SetBool("Damaged", false);
     }
 
-    IEnumerator Rolling(float dirX, float dirY)
+    IEnumerator Rolling(int dirX, int dirY)
     {
         rolling = true;
         Vector3 toRollVector = new Vector3(dirX, dirY);

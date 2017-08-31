@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4f71823a7f8b4854d93002687b9d9146
+timeCreated: 1504149949
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Personal Services
+  fontNames:
+  - Personal Services
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
